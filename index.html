@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,62 +8,83 @@
   <link href="https://fonts.googleapis.com/css2?family=David+Libre&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  
-  <header>
-  <nav>
-  <div class="logo"><h1 align="center">FILMVISARNA!</h1></div>
-  <a href="index.html">Hem</a>
-  <a href="kontakt.html">Kontakta oss</a>
-  <a href="omoss.html">Om oss</a>
-  <a class="login" href="login.html">login</a>
-  </nav>
+  <!--Link for jQuery-->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous">
+    </script>
+  <!--Link to the movie "Gladiator" JavaScript file.-->
+  <script src="filmer.js"></script>
+
+
+  <header style="text-align: center;">
+    <nav>
+      <div class="logo">
+        <h1>FILMVISARNA!</h1>
+      </div>
+      <div class="menu">
+        <a href="index.html">Hem</a>
+        <a href="kontakt.html">Kontakta oss</a>
+        <a href="omoss.html">Om oss</a>
+      </div>
+      <a class="login" href="login.html">login</a>
+    </nav>
   </header>
 
   <main>
-  <div class="firstcolumn">
-    <h2>Aktuella Filmer</h2>
-      <p>Här listar vi från JSON de filmer som finns tillgängliga, klickabara för att komma till sida med info. Eventuellt kommer infon upp i rutan intill eller nedan.</p>
-      <p>Cast Away</p>
-      <p class="higlightedMovie">GreenLand</p>
-      <p>RoboCop</p>
-      <p>Tenet</p> 
-  </div>
-    
-    <div class="secondcolumn">
-      <p>GREENLAND</p>
-      <p>Här kan vi visa info om vald film.</p>
-      <img class="movieImg" src="greenland.png" alt="">
-      <p>Imdb 7.2</p>
-      <p>123 min</p>
-      <p>Gerard Butler</p>
+    <div class="firstcolumn">
+      <h2>Aktuella Filmer</h2>
+      <p>Här listar vi från JSON de filmer som finns tillgängliga, klickabara för att komma till sida med info.
+        Eventuellt kommer infon upp i rutan intill eller nedan.</p>
+      <p class="movieClick" onclick="readJson('Gladiator');">Gladiator</p>
+      <p class="movieClick" onclick="readJson('Big Hero 6');">Big Hero 6</p>
+      <p class="movieClick" onclick="readJson('Braveheart');">Braveheart</p>
+      <p class="movieClick" onclick="readJson('The Dark Knight');">The Dark Knight</p>
+      <p class="movieClick" onclick="readJson('Good Will Hunting');">Good Will Hunting</p>
     </div>
- 
-  <div class="thirdcolumn">
-    <p class="bold">Schema</p>
-    <p>Här kan man se schema och boka vald film:</p>
-    <p>Tisdag kl 17:00 - Salong A</p>
-    <p>Tisdag kl 19:00 - Salong A</p>
-    <p>Tisdag kl 21:00 - Salong A</p>
-    <p>Onsdag kl 17:00 - Salong B</p>
-    <p>Onsdag kl 19:00 - Salong B</p>
-    <p>Onsdag kl 21:00 - Salong B</p>
 
-    <div class="seatingBooking">
-      <p>XXXXXXOXXOOOXXXXOOXXX</p>
-      <p>XOXXXXOXXXXXXXXXOOXXX</p>
-      <p>XXXXXXOXXXXXXXXXOOXXX</p>
-      <p>XOOXXXOXXXXXXXXXOOXXX</p>
-      <p>XXXXXXOXXXXOOOXXOOXXX</p>
-     </div>
+    <div class="secondcolumn">
+      <p id="test">GREENLAND
+        <br><br> Här kan vi visa info om vald film.
+        <br> Imdb: 7.2
+        <br> Runtime: 123 min
+        <br> Actor: Gerard Butler
+      </p>
+    </div>
 
-  </div> 
+    <div class="thirdcolumn">
+      <p class="bold">Schema</p>
+      <p>Här kan man se schema och boka vald film:</p>
+      <p>Tisdag kl 17:00 - Salong A</p>
+      <p>Tisdag kl 19:00 - Salong A</p>
+      <p>Tisdag kl 21:00 - Salong A</p>
+      <p>Onsdag kl 17:00 - Salong B</p>
+      <p>Onsdag kl 19:00 - Salong B</p>
+      <p>Onsdag kl 21:00 - Salong B</p>
+
+      <div class="seatingBooking">
+        <p>XXXXXXOXXOOOXXXXOOXXX</p>
+        <p>XOXXXXOXXXXXXXXXOOXXX</p>
+        <p>XXXXXXOXXXXXXXXXOOXXX</p>
+        <p>XOOXXXOXXXXXXXXXOOXXX</p>
+        <p>XXXXXXOXXXXOOOXXOOXXX</p>
+      </div>
+
+    </div>
   </main>
-  
-   <footer>
-    <div class="leftFoot"><p>Left footer column</p></div>
-    <div class="middleFoot"><p>Middle footer column</p></div>
-    <div class="rightFoot"><p><a href="mailto:test@example.com">info@filmvisarna.se</a></p></div>
+
+  <footer>
+    <div class="leftFoot">
+      <p>Vattenfallsgatan 15, Göteborg</p>
+    </div>
+    <div class="middleFoot">
+      <p>0707-001020</p>
+    </div>
+    <div class="rightFoot">
+      <p><a href="mailto:test@example.com">info@filmvisarna.se</a></p>
+    </div>
   </footer>
 </body>
+
 </html>

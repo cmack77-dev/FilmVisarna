@@ -80,9 +80,25 @@ h2 {
   margin:1%;
   border-radius: 2%;
 }
+#movieText {
+  float: left;
+  width: 50%;
+}
+#moviePicture {
+  float: left;
+  width: 50%;
+}
 .movieClick {
   font-style: italic;
   cursor: pointer;
+}
+#moviePic {
+  width: 50%;
+  position: center;
+  display: block;
+  margin-left: auto;
+  margin-top: auto;
+  border-radius: 10px;
 }
 #titleName {
   font-style: italic;

@@ -1,6 +1,7 @@
 [
   {
     "name": "Salong 1",
+    "seats": 120,
     "seatsPerRow": [
       12,
       12,
@@ -16,6 +17,7 @@
   },
   {
     "name": "Salong 2",
+    "seats": 80,
     "seatsPerRow": [
       10,
       10,

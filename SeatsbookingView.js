@@ -1,13 +1,46 @@
 
+$('.seatingBooking').hide();
 
-//Hårdkodade variabler att byta ut
-let chosenTheater = 'Salong 1';
-let date = '2021-03-16';
-let time = '21.00';
-let movie = 'Gladiator';
+  //Hämta och presentera tider för vald film
+  //Hämta JSON
+  async function readJson2(title) {
+    let visningar = await $.getJSON('JSON-filer/visningar.json');
+    showSchedule(visningar,title);
+  }
 
-//Externt funktionsanrop
+function showSchedule(visningar, title) {
+  let movie = title;
+  $('.visning').remove();
+  let $scheduleWindow = $('<div class="scheduleObj"></div>');
+  for (var i = 0; i < visningar.length; i++) {
+    if (visningar[i].film === movie) {
+      $scheduleWindow.append('<div class="visning" id="' + i + '"><span>' + visningar[i].date + ', kl ' + visningar[i].time.toFixed(2) +' - ' + visningar[i].biograf +'</span></div>');
+    }
+  }
+  $('.schedule').append($scheduleWindow);
+  $('.schemarubrik').empty();
+    $('.schemarubrik').append('Visningar för '+movie);
+  
+  
+  $('body').on('click', '.visning', function () {
+    $('.hook').remove();
+    let x =($(this).attr("id"));
+     //$(this).text(x);
+    // $('.visning span').css('background-color', 'green');
+     $(this).append('<div class="hook"><span><=</span></div>');
+      
+        movie = visningar[x].film;
+        chosenTheater = visningar[x].biograf;
+        date = visningar[x].date;
+        time = visningar[x].time;
+      
+      $('.seatingBooking').show();
+     
 bookSeats(chosenTheater, date, time, movie);
+
+  }); 
+}
+
 
 function bookSeats(chosenTheater, date, time, movie) {
 
@@ -24,6 +57,7 @@ function bookSeats(chosenTheater, date, time, movie) {
   function showSeats(salonger) {
     let SeatNr;
     let rowCounter = 0;
+    $('.obj').empty();
     let $bookingWindow = $('<div class="obj"></div>');
     for (var i = 0; i < salonger.length; i++) {
       if (salonger[i].name === chosenTheater) {
@@ -39,15 +73,22 @@ function bookSeats(chosenTheater, date, time, movie) {
           $('.seatingBooking').append($bookingWindow);
         }
         //Resetknapp
+        $('.reset-button').remove();
         $('.seatingBooking').append('<button class="reset-button">Rensa valda stolar</button>');
+        
         //Bokaknapp
+        $('.book-button').remove();
         $('.seatingBooking').append('<button class="book-button">Gå vidare med valda stolar</button>');
         
         //Visa info om salong etc
+        $('.film').empty();
         $('.film').append(movie);
-        $('.salong').append(chosenTheater +', ('+SeatNr+' platser totalt)');
-        $('.dateTime').append(date + ', kl ' + time);
+        $('.salong').empty();
+        $('.salong').append(chosenTheater + ', (' + SeatNr + ' platser totalt)');
+        $('.dateTime').empty();
+        $('.dateTime').append(date + ', kl ' + time.toFixed(2));
         //Här ska det ändras till att räkna platser kvar!!!!!!!!!!!!!!!!!!!!!!
+        $('.nrSeats').empty();
         $('.nrSeats').append(SeatNr);
         break;
       }
@@ -58,7 +99,7 @@ function bookSeats(chosenTheater, date, time, movie) {
   //On click funktion som placerar vald plats i en array  
   let chosenSeats = [];
   $('body').on('click', '.seats', function () {
-    seatID = '#' + ($(this).attr("id"));
+   let seatID = '#' + ($(this).attr("id"));
     $(seatID).text('[x]');
     chosenSeats.push(seatID);
   });

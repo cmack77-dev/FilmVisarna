@@ -1,7 +1,7 @@
 async function readJson(title) {
   let filmer = await $.getJSON('JSON-filer/filmer.json');
   showJsonAsHtml(filmer, title);
-
+  readJson2(title); //Markus har lagt in för att ropa på funktioner för bokning etc.
 }
 
 function showJsonAsHtml(filmer, wantedTitle) {

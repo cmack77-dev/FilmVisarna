@@ -4,15 +4,20 @@ html{
 
 .logo{
   display: inline-block;
-  color: rgb(5, 64, 116);
-  padding-right: 5px;
-  padding-left: 15px;  
+  color:white;
+  background-color: black;
+  border: 1px solid black;
+  padding-left:10px;
+  padding-right:10px;
+  margin:5px;  
   font-weight: bolder;
-  font-size: x-large;
+  font-size: large;
+  vertical-align: middle;
+  border-radius: 10%;
 }
 
 .menu {
-  display: inline-flexbox;
+  display: inline-block;
   text-align: center;
   padding-bottom: 10px;
   font-style: italic;
@@ -24,7 +29,6 @@ nav {
   background-color: rgb(255, 255, 255);
   border-top: solid rgb(0, 0, 0) 1px;
   border-bottom: solid rgb(0, 0, 0) 1px;
- 
 }
 
 nav a {
@@ -109,24 +113,20 @@ h2 {
 .thirdcolumn{
   float: left;
   width:auto;
-  background-color: rgba(216, 218, 221, 0.507);
   padding: 5px;
   margin:1%;
-  border-radius: 2%;
 }
 
-footer {
+.footer {
+  float:left;
+  width:100vw;
   background-color: rgba(50, 91, 168, 0.808);
-  color: black;
-  position: absolute;
-  width: 100vw;
-  bottom: 0;
-  height: 2.5rem;           
+  color: black;         
   padding-bottom: 1%;
-  border-top: solid black 1px;;
+  border-top: solid black 1px;
 }
 
-footer p {
+.footer p {
    font-weight: bold;
    font-size: 20px;
    font-style: italic;
@@ -160,14 +160,23 @@ img {
   width:50%
 }
 
+.schema{
+width:99%;
+background-color: rgba(216, 218, 221, 0.507);
+margin:5px;
+margin:1%;
+padding: 5px;
+border-radius: 2%;
+}
+
 .seatingBooking {
 color:white;
 background-color: rgb(0, 0, 0);
-float: left;
-width:100%;
+width:99%;
 border: solid black 1px;
 margin:5px;
 padding: 5px;
+border-radius: 2%;
 }
 
 .seats{
@@ -198,13 +207,48 @@ button:hover {
   cursor:pointer;
 }
 
-.booked {
-  
-}
-
 .seats:hover {
   background-color: yellow;
   cursor:pointer;
 }
+
+.movieScreen{
+  width:80%;
+  color: rgb(7, 7, 7);
+  background-color:white;
+  border: solid grey 3px;
+  margin-bottom: 5px;
+}
+
+.visning{
+  width:99%;
+  margin:10px;
+  padding: 5px;
+}
+.visning p{
+  
+  background-color: white;
+  border: solid 1px black;
+  padding:5px;
+}
+
+.schemarubrik{
+  font-weight: bold;
+}
+
+.visning span:hover {
+  background-color: yellow;
+  cursor:pointer;
+}
+
+.hook{
+  display: inline-block;
+  padding-left:3px;
+  color:red;
+  font-weight: bolder;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
 
 

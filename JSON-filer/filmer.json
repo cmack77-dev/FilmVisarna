@@ -23,10 +23,7 @@
     ],
     "description": "<p>En före detta romersk general får ett mål att utkräva hämnd mot den korrupta kejsaren som mördade hans familj och skickade honom till slaveri.</p>",
     "images": "images/gladiatorbild.jpg",
-    "youtubeTrailers": [
-      "trailer1",
-      "trailer2"
-    ],
+    "youtubeTrailers": "https://www.youtube.com/embed/owK1qxDselE",
     "reviews": [
       {
         "source": "GP",
@@ -63,10 +60,7 @@
     ],
     "description": "<p>William Wallace är en skotsk rebel som leder ett uppror mot den grymma engelska kungen Edward Longshanks. Det blir en episk saga om hur William försöker vinna Skottlands frihet.</p>",
     "images": "images/braveheart.jpg",
-    "youtubeTrailers": [
-      "trailer1",
-      "trailer2"
-    ],
+    "youtubeTrailers": "https://www.youtube.com/embed/1NJO0jxBtMo",
     "reviews": [
       {
         "source": "Expressen",
@@ -103,10 +97,7 @@
     ],
     "description": "<p>En rörande historia om en lite vilsen ung man som kämpar med att hitta sin plats i livet. Will Hunting är uppvuxen i slummen, spenderar kvällarna på barer med sina vänner. När Will är påväg att hämna i fängelse betalas borgen utav en professor på M.I.T som ger honom ett ultimatum att jobba med honom, och att träffa en terapeut som kommer förändra hans liv.</p>",
     "images": "images/goodwillhunting.png",
-    "youtubeTrailers": [
-      "trailer1",
-      "trailer2"
-    ],
+    "youtubeTrailers": "https://www.youtube.com/embed/ReIJ1lbL-Q8",
     "reviews": [
       {
         "source": "GP",
@@ -143,10 +134,7 @@
     ],
     "description": "<p>En animerad film om en annorlunda vänskap mellan ett ungt geni och en uppblåsbar robot. Tillsammans med andra vänner skapar dom en grupp high-tech hjältar.</p>",
     "images": "images/bighero6.jpg",
-    "youtubeTrailers": [
-      "trailer1",
-      "trailer2"
-    ],
+    "youtubeTrailers": "https://www.youtube.com/embed/bT8qmoCgxZg",
     "reviews": [
       {
         "source": "GP",
@@ -184,10 +172,7 @@
     ],
     "description": "<p>När en ny brottsling som kallar sig Jokern dyker upp i Gotham City, måste Bruce Wayne (Batman) göra allt i sin makt för att stoppa honom.</p>",
     "images": "images/thedarkknight.jpg",
-    "youtubeTrailers": [
-      "trailer1",
-      "trailer2"
-    ],
+    "youtubeTrailers": "https://www.youtube.com/embed/kmJLuwP3MbY",
     "reviews": [
       {
         "source": "GT",

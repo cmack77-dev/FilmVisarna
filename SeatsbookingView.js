@@ -21,6 +21,7 @@
 
 
 $('.seatingBooking').hide();
+$('.thirdcolumn').hide();
 
   //Hämta och presentera tider för vald film
   //Hämta JSON
@@ -30,6 +31,8 @@ $('.seatingBooking').hide();
   }
 
 function showSchedule(visningar, title) {
+  $('.thirdcolumn').show();
+  $('.schedule').show();
   let movie = title;
   $('.visning').remove();
   let $scheduleWindow = $('<div class="scheduleObj"></div>');
@@ -61,7 +64,9 @@ function showSchedule(visningar, title) {
         date = visningar[x].date;
         time = visningar[x].time;
       
-      $('.seatingBooking').show();
+    $('.seatingBooking').show();
+    
+    
      
 bookSeats(chosenTheater, date, time, movie);
 
@@ -153,7 +158,6 @@ function bookSeats(chosenTheater, date, time, movie) {
       $(seat).css('background-color', 'red');
       let seatnr = seat.substring(1, 5);
       $(seat).text('['+seatnr+']');
-      
     }
     chosenSeats = [];
     let seatNumbers = [];
@@ -165,5 +169,4 @@ function bookSeats(chosenTheater, date, time, movie) {
     
     alert('Du har valt platser med nr: ' +seatNumbers+' till filmen: '+ movie + ' den ' + date + ' kl ' + time.toFixed(2) + ' i ' +chosenTheater+'.');
   }); 
-
 }

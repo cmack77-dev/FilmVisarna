@@ -2,6 +2,10 @@ html{
   width:100vw;
 }
 
+header{
+  background-color: ;
+}
+
 .logo{
   display: inline-block;
   color:white;
@@ -71,17 +75,19 @@ h2 {
 
 .firstcolumn{
   float: left;
-  width: 12%;
+  width: 10%;
   padding: 5px;
   padding-left: 10px;
   margin:1%;
-  border-radius: 2%;
+  border-radius: 3%;
 }
 .secondcolumn{
   float: left;
   width: 25%;
-  background-color: rgb(212, 218, 226);
+  background-color:rgb(233, 233, 233);
   margin:1%;
+  padding: 1%;
+  border-radius: 3%;
 }
 #movieText {
   float: left;
@@ -119,6 +125,7 @@ h2 {
   width:auto;
   padding: 5px;
   margin:1%;
+ border-radius: 3%;
 }
 
 .footer {
@@ -155,14 +162,10 @@ h2 {
 }
 
 img {
-  width:25%;
+  width: 25%;
+  border-radius: 3%;
+  }
 
-}
-
-.higlightedMovie {
-  background-color: rgb(174, 252, 172);
-  width:50%
-}
 
 .schema{
 width:99%;
@@ -170,7 +173,7 @@ background-color: rgba(216, 218, 221, 0.507);
 margin:5px;
 margin:1%;
 padding: 5px;
-border-radius: 2%;
+border-radius: 3%;
 }
 
 .seatingBooking {
@@ -180,7 +183,7 @@ width:99%;
 border: solid black 1px;
 margin:5px;
 padding: 5px;
-border-radius: 2%;
+border-radius: 3%;
 }
 
 .seats{
@@ -263,3 +266,11 @@ button:hover {
   width:auto;
 }
 
+.firstimage{
+  width:100%;
+  border-radius: 3%;
+}
+
+iframe{
+  border-radius: 3%;
+}

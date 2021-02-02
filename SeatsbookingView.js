@@ -1,3 +1,24 @@
+//"title": "Gladiator",
+                                                         //<p class="movieClick" onclick="readJson('Gladiator');">Gladiator</p> 
+
+async function readJsonX() {
+    let filmer = await $.getJSON('JSON-filer/filmer.json');
+   
+   listMovies(filmer);
+  }
+
+readJsonX()
+
+function listMovies(filmer) {
+  let $listOfMovies = $('<div class="filmObj"></div>');
+  
+ for (var i = 0; i < filmer.length; i++) {
+    
+    $listOfMovies.append('<div class="filmLista"><p class="movieClick" id="x'+i+'" onclick="readJson('+ "'"+filmer[i].title +"'"+');">'+ filmer[i].title +'</p></div>');
+  }
+  $('.firstcolumn').append($listOfMovies);
+}
+
 
 $('.seatingBooking').hide();
 
@@ -79,14 +100,14 @@ function bookSeats(chosenTheater, date, time, movie) {
         $('.seatingBooking').append('<button class="book-button">Gå vidare med valda stolar</button>');
         
         //Visa info om salong etc
-        $('.film').remove();
+        $('.film').hide();
         $('.film').append(movie);
-        $('.salong').remove();
+        $('.salong').hide();
         $('.salong').append(chosenTheater + ', (' + SeatNr + ' platser totalt)');
-        $('.dateTime').remove();
+        $('.dateTime').hide();
         $('.dateTime').append(date + ', kl ' + time.toFixed(2));
         //Här ska det ändras till att räkna platser kvar!!!!!!!!!!!!!!!!!!!!!!
-        $('.nrSeats').remove();
+        $('.nrSeats').hide();
         $('.nrSeats').append(SeatNr);
         break;
       }

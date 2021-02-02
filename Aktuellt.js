@@ -5,7 +5,6 @@ async function readJsonFilmer(title) {
   console.log(aktuellt);
   showJsonasHtml(aktuellt);
 }
-
 function showJsonasHtml(aktuellt) {
   for (let aktuella of aktuellt) {
     let $aktuella = $('<div class="filmObj"></div>');

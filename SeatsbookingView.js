@@ -1,24 +1,3 @@
-//"title": "Gladiator",
-                                                         //<p class="movieClick" onclick="readJson('Gladiator');">Gladiator</p> 
-
-// async function readJsonX() {
-//     let filmer = await $.getJSON('JSON-filer/filmer.json');
-   
-//    listMovies(filmer);
-//   }
-
-// readJsonX()
-
-// function listMovies(filmer) {
-//   let $listOfMovies = $('<div class="filmObj"></div>');
-  
-//  for (var i = 0; i < filmer.length; i++) {
-    
-//     $listOfMovies.append('<div class="filmLista"><p class="movieClick" id="x'+i+'" onclick="readJson('+ "'"+filmer[i].title +"'"+');">'+ filmer[i].title +'</p></div>');
-//   }
-//   $('.firstcolumn').append($listOfMovies);
-// }
-
 
 $('.seatingBooking').hide();
 $('.thirdcolumn').hide();
@@ -27,6 +6,8 @@ $('.thirdcolumn').hide();
   //Hämta JSON
   async function readJson2(title) {
     let visningar = await $.getJSON('JSON-filer/visningar.json');
+   
+    $('.seatingBooking').hide();
     showSchedule(visningar,title);
   }
 
@@ -38,7 +19,7 @@ function showSchedule(visningar, title) {
   let $scheduleWindow = $('<div class="scheduleObj"></div>');
   for (var i = 0; i < visningar.length; i++) {
     if (visningar[i].film === movie) {
-      $scheduleWindow.append('<div class="visning" id="S' + i + '"><span>' + visningar[i].date + ', kl ' + visningar[i].time.toFixed(2) +' - ' + visningar[i].biograf +'</span></div>');
+      $scheduleWindow.append('<div class="visning" id="S' + i + '"><span>' + visningar[i].date + ', kl ' + visningar[i].time +' - ' + visningar[i].biograf +'</span></div>');
     }
   }
   $('.schedule').append($scheduleWindow);
@@ -113,7 +94,7 @@ function bookSeats(chosenTheater, date, time, movie) {
         //Visa info om salong etc
         $('.film').append(movie);
         $('.salong').append(chosenTheater + ', (' + SeatNr + ' platser totalt)');
-        $('.dateTime').append(date + ', kl ' + time.toFixed(2));
+        $('.dateTime').append(date + ', kl ' + time);
         //Här ska det ändras till att räkna platser kvar!!!!!!!!!!!!!!!!!!!!!!
         $('.nrSeats').append('Platser kvar: ' +SeatNr);
         break;
@@ -145,7 +126,6 @@ function bookSeats(chosenTheater, date, time, movie) {
       $(seat).css('background-color', 'red');
       let seatnr = seat.substring(1, 5);
       $(seat).text('['+seatnr+']');
-      
     }
     chosenSeats = [];
   }); 
@@ -167,6 +147,6 @@ function bookSeats(chosenTheater, date, time, movie) {
       seatNumbers.sort();
     }
     
-    alert('Du har valt platser med nr: ' +seatNumbers+' till filmen: '+ movie + ' den ' + date + ' kl ' + time.toFixed(2) + ' i ' +chosenTheater+'.');
+    alert('Du har valt platser med nr: ' +seatNumbers+' till filmen: '+ movie + ' den ' + date + ' kl ' + time + ' i ' +chosenTheater+'.');
   }); 
 }

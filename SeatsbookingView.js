@@ -20,11 +20,11 @@ function showSchedule(visningar, title) {
   //for (var i = 0; i < visningar.length; i++) {
   let counterVisningar = 0;
   for (let visning of visningar) {
+    let i = ((counterVisningar++)-1);
     for (let key in visning) {
-      counterVisningar++;
       if (visning[key] === movie) {
         console.log('film hittad!');
-        $scheduleWindow.append('<div class="visning" id="S' + counterVisningar + '"><span>' + visning['date'] + ', kl ' + visning['time'] + ' - ' + visning['biograf'] + '</span></div>');
+        $scheduleWindow.append('<div class="visning" id="S' + i + '"><span>' + visning['date'] + ', kl ' + visning['time'] + ' - ' + visning['biograf'] + '</span></div>');
       }
     }
   }
@@ -36,10 +36,7 @@ function showSchedule(visningar, title) {
   
   $('body').on('click', '.visning', function () {
     $('.hook').remove();
-    $('.film').empty();
-    $('.salong').empty();
-    $('.dateTime').empty();
-    $('.nrSeats').empty();
+   
 
     
     let x =($(this).attr("id")).substring(1,4);
@@ -77,7 +74,9 @@ function bookSeats(chosenTheater, date, time, movie) {
     let rowCounter = 0;
     $('.obj').remove();
     let $bookingWindow = $('<div class="obj"></div>');
+    let e = $bookingWindow;
     for (var i = 0; i < salonger.length; i++) {
+      if($bookingWindow !==e){ $bookingWindow =e}
       if (salonger[i].name === chosenTheater) {
         for (let nrOfSeats of salonger[i].seatsPerRow) {
           for (let x = 0; x < nrOfSeats; x++) {
@@ -99,6 +98,11 @@ function bookSeats(chosenTheater, date, time, movie) {
         $('.seatingBooking').append('<button class="book-button">Gå vidare med valda stolar</button>');
         
         //Visa info om salong etc
+        //Rensa först
+        $('.film').empty();
+        $('.salong').empty();
+        $('.dateTime').empty();
+        $('.nrSeats').empty();
         $('.film').append(movie);
         $('.salong').append(chosenTheater + ', (' + SeatNr + ' platser totalt)');
         $('.dateTime').append(date + ', kl ' + time);

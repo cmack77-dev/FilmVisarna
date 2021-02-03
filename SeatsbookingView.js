@@ -81,10 +81,10 @@ function bookSeats(chosenTheater, date, time, movie) {
         for (let nrOfSeats of salonger[i].seatsPerRow) {
           for (let x = 0; x < nrOfSeats; x++) {
             SeatNr = rowCounter + 1;
-            $bookingWindow.append('<div class="seats" id="' + SeatNr + '"><span>' + "["+SeatNr+"]" + ' </span></div>');
+            $bookingWindow.append('<div class="seats" id="' + SeatNr + '"><span>' + SeatNr+ ' </span></div>');
             rowCounter++;
             if ((x + 1) === (nrOfSeats)) {
-              $bookingWindow.append('<div></div>');
+              $bookingWindow.append('<div class="seatsrow"></div>');
             }
           }
           $('.seatingBooking').append($bookingWindow);
@@ -119,6 +119,7 @@ function bookSeats(chosenTheater, date, time, movie) {
     let seatID = '#' + ($(this).attr("id"));
     if (jQuery.inArray(seatID, chosenSeats) === -1) {
       $(seatID).css('background-color', 'green');
+     // $( seatID ).prop( "disabled", true ); XXXXXXXXXXXXX to change to disabled when reading from db
       chosenSeats.push(seatID);
     }
     else {
@@ -141,14 +142,14 @@ function bookSeats(chosenTheater, date, time, movie) {
     chosenSeats = [];
   }); 
 
-  //Boka knapp som nollställer valda platser samt arrayen som lagrar dem
+  //Bokaknapp som nollställer valda platser samt arrayen som lagrar dem
   let bookedSeatsID = [];
   $('body').on('click', '.book-button', function () {
     bookedSeatsID = chosenSeats;
-     for (seat of chosenSeats) {
+    for (seat of chosenSeats) {
       $(seat).css('background-color', 'red');
       let seatnr = seat.substring(1, 5);
-      $(seat).text('['+seatnr+']');
+      $(seat).text('[' + seatnr + ']');
     }
     chosenSeats = [];
     let seatNumbers = [];
@@ -158,6 +159,8 @@ function bookSeats(chosenTheater, date, time, movie) {
       seatNumbers.sort();
     }
     
-    alert('Du har valt platser med nr: ' +seatNumbers+' till filmen: '+ movie + ' den ' + date + ' kl ' + time + ' i ' +chosenTheater+'.');
+    alert('Du har valt platser med nr: ' + seatNumbers + ' till filmen: ' + movie + ' den ' + date + ' kl ' + time + ' i ' + chosenTheater + '.');
+  
   }); 
+  //FUNKTION SOM SKICKAR MED chosenseats...
 }

@@ -17,11 +17,18 @@ function showSchedule(visningar, title) {
   let movie = title;
   $('.visning').remove();
   let $scheduleWindow = $('<div class="scheduleObj"></div>');
-  for (var i = 0; i < visningar.length; i++) {
-    if (visningar[i].film === movie) {
-      $scheduleWindow.append('<div class="visning" id="S' + i + '"><span>' + visningar[i].date + ', kl ' + visningar[i].time +' - ' + visningar[i].biograf +'</span></div>');
+  //for (var i = 0; i < visningar.length; i++) {
+  let counterVisningar = 0;
+  for (let visning of visningar) {
+    for (let key in visning) {
+      counterVisningar++;
+      if (visning[key] === movie) {
+        console.log('film hittad!');
+        $scheduleWindow.append('<div class="visning" id="S' + counterVisningar + '"><span>' + visning['date'] + ', kl ' + visning['time'] + ' - ' + visning['biograf'] + '</span></div>');
+      }
     }
   }
+
   $('.schedule').append($scheduleWindow);
   $('.schemarubrik').empty();
     $('.schemarubrik').append('Visningar för '+ movie);

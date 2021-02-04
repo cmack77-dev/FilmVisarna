@@ -274,6 +274,8 @@ function bookSeats(chosenTheater, date, time, movie) {
       seatNumbers.push(seat.substring(1, 5))
       seatNumbers.sort()
     }
+
+    // ----------------------- Prototyp på ett boknings-formulär --------------------------------
     $('.middleColumnChange').replaceWith(`<div><h3 id="titleName">Bokning!</div><p>Du har valt platser med nummer: ${seatNumbers} <br><br>Filmen du har valt är: ${movie} <br><br>Den  ${date} kl ${time}<br><br></p>
 
       <form action=""><label for="namn">Ange ditt namn:</label><input type="text" id="namn" name="namn" placeholder="namn" required> <br><br> 

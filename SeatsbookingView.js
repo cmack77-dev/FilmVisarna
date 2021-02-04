@@ -1,3 +1,28 @@
+
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
 //temporära hårdkodade varaibler
 let nrOfTickets = 2;
 let JSONofBookedSeatsPerShow = [
@@ -28,6 +53,8 @@ let chosenShowID;
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 $('.seatingBooking').hide();
 $('.thirdcolumn').hide();
+$('.visning').hide();
+$('.movieScreen').hide();
 
   //Hämta och presentera tider för vald film
   //Hämta JSON
@@ -51,7 +78,7 @@ function showSchedule(visningar, title) {
     for (let key in visning) {
       if (visning[key] === movie) {
         console.log('film hittad!');
-        $scheduleWindow.append('<div class="visning" id="S' + visningsID + '"><span>' + visning['date'] + ', kl ' + visning['time'] + ' - ' + visning['biograf'] + '</span></div>');
+        $('#myDropdown').append('<a><div class="visning" id="S' + visningsID + '"><span>' + visning['date'] + ', kl ' + visning['time'] + ' - ' + visning['biograf'] + '</span></div></a>');
       }
     }
   }
@@ -62,13 +89,13 @@ function showSchedule(visningar, title) {
   
   
   $('body').on('click', '.visning', function () {
-    $('.hook').remove();
+   // $('.hook').remove();
 
     let x = ($(this).attr("id")).substring(1, 4);
     //alert(x);
     // $(this).text(x);
     // $('.visning span').css('background-color', 'green');
-     $(this).append('<div class="hook"><span><=</span></div>');
+    // $(this).append('<div class="hook"><span><=</span></div>');
       
         movie = visningar[x].film;
         chosenTheater = visningar[x].biograf;
@@ -140,6 +167,7 @@ function bookSeats(chosenTheater, date, time, movie) {
     readInAndDisableReservedSeats(chosenShowID,SeatNr);
   }
 
+  //FUNKTION FÖR ATT LÄSA IN UPPTAGNA PLATSER
   function readInAndDisableReservedSeats(chosenShowID,SeatNr) {
 let busySeats = 0;
       let totalSeats = parseInt(SeatNr, 10);

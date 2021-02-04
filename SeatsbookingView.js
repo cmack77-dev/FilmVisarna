@@ -132,28 +132,33 @@ function bookSeats(chosenTheater, date, time, movie) {
         $('.film').append(movie);
         $('.salong').append(chosenTheater + ', (' + SeatNr + ' platser totalt)');
         $('.dateTime').append(date + ', kl ' + time);
-        //Här ska det ändras till att räkna platser kvar!!!!!!!!!!!!!!!!!!!!!!
-        $('.nrSeats').append('Platser kvar: ' +SeatNr);
+        
         break;
       }
     }
     //Läs in upptagna platser
-    readInAndDisableReservedSeats(chosenShowID);
+    readInAndDisableReservedSeats(chosenShowID,SeatNr);
   }
 
-  function readInAndDisableReservedSeats(chosenShowID) {
-
+  function readInAndDisableReservedSeats(chosenShowID,SeatNr) {
+let busySeats = 0;
+      let totalSeats = parseInt(SeatNr, 10);
     for (let show of JSONofBookedSeatsPerShow) {
-      //alert(show.visningsID+'XXX');
+      //alert(show.visningsID+'?');
+      
       if (show.visningsID.toString() === chosenShowID) {
         let arrOfAlreadyBookedSeatsID = show.seats;
         for (let seatBusy of arrOfAlreadyBookedSeatsID) {
+          busySeats++;
           let seatID = '#' + seatBusy;
       $(seatID).prop("disabled", true);
       $(seatID).css('background-color', 'blue');
         }
       }       
     }  
+    //Här ska det ändras till att räkna platser kvar!!!!!!!!!!!!!!!!!!!!!!
+    let SeatsLeft = totalSeats-busySeats;
+        $('.nrSeats').append('Platser kvar: ' +SeatsLeft);
  }
 
   //On click funktion som placerar vald plats i en array  
@@ -164,7 +169,6 @@ function bookSeats(chosenTheater, date, time, movie) {
     if (jQuery.inArray(seatID, chosenSeats) === -1) {
       if (chosenSeats.length < (nrOfTickets)){
       $(seatID).css('background-color', 'green');
-      // $( seatID ).prop( "disabled", true ); XXXXXXXXXXXXX to change to disabled when reading from db
         chosenSeats.push(seatID);
          }
   else {

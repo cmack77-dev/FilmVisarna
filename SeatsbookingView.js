@@ -1,4 +1,31 @@
+//temporära hårdkodade varaibler
+let nrOfTickets = 2;
+let JSONofBookedSeatsPerShow = [
+  {
+    "visningsID": 2,
+    "seats": [5, 6, 22, 23, 42, 43, 69, 70]
+  },
+  {
+    "visningsID": 8,
+    "seats": [8, 9, 10, 44, 45, 67, 68]
+  },
+  {
+    "visningsID": 17,
+    "seats": [5, 6, 22, 23, 42, 43, 69, 70]
+  },
+  {
+    "visningsID": 22,
+    "seats": [33, 34, 78, 79, 80]
+  },
+  {
+    "visningsID": 26,
+    "seats": [12, 13, , 23, 24, 25, 67, 68, 71, 72]
+  }
+];
 
+let chosenShowID;
+
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 $('.seatingBooking').hide();
 $('.thirdcolumn').hide();
 
@@ -17,14 +44,14 @@ function showSchedule(visningar, title) {
   let movie = title;
   $('.visning').remove();
   let $scheduleWindow = $('<div class="scheduleObj"></div>');
-  //for (var i = 0; i < visningar.length; i++) {
   let counterVisningar = 0;
   for (let visning of visningar) {
-    let i = ((counterVisningar++)-1);
+    //Här tilledelar vi varje visning ett unikt ID som vi kan använda oss av vid tex att läsa in rätt data till/från databas.
+    let visningsID = ((counterVisningar++));
     for (let key in visning) {
       if (visning[key] === movie) {
         console.log('film hittad!');
-        $scheduleWindow.append('<div class="visning" id="S' + i + '"><span>' + visning['date'] + ', kl ' + visning['time'] + ' - ' + visning['biograf'] + '</span></div>');
+        $scheduleWindow.append('<div class="visning" id="S' + visningsID + '"><span>' + visning['date'] + ', kl ' + visning['time'] + ' - ' + visning['biograf'] + '</span></div>');
       }
     }
   }
@@ -36,10 +63,9 @@ function showSchedule(visningar, title) {
   
   $('body').on('click', '.visning', function () {
     $('.hook').remove();
-   
 
-    
-    let x =($(this).attr("id")).substring(1,4);
+    let x = ($(this).attr("id")).substring(1, 4);
+    //alert(x);
     // $(this).text(x);
     // $('.visning span').css('background-color', 'green');
      $(this).append('<div class="hook"><span><=</span></div>');
@@ -51,7 +77,8 @@ function showSchedule(visningar, title) {
       
     $('.seatingBooking').show();
     
-    
+    //Tilldela id för vald visning
+    chosenShowID = x;
      
 bookSeats(chosenTheater, date, time, movie);
 
@@ -60,7 +87,6 @@ bookSeats(chosenTheater, date, time, movie);
 
 
 function bookSeats(chosenTheater, date, time, movie) {
-
   //Hämta JSON
   async function readJson3() {
     let salonger = await $.getJSON('JSON-filer/salonger.json');
@@ -76,7 +102,7 @@ function bookSeats(chosenTheater, date, time, movie) {
     let $bookingWindow = $('<div class="obj"></div>');
     let e = $bookingWindow;
     for (var i = 0; i < salonger.length; i++) {
-      if($bookingWindow !==e){ $bookingWindow =e}
+      if ($bookingWindow !== e) { $bookingWindow = e;}
       if (salonger[i].name === chosenTheater) {
         for (let nrOfSeats of salonger[i].seatsPerRow) {
           for (let x = 0; x < nrOfSeats; x++) {
@@ -111,16 +137,39 @@ function bookSeats(chosenTheater, date, time, movie) {
         break;
       }
     }
+    //Läs in upptagna platser
+    readInAndDisableReservedSeats(chosenShowID);
   }
+
+  function readInAndDisableReservedSeats(chosenShowID) {
+
+    for (let show of JSONofBookedSeatsPerShow) {
+      //alert(show.visningsID+'XXX');
+      if (show.visningsID.toString() === chosenShowID) {
+        let arrOfAlreadyBookedSeatsID = show.seats;
+        for (let seatBusy of arrOfAlreadyBookedSeatsID) {
+          let seatID = '#' + seatBusy;
+      $(seatID).prop("disabled", true);
+      $(seatID).css('background-color', 'blue');
+        }
+      }       
+    }  
+ }
 
   //On click funktion som placerar vald plats i en array  
   let chosenSeats = [];
   $('body').on('click', '.seats', function () {
+    
     let seatID = '#' + ($(this).attr("id"));
     if (jQuery.inArray(seatID, chosenSeats) === -1) {
+      if (chosenSeats.length < (nrOfTickets)){
       $(seatID).css('background-color', 'green');
-     // $( seatID ).prop( "disabled", true ); XXXXXXXXXXXXX to change to disabled when reading from db
-      chosenSeats.push(seatID);
+      // $( seatID ).prop( "disabled", true ); XXXXXXXXXXXXX to change to disabled when reading from db
+        chosenSeats.push(seatID);
+         }
+  else {
+    alert("Du kan bara välja " + nrOfTickets + "!");
+  }
     }
     else {
       $(seatID).css('background-color', 'red');
@@ -128,7 +177,7 @@ function bookSeats(chosenTheater, date, time, movie) {
       chosenSeats.splice(chosenSeats.indexOf(seatID), 1);
      
     }
-    //$('.summaryTickets').append('<div><p>'+seatID+'</p></div>');
+ 
 
   });
 
@@ -137,7 +186,7 @@ function bookSeats(chosenTheater, date, time, movie) {
     for (seat of chosenSeats) {
       $(seat).css('background-color', 'red');
       let seatnr = seat.substring(1, 5);
-      $(seat).text('['+seatnr+']');
+      $(seat).text(seatnr);
     }
     chosenSeats = [];
   }); 
@@ -149,7 +198,7 @@ function bookSeats(chosenTheater, date, time, movie) {
     for (seat of chosenSeats) {
       $(seat).css('background-color', 'red');
       let seatnr = seat.substring(1, 5);
-      $(seat).text('[' + seatnr + ']');
+      $(seat).text(seatnr);
     }
     chosenSeats = [];
     let seatNumbers = [];

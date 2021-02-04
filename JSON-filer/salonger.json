@@ -3,7 +3,7 @@
     "name": "Salong 1",
     "seats": 120,
     "seatsPerRow": [
-      12,
+      8,
       12,
       12,
       12,
@@ -19,8 +19,8 @@
     "name": "Salong 2",
     "seats": 80,
     "seatsPerRow": [
-      10,
-      10,
+      8,
+      8,
       10,
       10,
       10,

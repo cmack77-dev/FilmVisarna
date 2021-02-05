@@ -48,6 +48,7 @@ h1 {
 body {
   font-family: 'David Libre', serif;
   background-color: rgb(253, 254, 255);
+  width: 100%;
 }
 
 .login {
@@ -75,6 +76,7 @@ h2 {
   padding-left: 10px;
   margin: 1%;
   border-radius: 2%;
+  display: block;
 }
 .secondcolumn {
   float: left;
@@ -83,6 +85,8 @@ h2 {
   margin: 1%;
   padding: 1%;
   border-radius: 2%;
+  padding-bottom: 2.5rem;
+  display: block;
 }
 #movieText {
   float: left;
@@ -111,7 +115,7 @@ h2 {
 #titleName {
   font-style: italic;
   color: #054074;
-  margin-left: 7px;
+  margin-left: 10px;
 }
 
 .thirdcolumn {
@@ -120,9 +124,11 @@ h2 {
   padding: 5px;
   margin: 1%;
   border-radius: 2%;
+  display: block;
 }
 
 .footer {
+  position: bottom;
   float: left;
   width: 100vw;
   background-color: rgba(50, 91, 168, 0.808);
@@ -339,4 +345,17 @@ iframe {
 }
 .visning span text {
   font-weight: lighter;
+}
+/* ---------------------- BOKNINGSFORMULÄR STYLING ---------------------- */
+#booking-button {
+  margin: 30px 30px 0px 30px;
+}
+.secondcolumn p{
+  text-align: left; 
+}
+form {
+  margin-left: 10px;
+}
+#cancel-button {
+  margin-left: 10px;
 }

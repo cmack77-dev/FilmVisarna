@@ -1,3 +1,4 @@
+
 //temporära hårdkodade varaibler
 let chosenShowID
 let nrOfTickets = 2

@@ -1,0 +1,32 @@
+.footer {
+  position: bottom;
+  float: left;
+  width: 100vw;
+  background-color: rgba(50, 91, 168, 0.808);
+  color: black;
+  padding-bottom: 1%;
+  border-top: solid black 1px;
+}
+
+.footer p {
+  font-weight: bold;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.leftFoot {
+  float: left;
+  width: 33%;
+  text-align: right;
+}
+
+.middleFoot {
+  float: left;
+  width: 33%;
+  text-align: center;
+}
+
+.rightFoot {
+  float: left;
+  width: auto;
+}

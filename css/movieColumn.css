@@ -1,0 +1,39 @@
+#movieText {
+  float: left;
+  width: 50%;
+}
+#moviePicture {
+  float: left;
+  width: 50%;
+}
+#trailer {
+  position: relative;
+  width: 24.7vw;
+  height: 19vw;
+  overflow: scroll;
+}
+.movieClick {
+  font-style: italic;
+  cursor: pointer;
+}
+#moviePic {
+  width: auto !important;
+  max-width: 100%;
+  height: auto;
+  float: right;
+}
+#titleName {
+  font-style: italic;
+  color: #054074;
+  margin-left: 10px;
+}
+.secondcolumn {
+  float: left;
+  width: 25%;
+  background-color: rgb(233, 233, 233);
+  margin: 1%;
+  padding: 1%;
+  border-radius: 2%;
+  padding-bottom: 2.5rem;
+  display: block;
+}

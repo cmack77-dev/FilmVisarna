@@ -1,0 +1,213 @@
+/* Import all of the different CSS-files */
+@import './footer.css';
+@import './movieColumn.css';
+@import './dropdown.css';
+@import './bookingform.css';
+
+html {
+  width: 100vw;
+}
+
+.logo {
+  display: inline-block;
+  color: white;
+  background-color: black;
+  border: 1px solid black;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 5px;
+  font-weight: bolder;
+  font-size: large;
+  vertical-align: middle;
+  border-radius: 10%;
+}
+
+.menu {
+  display: inline-block;
+  text-align: center;
+  padding-bottom: 10px;
+  font-style: italic;
+}
+
+nav {
+  height: 1%;
+  background-color: rgb(255, 255, 255);
+  border-top: solid rgb(0, 0, 0) 1px;
+  border-bottom: solid rgb(0, 0, 0) 1px;
+}
+
+nav a {
+  font-family: verdana;
+  font-size: medium;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  display: inline-block;
+  margin-left: 30px;
+  margin-right: 10px;
+}
+
+h1 {
+  font-family: 'David Libre', serif;
+  position: sticky;
+}
+
+body {
+  font-family: 'David Libre', serif;
+  background-color: rgb(253, 254, 255);
+  width: 100%;
+}
+
+.login {
+  float: right;
+  color: rgb(48, 20, 202);
+  margin-top: 5px;
+}
+p {
+  margin: 10px;
+}
+
+h2 {
+  padding-left: 10px;
+  text-align: left;
+  color: #054074;
+}
+.firstcolumn {
+  float: left;
+  width: 10%;
+  padding: 5px;
+  padding-left: 10px;
+  margin: 1%;
+  border-radius: 2%;
+  display: block;
+}
+.thirdcolumn {
+  float: left;
+  width: auto;
+  padding: 5px;
+  margin: 1%;
+  border-radius: 2%;
+  display: block;
+}
+
+img {
+  width: 25%;
+  border-radius: 3%;
+}
+
+.schema {
+  width: 99%;
+  background-color: rgba(216, 218, 221, 0.507);
+  margin: 5px;
+  margin: 1%;
+  padding: 5px;
+  border-radius: 2%;
+}
+
+.seatingBooking {
+  color: white;
+  background-color: rgb(0, 0, 0);
+  width: 99%;
+  border: solid black 1px;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 2%;
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.seats {
+  width: 40px;
+  height: 25px;
+  padding-top: 5px;
+  font-family: 'Courier New', Courier, monospace;
+  /* text-decoration: underline; */
+  display: inline-block;
+  font-size: large;
+  font-weight: bolder;
+  color: rgb(27, 10, 10);
+  background-color: red;
+  border: solid 1px grey;
+  /* border-radius: 10%; */
+  margin: 1px;
+  margin-bottom: 10px;
+  margin-right: 3px;
+  border-bottom-left-radius: 35%;
+  border-bottom-right-radius: 35%;
+}
+
+.seatsrow:nth-child(5n) {
+  margin: 35px;
+}
+
+.seatingBooking button {
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  padding: 5px;
+  font-weight: bold;
+  border: none;
+}
+
+button:hover {
+  background-color: lightgrey;
+  cursor: pointer;
+}
+
+.seats:hover {
+  background-color: yellow;
+  cursor: pointer;
+}
+
+.movieScreen {
+  width: 80%;
+  color: rgb(7, 7, 7);
+  background-color: white;
+  border: solid grey 3px;
+  margin-bottom: 45px;
+}
+
+.visning {
+  width: 99%;
+  margin: 5px;
+  padding: 8px;
+}
+.visning p {
+  background-color: white;
+  border: solid 1px black;
+}
+
+.schemarubrik {
+  font-weight: bold;
+}
+
+.visning span:hover {
+  /* background-color: yellow; */
+  cursor: pointer;
+}
+
+.hook {
+  display: inline-block;
+  padding-left: 3px;
+  color: red;
+  font-weight: bolder;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* .filmObj:last-child{
+  display:none;
+} */
+
+.summaryTickets {
+  float: right;
+  width: auto;
+}
+
+.firstimage {
+  width: 100%;
+  border-radius: 3%;
+}
+
+iframe {
+  border-radius: 3%;
+}

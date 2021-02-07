@@ -1,4 +1,13 @@
 //temporära hårdkodade varaibler
+let visningar = []
+let title
+
+let chosenTheater
+let date
+let time
+let movie
+
+let salonger = []
 let chosenShowID
 let nrOfTickets = 2
 let JSONofBookedSeatsPerShow = [
@@ -26,50 +35,55 @@ let JSONofBookedSeatsPerShow = [
 
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 $('.seatingBooking').hide()
-$('.thirdcolumn').hide()
+$('.partTwoSecondColumn').hide()
 $('.visning').hide()
 $('.movieScreen').hide()
 
 //Hämta och presentera tider för vald film
 //Hämta JSON
-async function readJson2 (title) {
-  let visningar = await $.getJSON('JSON-filer/visningar.json')
+async function getShows (nameOfFilm) {
+  console.log('TESTAR!!!')
 
+  visningar = await $.getJSON('JSON-filer/visningar.json')
+  title = nameOfFilm
+  console.log(title)
   $('.seatingBooking').hide()
-  showSchedule(visningar, title)
-}
 
-function myFunction () {
-  document.getElementById('myDropdown').classList.toggle('show')
+  showSchedule()
 }
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+// function myFunction () {
+//   document.getElementById('myDropdown').classList.toggle('show')
+// }
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function (event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName('dropdown-content')
-    var i
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i]
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show')
-      }
-    }
-  }
-}
-
-function showSchedule (visningar, title) {
-  $('.thirdcolumn').show()
+// // Close the dropdown menu if the user clicks outside of it
+// window.onclick = function (event) {
+//   if (!event.target.matches('.dropbtn')) {
+//     let dropdowns = document.getElementsByClassName('dropdown-content')
+//     let i
+//     for (i = 0; i < dropdowns.length; i++) {
+//       let openDropdown = dropdowns[i]
+//       if (openDropdown.classList.contains('show')) {
+//         openDropdown.classList.remove('show')
+//       }
+//     }
+//   }
+// }
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+function showSchedule () {
+  $('.scheduleObj').html('')
+  $('.partTwoSecondColumn').show()
   $('.schedule').show()
+  $('.schedule').html('')
   let movie = title
   $('.visning').remove()
-  let $scheduleWindow = $('<div class="scheduleObj"></div>')
+  let $scheduleWindow = $('<select class="scheduleObj"></select>')
   let counterVisningar = 0
   for (let visning of visningar) {
     //Här tilledelar vi varje visning ett unikt ID som vi kan använda oss av vid tex att läsa in rätt data till/från databas.
     let visningsID = counterVisningar++
     for (let key in visning) {
       if (visning[key] === movie) {
-        //XXXXXXXXXXXXXXXXXXXXX
         let busySeats = 0
 
         async function readJson4 (bioRum) {
@@ -94,10 +108,9 @@ function showSchedule (visningar, title) {
           }
 
           let SeatsLeft = totalSeats - busySeats
-          //XXXXXXXXXXXXXXXXXXXXXXX
 
-          $('#myDropdown').append(
-            '<a><div class="visning" id="S' +
+          $('.scheduleObj').append(
+            '<option value="S' +
               visningsID +
               '"><span>' +
               visning['date'] +
@@ -107,8 +120,9 @@ function showSchedule (visningar, title) {
               visning['biograf'] +
               ' - Platser kvar: ' +
               SeatsLeft +
-              '</text></span></div></a>'
+              '</text></span></option>'
           )
+          console.log(visningsID)
         }
       }
     }
@@ -118,16 +132,11 @@ function showSchedule (visningar, title) {
   $('.schemarubrik').empty()
   $('.schemarubrik').append('Visningar för ' + movie)
 
-  $('body').on('click', '.visning', function () {
-    // $('.hook').remove();
-
+  $('body').on('change', 'select', function () {
+    console.log($(this))
     let x = $(this)
-      .attr('id')
+      .val()
       .substring(1, 4)
-    //alert(x);
-    // $(this).text(x);
-    // $('.visning span').css('background-color', 'green');
-    // $(this).append('<div class="hook"><span><=</span></div>');
 
     movie = visningar[x].film
     chosenTheater = visningar[x].biograf
@@ -139,20 +148,20 @@ function showSchedule (visningar, title) {
     //Tilldela id för vald visning
     chosenShowID = x
 
-    bookSeats(chosenTheater, date, time, movie)
+    bookSeats()
   })
 }
 
-function bookSeats (chosenTheater, date, time, movie) {
+function bookSeats () {
   //Hämta JSON
   async function readJson3 () {
-    let salonger = await $.getJSON('JSON-filer/salonger.json')
-    showSeats(salonger)
+    salonger = await $.getJSON('JSON-filer/salonger.json')
+    showSeats()
   }
   readJson3()
 
   //Rita upp platser grafiskt och tilldela varje plats ett id X?
-  function showSeats (salonger) {
+  function showSeats () {
     let SeatNr
     let rowCounter = 0
     $('.obj').remove()
@@ -244,13 +253,6 @@ function bookSeats (chosenTheater, date, time, movie) {
       }
     } else {
       $(seatID).css('background-color', 'red')
-      // $(seatID).replace(
-      //   '<div class="seats" id="' +
-      //     seatID +
-      //     '"><span>' +
-      //     SeatNr +
-      //     '</span></div>'
-      // )
       chosenSeats.splice(chosenSeats.indexOf(seatID), 1)
     }
   })
@@ -296,7 +298,7 @@ function bookSeats (chosenTheater, date, time, movie) {
     $('.secondcolumn').append(
       '<button id="booking-button" type="button">Boka biljetter</button>'
     )
-    $('.thirdcolumn').hide()
+    $('.partTwoSecondColumn').hide()
     $('.firstcolumn').hide()
   })
   //FUNKTION SOM SKICKAR MED chosenseats...

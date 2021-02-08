@@ -1,0 +1,35 @@
+.logo {
+  display: inline-block;
+  color: white;
+  background-color: black;
+  border: 1px solid black;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 5px;
+  font-weight: bolder;
+  font-size: large;
+  vertical-align: middle;
+  border-radius: 10%;
+}
+.menu {
+  display: inline-block;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+header nav a {
+  font-family: verdana;
+  font-size: medium;
+  color: rgb(0, 0, 0);
+  display: inline-block;
+  margin-left: 30px;
+  margin-right: 10px;
+  text-decoration: none;
+  font-weight: bolder;
+  font-size: large;
+}
+.login {
+  float: right;
+  color: rgb(48, 20, 202);
+  margin-top: 5px;
+}

@@ -41,7 +41,7 @@ $('.movieScreen').hide()
 
 //Hämta och presentera tider för vald film
 //Hämta JSON
-async function getShows (nameOfFilm) {
+async function getShows(nameOfFilm) {
   console.log('TESTAR!!!')
 
   visningar = await $.getJSON('JSON-filer/visningar.json')
@@ -70,7 +70,7 @@ async function getShows (nameOfFilm) {
 //   }
 // }
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-function showSchedule () {
+function showSchedule() {
   $('.scheduleObj').html('')
   $('.partTwoSecondColumn').show()
   $('.schedule').show()
@@ -86,13 +86,13 @@ function showSchedule () {
       if (visning[key] === movie) {
         let busySeats = 0
 
-        async function readJson4 (bioRum) {
+        async function readJson4(bioRum) {
           let salongerx = await $.getJSON('JSON-filer/salonger.json')
           total(salongerx, bioRum)
         }
         readJson4(visning['biograf'])
 
-        function total (salongerx, bioRum) {
+        function total(salongerx, bioRum) {
           for (salongx of salongerx) {
             if (salongx.name === bioRum) {
               totalSeats = salongx.seats
@@ -111,16 +111,16 @@ function showSchedule () {
 
           $('.scheduleObj').append(
             '<option value="S' +
-              visningsID +
-              '"><span>' +
-              visning['date'] +
-              ', kl ' +
-              visning['time'] +
-              '<br><text>' +
-              visning['biograf'] +
-              ' - Platser kvar: ' +
-              SeatsLeft +
-              '</text></span></option>'
+            visningsID +
+            '"><span>' +
+            visning['date'] +
+            ', kl ' +
+            visning['time'] +
+            '<br><text>' +
+            visning['biograf'] +
+            ' - Platser kvar: ' +
+            SeatsLeft +
+            '</text></span></option>'
           )
           console.log(visningsID)
         }
@@ -152,16 +152,16 @@ function showSchedule () {
   })
 }
 
-function bookSeats () {
+function bookSeats() {
   //Hämta JSON
-  async function readJson3 () {
+  async function readJson3() {
     salonger = await $.getJSON('JSON-filer/salonger.json')
     showSeats()
   }
   readJson3()
 
   //Rita upp platser grafiskt och tilldela varje plats ett id X?
-  function showSeats () {
+  function showSeats() {
     let SeatNr
     let rowCounter = 0
     $('.obj').remove()
@@ -177,10 +177,10 @@ function bookSeats () {
             SeatNr = rowCounter + 1
             $bookingWindow.append(
               '<a class ="a-hover"><div class="seats" id="' +
-                SeatNr +
-                '"><span>' +
-                SeatNr +
-                ' </span></div></a>'
+              SeatNr +
+              '"><span>' +
+              SeatNr +
+              ' </span></div></a>'
             )
             rowCounter++
             if (x + 1 === nrOfSeats) {
@@ -219,7 +219,7 @@ function bookSeats () {
   }
 
   //FUNKTION FÖR ATT LÄSA IN UPPTAGNA PLATSER
-  function readInAndDisableReservedSeats (chosenShowID, SeatNr) {
+  function readInAndDisableReservedSeats(chosenShowID, SeatNr) {
     let busySeats = 0
     let totalSeats = parseInt(SeatNr, 10)
     for (let show of JSONofBookedSeatsPerShow) {
@@ -286,20 +286,33 @@ function bookSeats () {
     // ----------------------- Prototyp på ett boknings-formulär --------------------------------
     $(
       '.middleColumnChange'
-    ).replaceWith(`<div><h3 id="titleName">Bokning!</div><p>Du har valt platser med nummer: ${seatNumbers} <br><br>Filmen du har valt är: ${movie} <br><br>Den  ${date} kl ${time}<br><br></p>
+    ).replaceWith(`<div><h3 id="titleName">Bokning!</div><p>Du har valt platser med nummer: ${seatNumbers} <br><br>Filmen du har valt är: ${title} <br><br>Den  ${date} kl ${time}<br><br></p>
+      <div id="containerForm">
+      <form action="">
+      <label for="namn">Ange ditt namn:</label>
+      <input type="text" id="namn" name="namn" placeholder="namn" required> <br><br> 
+      <label for="email">Ange din e-postadress:</label>
+      <input type="email" id="email" name="email" placeholder="e-postadress" required> <br><br> 
+      <label for="telefonnummer">Ange ditt telefonnummer:</label>
+      <input type="int" id="phone" name="phone" placeholder="telefonnummer" required></div>`)
 
-      <form action=""><label for="namn">Ange ditt namn:</label><input type="text" id="namn" name="namn" placeholder="namn" required> <br><br> 
-      <label for="email">Ange din e-postadress:</label><input type="email" id="email" name="email" placeholder="e-postadress" required> <br><br> 
-      <label for="telefonnummer">Ange ditt telefonnummer:</label> <input type="int" id="phone" name="phone" placeholder="telefonnummer" required>`)
-
-    $('.secondcolumn').append(
+    $('.moviecolumn').append(
       '<button id="cancel-button" type="button">Avbryt reservation</button>'
     )
-    $('.secondcolumn').append(
+    $('.moviecolumn').append(
       '<button id="booking-button" type="button">Boka biljetter</button>'
     )
     $('.partTwoSecondColumn').hide()
     $('.firstcolumn').hide()
   })
   //FUNKTION SOM SKICKAR MED chosenseats...
+  // Kod som implementeras vid tryck på "Boka biljetter knappen"
+  $('body').on('click', '#booking-button', () => {
+    $('.moviecolumn').replaceWith(`<div><h3 id="titleName">Tack för din bokning!</h3><p>Vi har skickat en bekräftelse till din email-adress. Hjärtligt välkommen, vi önskar dig en trevlig bio upplevelse!</p></div>`)
+  })
+  // Kod som implementeras vid tryck på "Avbryt reservation knappen"
+  $('body').on('click', '#cancel-button', () => {
+    window.history.back();
+    // Denna knappen kommer inte fungera, vi måste lägga till hashlänkar eller eventListener till SPA. Så vi har en URL att gå bakåt till.
+  })
 }

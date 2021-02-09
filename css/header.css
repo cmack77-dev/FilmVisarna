@@ -1,23 +1,64 @@
-.logo {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+header{
+  background-color: #24252A;
+}
+.nav-links {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #24252A;
+  list-style: none;
+}
+.nav-links li {
   display: inline-block;
-  color: white;
-  background-color: black;
-  border: 1px solid black;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin: 5px;
-  font-weight: bolder;
-  font-size: large;
-  vertical-align: middle;
-  border-radius: 10%;
+  padding: 0px 20px;
+}
+.nav-links li a {
+  transition: all 0.3s ease 0s;
+}
+.nav-links li a:hover {
+  color: #0088a9;
+}
+.nav-bar {
+  position:sticky;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+}
+li, a, .login{
+  font-family: "Montserrat",sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+ .login {
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 50px;
+  cursor:pointer;
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+} 
+.login:hover {
+  background-color: rgba(0, 136, 169, 0.8);
+}
+.logo-picture{
+  display: flex;
+  text-align: center;
+  position: sticky;
+  max-width: 100%;
+  cursor: pointer;
 }
 .menu {
-  display: inline-block;
   text-align: center;
   padding-bottom: 10px;
 }
 
-header nav a {
+/* header nav a {
   font-family: verdana;
   font-size: medium;
   color: rgb(0, 0, 0);
@@ -27,9 +68,5 @@ header nav a {
   text-decoration: none;
   font-weight: bolder;
   font-size: large;
-}
-.login {
-  float: right;
-  color: rgb(48, 20, 202);
-  margin-top: 5px;
-}
+} */
+

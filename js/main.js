@@ -9,7 +9,7 @@ async function initialPage () {
     ${await $.get('html-partials/footer.html')}
   `
   $('body').prepend(html)
- 
+  readJsonFilmer()
   loadMainSection()
 }
 

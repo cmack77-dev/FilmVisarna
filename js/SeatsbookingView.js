@@ -36,7 +36,7 @@ let JSONofBookedSeatsPerShow = [
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 $('.seatingBooking').hide()
 $('.partTwoSecondColumn').hide()
-$('.visning').hide()
+//$('.visning').hide()
 $('.movieScreen').hide()
 
 //Hämta och presentera tider för vald film
@@ -76,8 +76,8 @@ function showSchedule() {
   $('.schedule').show()
   $('.schedule').html('')
   let movie = title
-  $('.visning').remove()
-  let $scheduleWindow = $('<select class="scheduleObj"></select>')
+  //$('.visning').remove()
+  let $scheduleWindow = $('<select class="scheduleObj"><option value="" disabled selected>Välj en föreställning</option></select>')
   let counterVisningar = 0
   for (let visning of visningar) {
     //Här tilledelar vi varje visning ett unikt ID som vi kan använda oss av vid tex att läsa in rätt data till/från databas.
@@ -127,7 +127,7 @@ function showSchedule() {
       }
     }
   }
-
+  // $('schedule').append('<option value="" disabled selected>Select your option</option>')
   $('.schedule').append($scheduleWindow)
   $('.schemarubrik').empty()
   $('.schemarubrik').append('Visningar för ' + movie)

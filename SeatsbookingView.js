@@ -301,5 +301,11 @@ function bookSeats () {
     $('.partTwoSecondColumn').hide()
     $('.firstcolumn').hide()
   })
+
+  // $('.secondcolumn').on('click', '#booking-button', function () {
+  //   alert("FUNKAR!")
+  //   }
+
+
   //FUNKTION SOM SKICKAR MED chosenseats...
 }

@@ -1,0 +1,26 @@
+.footer {
+  font-family: verdana;
+  font-size: smaller;
+  width: 100vw;
+  color: black;
+  padding-bottom: 1%;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.leftFoot {
+  float: left;
+  width: 33%;
+  text-align: right;
+}
+
+.middleFoot {
+  float: left;
+  width: 33%;
+  text-align: center;
+}
+
+.rightFoot {
+  float: left;
+  width: auto;
+}

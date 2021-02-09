@@ -1,0 +1,38 @@
+#movieText {
+  float: left;
+  width: 50%;
+}
+#moviePicture {
+  float: left;
+  width: 50%;
+}
+#trailer {
+  position: relative;
+  width: 24.7vw;
+  height: 19vw;
+  overflow: scroll;
+}
+.movieClick {
+  font-style: italic;
+  cursor: pointer;
+}
+#moviePic {
+  width: auto !important;
+  max-width: 50%;
+  height: auto;
+  float: right;
+}
+#titleName {
+  font-style: italic;
+  color: #054074;
+  margin-left: 10px;
+}
+/* Dropdown menyn i filminformations-sidan */
+.schema {
+  width: 99%;
+  background-color: rgba(216, 218, 221, 0.507);
+  margin: 5px;
+  margin: 1%;
+  padding: 5px;
+  border-radius: 2%;
+}

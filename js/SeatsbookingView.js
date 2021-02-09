@@ -112,15 +112,15 @@ function showSchedule() {
           $('.scheduleObj').append(
             '<option value="S' +
             visningsID +
-            '"><span>' +
+            '">' +
             visning['date'] +
             ', kl ' +
             visning['time'] +
-            '<br><text>' +
+            ' &nbsp &nbsp' +
             visning['biograf'] +
-            ' - Platser kvar: ' +
+            ': ' +
             SeatsLeft +
-            '</text></span></option>'
+            ' platser kvar</option>'
           )
           console.log(visningsID)
         }

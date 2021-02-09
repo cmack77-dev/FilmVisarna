@@ -4,7 +4,7 @@ async function initialPage () {
 
   let html = `
     ${await $.get('html-partials/header.html')}
-    ${await $.get('html-partials/first.html')}
+    ${await $.get('html-partials/start.html')}
     <main></main>
     ${await $.get('html-partials/footer.html')}
   `

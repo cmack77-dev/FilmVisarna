@@ -12,6 +12,10 @@
   height: 19vw;
   overflow: scroll;
 }
+.movieClick {
+  font-style: italic;
+  cursor: pointer;
+}
 #moviePic {
   width: auto !important;
   max-width: 50%;
@@ -20,6 +24,6 @@
 }
 #titleName {
   font-style: italic;
-  color: #fff;
+  color: #054074;
   margin-left: 10px;
 }

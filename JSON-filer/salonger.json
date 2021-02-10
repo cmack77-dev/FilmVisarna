@@ -1,6 +1,6 @@
 [
   {
-    "name": "Stora salongen",
+    "name": "Salong 1",
     "seats": 116,
     "seatsPerRow": [
       8,
@@ -16,7 +16,7 @@
     ]
   },
   {
-    "name": "Lilla salongen",
+    "name": "Salong 2",
     "seats": 76,
     "seatsPerRow": [
       8,

@@ -64,21 +64,15 @@ button:hover {
   margin-bottom: 45px;
 }
 
-.colorBG p{
-  color: blue;
-  background-color: aquamarine;
-}
-
-.schema {
+/* .schema {
   width: 99%;
   /* background-color: rgb(188, 196, 201); */
   margin: 5px;
   margin: 1%;
   padding: 5px;
   border-radius: 2%;
-}
+} */
 
-select {
-  padding: 5px;
-}
-
+/* .partTwoSecondColumn{
+  background-color: rgb(188, 196, 201);
+} */

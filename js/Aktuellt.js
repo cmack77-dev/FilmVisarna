@@ -8,7 +8,7 @@ function showJsonasHtml(aktuellt) {
   aktuellt.filter(aktuella => aktuella.title)
     .forEach(aktuella => {
       $aktuella.append(
-        '<div class="movieFrame"><p class="movieClick" onclick="readJson(' + "'" + aktuella.title + "'" + '); "> <img src= "' + aktuella.images + '" id="moviePictureLink"><button id="moviePictureButton">Hitta biljetter</button></p></div>'
+        '<div><p class="movieClick" onclick="readJson(' + "'" + aktuella.title + "'" + '); "> <img src= "' + aktuella.images + '" id="moviePictureLink" </div>'
       )
     })
     $('.firstcolumn').html('')

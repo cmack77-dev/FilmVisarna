@@ -1,17 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 header{
-  /* background-color: rgb(36, 37, 42); */
-  position: relative;
+  background-color: #24252A;
 }
 .nav-links {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: transparent;
+  background-color: #24252A;
   list-style: none;
 }
 .nav-links li {
   display: inline-block;
   padding: 0px 20px;
+<<<<<<< HEAD
   background-color: rgba(0, 136, 169, 1);
   border: none;
   border-radius: 50px;
@@ -19,6 +20,8 @@ header{
   transition: all 0.3s ease 0s;
   text-decoration: none;
   
+=======
+>>>>>>> 6aad9890b42937f9d6e59ba833ffc698d582f3fd
 }
 
 ul .active{
@@ -28,24 +31,21 @@ ul .active{
 .nav-links li a {
   transition: all 0.3s ease 0s;
 }
-.nav-links li:hover {
-  background-color: rgba(0, 136, 169, 0.6);
+.nav-links li a:hover {
+  color: #0088a9;
 }
 .nav-bar {
-  position: relative;
-  bottom: 40px;
-  vertical-align: bottom;
-  width: 1522px;
+  position:sticky;
   background-color: transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 10%;
+  padding: 30px 10%;
 }
 li, a, .login{
   font-family: "Montserrat",sans-serif;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 16px;
   color: #edf0f1;
   text-decoration: none;
 }
@@ -59,7 +59,7 @@ li, a, .login{
   text-decoration: none;
 } 
 .login:hover {
-  background-color: rgba(0, 136, 169, 0.6);
+  background-color: rgba(0, 136, 169, 0.8);
 }
 .logo-picture{
   display: flex;

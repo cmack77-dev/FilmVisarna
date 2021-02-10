@@ -4,13 +4,13 @@ async function readJsonFilmer(title) {
   showJsonasHtml(aktuellt)
 }
 function showJsonasHtml(aktuellt) {
-  let $aktuella = $('<div class="filmObj"></div>')
+  let $aktuella = $('<div class="filmObj"><h2>Aktuella Filmer</h2></div>')
   aktuellt.filter(aktuella => aktuella.title)
     .forEach(aktuella => {
       $aktuella.append(
-        '<div class="movieFrame"><p class="movieClick" onclick="readJson(' + "'" + aktuella.title + "'" + '); "> <img src= "' + aktuella.images + '" id="moviePictureLink"><button id="moviePictureButton">Hitta biljetter</button></p></div>'
+        '<div class="movieFrame"><img onclick="readJson(' + "'" + aktuella.title + "'" + ');" src= "' + aktuella.images + '" id="moviePictureLink"><button id="moviePictureButton">Hitta biljetter</button></div>'
       )
     })
-  $('.firstcolumn').append($aktuella)
+  $('.secondcolumn').append($aktuella)
 }
 readJsonFilmer()

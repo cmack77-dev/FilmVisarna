@@ -10,7 +10,7 @@ async function buildInitialPage() {
   `;
   $('body').append(html);
   // Now load the main section - the page content
-  
+
   loadMainSection();
 }
 

@@ -12,7 +12,7 @@ header{
 .nav-links li {
   display: inline-block;
   padding: 0px 20px;
-  background-color: rgba(0, 136, 169, 1);
+  background-color: rgba(116, 0, 0, 1);
   border: none;
   border-radius: 50px;
   cursor:pointer;
@@ -23,13 +23,13 @@ header{
   transition: all 0.3s ease 0s;
 }
 .nav-links li:hover {
-  background-color: rgba(0, 136, 169, 0.6);
+  background-color: rgba(116, 0, 0, 0.6);
 }
 .nav-bar {
   position: relative;
   bottom: 40px;
   vertical-align: bottom;
-  width: 1522px;
+  width: 76vw;
   background-color: transparent;
   display: flex;
   justify-content: space-between;
@@ -45,7 +45,7 @@ li, a, .login{
 }
  .login {
   padding: 9px 25px;
-  background-color: rgba(0, 136, 169, 1);
+  background-color: rgba(116, 0, 0, 1);
   border: none;
   border-radius: 50px;
   cursor:pointer;
@@ -53,7 +53,7 @@ li, a, .login{
   text-decoration: none;
 } 
 .login:hover {
-  background-color: rgba(0, 136, 169, 0.6);
+  background-color: rgba(116, 0, 0, 0.6);
 }
 .logo-picture{
   display: flex;
@@ -61,6 +61,7 @@ li, a, .login{
   position: sticky;
   max-width: 100%;
   cursor: pointer;
+  margin: auto;
 }
 .menu {
   text-align: center;

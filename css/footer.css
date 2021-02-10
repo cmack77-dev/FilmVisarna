@@ -1,34 +1,20 @@
-.footer {
+footer {
   font-family: verdana;
   font-size: smaller;
-  width: 100vw;
+  width: auto;
   background-color: #24252A;
-  padding-top: 12px;
+  padding: 20px 20px 20px 20px;
   font-weight: bold;
   font-style: italic;
+  display: flex;
+  justify-content: space-between;
 }
 
-.leftFoot {
-  float: left;
-  width: 33%;
-  text-align: right;
-}
-
-.middleFoot {
-  float: left;
-  width: 33%;
-  text-align: center;
-}
-
-.rightFoot {
-  float: left;
-  width: auto;
-}
-.footer p {
+footer > p {
   margin: 10px 10px 10px 10px;
   font-size: 16px;
 }
-.rightFoot:hover {
+.info-footer:hover {
   background-color: rgba(116, 0, 0, 0.5);
   border-radius: 50px;
 }

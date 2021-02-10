@@ -1,7 +1,8 @@
-.filmObj {
-  display: inline-block;
-  width: 100%;
-}
+ .filmObj {
+  justify-content: center;
+  align-items: center;
+  margin-left: 35px;
+} 
 #moviePictureLink{
   width: 180px;
   height: 280px;
@@ -12,12 +13,9 @@
 }
 .movieFrame {
   display: inline-block;
-  width: 18%;
+  width: 10vw;
   border: 2px solid rgb(0, 0, 0);
   padding: 10px 10px 10px 10px;
-  /* padding-left: 15px;
-  padding-right: 40px; */
-  /* padding: 15px 0px 40px 40px; */
 }
 .movieFrame:hover {
   border: 2px solid rgba(116, 0, 0, 1);

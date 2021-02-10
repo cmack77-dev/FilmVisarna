@@ -1,14 +1,16 @@
 header{
-  /* background-color: rgb(36, 37, 42); */
+  background-color: rgb(0, 0, 0);
   position: relative;
+  min-height: 50vh;
 }
+
 .nav-links {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
   background-color: transparent;
   list-style: none;
 }
+
 .nav-links li {
   display: inline-block;
   padding: 0px 20px;
@@ -19,12 +21,15 @@ header{
   transition: all 0.3s ease 0s;
   text-decoration: none;
 }
+
 .nav-links li a {
   transition: all 0.3s ease 0s;
 }
+
 .nav-links li:hover {
   background-color: rgba(116, 0, 0, 0.6);
 }
+
 .nav-bar {
   position: relative;
   bottom: 40px;
@@ -36,13 +41,15 @@ header{
   align-items: center;
   padding: 10px 10%;
 }
-li, a, .login{
+
+.nav-links > li, a, .login{
   font-family: "Montserrat",sans-serif;
   font-weight: 500;
   font-size: 20px;
   color: #edf0f1;
   text-decoration: none;
 }
+
  .login {
   padding: 9px 25px;
   background-color: rgba(116, 0, 0, 1);
@@ -52,31 +59,22 @@ li, a, .login{
   transition: all 0.3s ease 0s;
   text-decoration: none;
 } 
+
 .login:hover {
   background-color: rgba(116, 0, 0, 0.6);
 }
+
 .logo-picture{
   display: flex;
   text-align: center;
   position: sticky;
   max-width: 100%;
   cursor: pointer;
-  margin: auto;
+  margin: 0;
 }
+
 .menu {
   text-align: center;
   padding-bottom: 10px;
 }
-
-/* header nav a {
-  font-family: verdana;
-  font-size: medium;
-  color: rgb(0, 0, 0);
-  display: inline-block;
-  margin-left: 30px;
-  margin-right: 10px;
-  text-decoration: none;
-  font-weight: bolder;
-  font-size: large;
-} */
 

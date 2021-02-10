@@ -5,7 +5,6 @@ async function buildInitialPage() {
   // (but empty main section)
   let html = `
     ${await $.get('html-partials/header.html')}
-    ${await $.get('html-partials/first.html')}
     <main></main>
     ${await $.get('html-partials/footer.html')}
   `;
@@ -62,7 +61,8 @@ async function loadMainSection() {
 
 // Make loadMainSection run on every url/hash change
 // (window.onhashchange sets an event listener on hash changes)
-window.onhashchange = loadMainSection
+window.onhashchange = loadMainSection;
 
-initialPage()
+// Start everything
+buildInitialPage();
 

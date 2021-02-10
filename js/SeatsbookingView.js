@@ -283,42 +283,54 @@ function bookSeats() {
       seatNumbers.sort()
     }
 
+    //XXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+//location.hash = "#booking"; 
+
+    //XXXXXXXXXXXXXXXXXXXXXXXXXX
+
     // ----------------------- Prototyp på ett boknings-formulär --------------------------------
+    //$('.moviecolumn').html('')
     $(
       '.middleColumnChange'
-    ).replaceWith(`<div><h3 id="titleName">Bokning!</div><p>Du har valt platser med nummer: ${seatNumbers} <br><br>Filmen du har valt är: ${title} <br><br>Den  ${date} kl ${time}<br><br></p>
+    ).replaceWith(`<div class="bookingField"><div class="bookingText"><h3 id="titleName">Bokning!</div><p>Nu är det dags att boka biljetter till filmen <b>${title}</b> <br><br>Avser föreställningen <b>${date}</b> kl <b>${time}</b> i <b>${chosenTheater}</b><br><br>Du har valt följande platser: <b>${seatNumbers}</b> <br><br></p>
       <div id="containerForm">
       <form action="">
-      <label for="namn">Ange ditt namn:</label>
+      <label for="namn">Fullständigt namn:</label>
       <input type="text" id="namn" name="namn" placeholder="namn" required> <br><br> 
-      <label for="email">Ange din e-postadress:</label>
+      <label for="email">E-postadress:</label>
       <input type="email" id="email" name="email" placeholder="e-postadress" required> <br><br> 
-      <label for="telefonnummer">Ange ditt telefonnummer:</label>
-      <input type="int" id="phone" name="phone" placeholder="telefonnummer" required></div>`)
+      <label for="telefonnummer">Telefonnummer:</label>
+      <input type="int" id="phone" name="phone" placeholder="telefonnummer" required></div></div><button id="cancel-button" type="button">Avbryt reservation</button><button id="booking-button" type="button">Boka biljetter</button>`)
+      
+    // $('.moviecolumn').append(
+    //   '<button id="cancel-button" type="button">Avbryt reservation</button>'
+    // )
+    // $('.moviecolumn').append(
+    //   '<button id="booking-button" type="button">Boka biljetter</button>'
+    // )
+    // $('.moviecolumn').append(
+    //   '<button id="cancel-button" type="button">Tillbaka</button>'
+    // )
 
-    $('.moviecolumn').append(
-      '<button id="cancel-button" type="button">Avbryt reservation</button>'
-    )
-    $('.moviecolumn').append(
-      '<button id="booking-button" type="button">Boka biljetter</button>'
-    )
     $('.partTwoSecondColumn').hide()
     $('.firstcolumn').hide()
+
   })
 
-  // $('.secondcolumn').on('click', '#booking-button', function () {
-  //   alert("FUNKAR!")
-  //   }
 
 
   //FUNKTION SOM SKICKAR MED chosenseats...
   // Kod som implementeras vid tryck på "Boka biljetter knappen"
   $('body').on('click', '#booking-button', () => {
-    $('.moviecolumn').replaceWith(`<div><h3 id="titleName">Tack för din bokning!</h3><p>Vi har skickat en bekräftelse till din email-adress. Hjärtligt välkommen, vi önskar dig en trevlig bio upplevelse!</p></div>`)
+    $('.moviecolumn').replaceWith(`<div><h3 id="titleName">Tack för din bokning!</h3><p>Vi har skickat en bekräftelse till din email-adress. Hjärtligt välkommen, vi önskar dig en trevlig bio upplevelse!</p></div><button id="cancel-button" type="button">Tillbaka</button>`)
   })
   // Kod som implementeras vid tryck på "Avbryt reservation knappen"
   $('body').on('click', '#cancel-button', () => {
-    window.history.back();
-    // Denna knappen kommer inte fungera, vi måste lägga till hashlänkar eller eventListener till SPA. Så vi har en URL att gå bakåt till.
+    location.hash = "#booking";
+    window.history.back(); 
+    //loadMainSection();
+    
   })
 }

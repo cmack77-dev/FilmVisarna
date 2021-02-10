@@ -104,9 +104,33 @@ form {
   margin-left: 10px;
 }
 #cancel-button {
-  margin-left: 10px;
+  margin-left: 40px;
 }
 
-.active{
-  color: blue;
+.bookingField {
+background-color: rgb(199, 197, 197);
+margin-left: 20px;
+margin-top: -35px;
+border: solid 1px black;
+padding: 10px;
+padding-bottom: 20px;
 }
+
+input {
+  width: 95%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.bookingText {
+  text-align: center;
+}
+
+.bookingField p {
+  text-align: center;
+  }
+
+
+
+

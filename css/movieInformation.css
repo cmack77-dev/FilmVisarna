@@ -1,25 +1,45 @@
-#movieText {
-  float: left;
-  width: 50%;
+.moviecolumn {
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
 }
-#moviePicture {
-  float: left;
-  width: 50%;
+.movieText {
+  display:inline-block; 
+  text-align: center;
+}
+.moviePicture {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#close-button {
+  position: absolute;
+  padding: 5px 10px 5px 10px;
+  font-size: 15px;
 }
 #trailer {
-  position: relative;
-  width: 24.7vw;
-  height: 19vw;
+  position: center;
+  width: 40vw;
+  height: 30vw;
   overflow: scroll;
+  border:none;
 }
 #moviePic {
-  width: auto !important;
-  max-width: 50%;
-  height: auto;
-  float: right;
+  width: 20vw;
+  height: 20vw;
 }
 #titleName {
   font-style: italic;
   color: #fff;
   margin-left: 10px;
+}
+#trailer-button {
+  margin-left: 520px;
+  margin-bottom: 30px;
+  padding: 5px 14px;
+  border-radius: 50px;
+  border-style: double;
+  font-size: 18px;
+  text-align:center;
 }

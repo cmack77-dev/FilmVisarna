@@ -42,7 +42,7 @@ $('.movieScreen').hide()
 //Hämta och presentera tider för vald film
 //Hämta JSON
 async function getShows(nameOfFilm) {
-  console.log('TESTAR!!!')
+  //console.log('TESTAR!!!')
 
   visningar = await $.getJSON('JSON-filer/visningar.json')
   title = nameOfFilm
@@ -51,25 +51,7 @@ async function getShows(nameOfFilm) {
 
   showSchedule()
 }
-//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-// function myFunction () {
-//   document.getElementById('myDropdown').classList.toggle('show')
-// }
 
-// // Close the dropdown menu if the user clicks outside of it
-// window.onclick = function (event) {
-//   if (!event.target.matches('.dropbtn')) {
-//     let dropdowns = document.getElementsByClassName('dropdown-content')
-//     let i
-//     for (i = 0; i < dropdowns.length; i++) {
-//       let openDropdown = dropdowns[i]
-//       if (openDropdown.classList.contains('show')) {
-//         openDropdown.classList.remove('show')
-//       }
-//     }
-//   }
-// }
-//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 function showSchedule() {
   $('.scheduleObj').html('')
   $('.partTwoSecondColumn').show()
@@ -167,7 +149,7 @@ function bookSeats() {
     $('.obj').remove()
     let $bookingWindow = $('<div class="obj"></div>')
     let e = $bookingWindow
-    for (var i = 0; i < salonger.length; i++) {
+    for (let i = 0; i < salonger.length; i++) {
       if ($bookingWindow !== e) {
         $bookingWindow = e
       }

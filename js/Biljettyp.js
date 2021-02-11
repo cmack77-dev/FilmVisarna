@@ -19,7 +19,7 @@ function ticketLoad(jsonAntalTicket) {
   `);
 
   articles.forEach(article => $('.ticket-dropdown').append(article));
-
+}
 /*
 
 async function readJson() {

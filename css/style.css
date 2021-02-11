@@ -6,10 +6,11 @@
 @import './seats-booking.css';
 @import './pictureLinks.css';
 
-/* nav,
-footer {
-  background-color: lightblue;
-} */
+*{
+    box-sizing: border-box;
+}
+
+
 
 h1 {
   font-family: 'David Libre', serif;

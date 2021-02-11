@@ -14,16 +14,42 @@
   width: 100%;
 }
 #close-button {
-  position: absolute;
+  position: relative;
   padding: 5px 10px 5px 10px;
   font-size: 15px;
 }
+.trailer video {
+  position: relative;
+  max-width: 900px;
+  outline:none;
+}
+@media (max-width: 991px) {
+  .trailer video {
+    max-width: 90%;
+  }
+}
+.trailer-container {
+  width: 60vw;
+  height: 39vw;
+  top: 54%;
+  position: absolute;
+  background: rgba(0,0,0,1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+}
+.trailer-container.active {
+  visibility: visible;
+  opacity: 1;
+}
 #trailer {
-  position: center;
-  width: 40vw;
+  position: sticky;
+  width: 52vw;
   height: 30vw;
   overflow: scroll;
-  border:none;
+  border: none;
 }
 #moviePic {
   width: 20vw;

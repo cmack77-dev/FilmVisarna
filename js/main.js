@@ -31,16 +31,16 @@ async function loadMainSection() {
 
   let html;
   // get the html from our cache if possible
-  
-  // otherwise from reading the file with $.get
-  
-    // if so call the function in dynamicPages
 
-    // else try to read the page from the html-partials folder
- 
-      html = await $.get(fileName).catch(e => 'error');
- 
-  
+  // otherwise from reading the file with $.get
+
+  // if so call the function in dynamicPages
+
+  // else try to read the page from the html-partials folder
+
+  html = await $.get(fileName).catch(e => 'error');
+
+
 
   if (html === 'error') {
     // if we have an error - we could not get the content from file
@@ -56,7 +56,12 @@ async function loadMainSection() {
     // and then show it in the DOM
     $('main').replaceWith(html);
     readJsonFilmer()
+    readNumbers()
+    readNumbers2()
+
+
   }
+
 }
 
 // Make loadMainSection run on every url/hash change

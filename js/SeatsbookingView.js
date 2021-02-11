@@ -116,9 +116,7 @@ function showSchedule() {
 
   $('body').on('change', 'select', function () {
     console.log($(this))
-    let x = $(this)
-      .val()
-      .substring(1, 4)
+    let x = $(this).val().substring(1, 4)
 
     movie = visningar[x].film
     chosenTheater = visningar[x].biograf

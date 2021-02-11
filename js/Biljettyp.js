@@ -1,4 +1,21 @@
-let jsonAntalTicket = [];
+
+
+
+function readNumbers() {
+
+
+  for (let antal = 1; antal < 21; antal++) {
+
+    $('.ticket-dropdown').append(`<option multi value="' + antal + '"> ${antal} </option>`)
+  }
+  $('.ticketTypeNormal').append(`<p>Välj antal Vuxen Biljetter</p>`)
+
+}
+
+
+
+
+/*let jsonAntalTicket = [];
 
 async function jsonticket() {
   jsonAntalTicket = await $getJSON('JSON-filer/ticketType.json')
@@ -19,7 +36,8 @@ function ticketLoad(jsonAntalTicket) {
   `);
 
   articles.forEach(article => $('.ticket-dropdown').append(article));
-}
+} */
+
 /*
 
 async function readJson() {

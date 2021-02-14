@@ -13,7 +13,8 @@ function showJsonAsHtml(filmer, wantedTitle) {
       $film.append(
         `<section class="middleColumnChange"><div id="movieText"> <h3 id="titleName">${film.title}</h3> <p>Handling: ${film.description}</p> <p>Regissör: ${film.director}</p> <p>Skådespelare: ${film.actors}</p> </div> <div id="moviePicture"><img src="${film.images}" id="moviePic"></div> <div> <iframe id="trailer" src="${film.youtubeTrailers}" allowfullscreen></iframe> </div></section>`
       )
-      $('.moviecolumn').replaceWith($film)
-      // $('.secondcolumn').html($film);
+
+      $('.secondcolumn').html($film);
+
     })
 }

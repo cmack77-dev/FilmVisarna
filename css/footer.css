@@ -3,7 +3,6 @@
   font-size: smaller;
   width: 100vw;
   background-color: #24252A;
-  padding-bottom: 12px;
   padding-top: 12px;
   font-weight: bold;
   font-style: italic;
@@ -25,6 +24,11 @@
   float: left;
   width: auto;
 }
+.footer p {
+  margin: 10px 10px 10px 10px;
+  font-size: 16px;
+}
 .rightFoot:hover {
-  background-color: #0088a9;
+  background-color: rgba(116, 0, 0, 0.5);
+  border-radius: 50px;
 }

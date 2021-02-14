@@ -12,11 +12,12 @@ const dynamicPages = {
       let url = `#detailedView?${encodeURI(movie.title)}`
       html += (
         `<div class="movieFrame">
-        <img onclick="${url}" src="${movie.images}" id="moviePictureLink"><button id="moviePictureButton">Hitta biljetter</button></div>`
+        <a href="${url}"><img src="${movie.images}" id="moviePictureLink"><button id="moviePictureButton">Hitta biljetter</button></a></div>`
       )
     })
     html += `</div></div>`
     return html
+
   },
   "#detailedView": async () => {
     let movie = storage.movies.filter(mov => mov.title === decodeURI(window.location.hash.split("?")[1]))[0]
@@ -25,9 +26,7 @@ const dynamicPages = {
     let html = `<div class="secondcolumn"><div class="moviecolumn">`
 
     html += (
-      `<section class="middleColumnChange">
-
-      <div class="moviePicture"><img src="${movie.images}" id="moviePic"></div>
+      `<div class="moviePicture"><img src="${movie.images}" id="moviePic"></div>
 
       <button onclick="toggleTrailer();" id="trailer-button"  type="button">Visa trailer</button>
 
@@ -38,7 +37,7 @@ const dynamicPages = {
       <div class="movie-information"> <div class="movie-information-label">Språk: </div> <div class="movie-information-value">${movie.language} </div></div>
 
       <div class="trailer-container"><iframe id="trailer" src="${movie.youtubeTrailers}" allowfullscreen="true" allowscriptaccess="always"></iframe>
-      <button onclick="toggleTrailer();" id="close-button">&times;</button></div> </section>`
+      <button onclick="toggleTrailer();" id="close-button">&times;</button></div>`
     )
     html += `</div></div>`
     return html

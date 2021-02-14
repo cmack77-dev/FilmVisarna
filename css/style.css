@@ -27,7 +27,6 @@ body {
 }
 
 p {
-  margin: 20px;
   color: #fff;
 }
 
@@ -36,6 +35,8 @@ p {
 } 
 
 .secondcolumn {
+  overflow: hidden;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   flex-flow:column;

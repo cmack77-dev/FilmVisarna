@@ -1,34 +1,22 @@
-.footer {
-  font-family: verdana;
-  font-size: smaller;
-  width: 100vw;
-  background-color: #24252A;
-  padding-top: 12px;
-  font-weight: bold;
-  font-style: italic;
+footer {
+ font-family: verdana;
+ font-size: smaller;
+ width: auto;
+ background-color: #24252A;
+ padding: 20px 20px 20px 20px;
+ font-weight: bold;
+ font-style: italic;
+ display: flex;
+ justify-content: space-between;
 }
 
-.leftFoot {
-  float: left;
-  width: 33%;
-  text-align: right;
+footer > p {
+ margin: 10px 10px 10px 10px;
+ font-size: 16px;
 }
 
-.middleFoot {
-  float: left;
-  width: 33%;
-  text-align: center;
-}
+.info-footer:hover {
+ background-color: rgba(116, 0, 0, 0.5);
+ border-radius: 50px;
 
-.rightFoot {
-  float: left;
-  width: auto;
-}
-.footer p {
-  margin: 10px 10px 10px 10px;
-  font-size: 16px;
-}
-.rightFoot:hover {
-  background-color: rgba(116, 0, 0, 0.5);
-  border-radius: 50px;
 }

@@ -1,8 +1,8 @@
 const dynamicPages = {
   "#start": () => `<div class="secondcolumn"></div>`,
   "#error": () => `<div class="secondcolumn">Något gick fel</div>`,
-  "#about-us": () => $(document).ready(() => { $('main').load('/html-partials/about-us.html') }),
-  "#contact": () => $(document).ready(() => { $('main').load('/html-partials/contact.html') }),
+  "#about-us": () => () => $('main').load('/html-partials/about-us.html'),
+  "#contact": () => () => $('main').load('/html-partials/contact.html'),
 
   "#filmer": async () => {
     let movies = await getMovies()

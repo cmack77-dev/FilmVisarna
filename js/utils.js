@@ -3,8 +3,8 @@ async function getMovies() {
 
 }
 function toggleTrailer() {
-  let trailer = document.querySelector('.trailer-container')
-  trailer.classList.toggle('active')
+  let trailer = $('.trailer-container')
+  trailer.toggleClass('active')
 
   let video = $('#trailer').attr('src');
   $('#trailer').attr('src', "");

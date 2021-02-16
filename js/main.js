@@ -57,7 +57,8 @@ async function loadMainSection() {
     $('main').replaceWith(html);
     readJsonFilmer()
     readNumbers()
-    readNumbers2()
+
+
 
 
   }

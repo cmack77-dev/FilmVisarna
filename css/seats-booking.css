@@ -1,23 +1,47 @@
+
+*{
+  box-sizing: border-box;
+} 
+
 .seatingBooking {
   color: white;
-  background-color: rgb(0, 0, 0);
-  width: 99%;
+  background-color:black;
+  min-width: 400px;
+  /* width: 99%; */
   border: solid black 1px;
   margin: 5px;
   padding: 10px;
   border-radius: 2%;
-  padding-right: 25px;
-  padding-left: 25px;
+  /* padding-right: 25px;
+  padding-left: 25px; */
 }
 
+@media screen and (max-width: 750px) {
+  .seatingBooking {
+    zoom: 0.85;
+    -moz-transform: scale(0.85);
+  }
+}
+
+@media screen and (max-width: 500px) and (min-width: 001px) {
+  .seatingBooking {
+    zoom: 0.7;
+    -moz-transform: scale(0.7);
+  }
+}
+
+
 .seats {
-  width: 40px;
-  height: 25px;
-  padding-top: 5px;
+  display:flex;
+  flex-shrink: 1;
+  min-width: 25px;
+  
+  height: auto;
+  padding-top: 1%;
   font-family: 'Courier New', Courier, monospace;
   /* text-decoration: underline; */
   display: inline-block;
-  font-size: large;
+  font-size:12px;
   font-weight: bolder;
   color: rgb(27, 10, 10);
   background-color: red;
@@ -28,6 +52,12 @@
   margin-right: 3px;
   border-bottom-left-radius: 35%;
   border-bottom-right-radius: 35%;
+}
+.obj > .a-hover:hover {
+  background-color: yellow;
+  cursor: pointer;
+  padding: 10px 0px 10px 0px;
+  border-radius: 5px;
 }
 
 .seatsrow:nth-child(5n) {
@@ -49,12 +79,7 @@ button:hover {
   cursor: pointer;
 }
 
-.a-hover:hover {
-  background-color: yellow;
-  cursor: pointer;
-  padding: 10px 0px 10px 0px;
-  border-radius: 5px;
-}
+
 
 .movieScreen {
   width: 80%;
@@ -66,7 +91,7 @@ button:hover {
 
 /* .schema {
   width: 99%;
-  /* background-color: rgb(188, 196, 201); */
+  background-color: rgb(188, 196, 201);
   margin: 5px;
   margin: 1%;
   padding: 5px;

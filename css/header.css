@@ -12,7 +12,6 @@ header{
 .nav-links li {
   display: inline-block;
   padding: 0px 20px;
-<<<<<<< HEAD
   background-color: rgba(0, 136, 169, 1);
   border: none;
   border-radius: 50px;
@@ -20,8 +19,6 @@ header{
   transition: all 0.3s ease 0s;
   text-decoration: none;
   
-=======
->>>>>>> 6aad9890b42937f9d6e59ba833ffc698d582f3fd
 }
 
 ul .active{

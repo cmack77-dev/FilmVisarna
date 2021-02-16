@@ -10,6 +10,7 @@
   display: flex;
   cursor: pointer;
   margin: auto;
+  
 }
 .movieFrame {
   margin-left: 18px;
@@ -17,12 +18,13 @@
   width: 18%;
   border: 2px solid rgb(0, 0, 0);
   padding: 10px 10px 10px 10px;
+  transition: transform .5s ease;
 }
 .movieFrame:hover {
-  border: 2px solid rgba(116, 0, 0, 1);
   border-radius: 3%;
   padding: 10px 10px 10px 10px;
   display: inline-block;
+  transform: scale(1.2);
 }
 #moviePictureButton {
   padding: 5px 5px;

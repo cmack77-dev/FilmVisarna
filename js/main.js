@@ -56,7 +56,7 @@ async function loadMainSection() {
     // and then show it in the DOM
     $('main').replaceWith(html);
     readJsonFilmer()
-    readNumbers()
+    //readNumbers()
 
 
 

@@ -23,17 +23,17 @@ function readNumbers() {
   $('body').on('click', '#ticket-dropdown-vuxna', function () {
     let vuxna = $(this)
       .val()
-    console.log(vuxna)
-    alert(vuxna)
+
+
   })
   $('body').on('click', '#ticket-dropdown-barn', function () {
     let barn = $(this)
       .val()
-    alert(barn)
+
   })
   $('body').on('click', '#ticket-dropdown-pensionar', function () {
     let pensionar = $(this)
       .val()
-    alert(pensionar)
+
   })
 }

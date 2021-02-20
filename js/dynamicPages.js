@@ -1,4 +1,6 @@
-// import { readNumbers } from './Biljettyp';
+let vuxna;
+let barn;
+let pensionar;
 let url1 = `#bokning?`
 const dynamicPages = {
   "#start": () => `<div class="secondcolumn"></div>`,
@@ -51,11 +53,11 @@ const dynamicPages = {
     readNumbers()
 
     let html = `<div class="secondcolumn"><form class="dropdown-form">`
-    html += (`<a>asdhkashdks</a>`)
+    html += (`<div class="drop"><a>asdhkashdks</a></div>`)
     html += `</form ></div > `
     return html
     async function readNumbers() {
-      await $('body').append('<div class="ticketType"></div>')
+      await $('.drop').append('<div class="ticketType"></div>')
       $('.ticketType').append(`
   <H4>Välj antal biljetter<br></H4>
   <select id=dropdown-vuxna  ><option value="" disabled selected>Vuxna</option></select>

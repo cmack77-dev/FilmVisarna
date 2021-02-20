@@ -5,6 +5,7 @@
 @import './movieInformation.css';
 @import './seats-booking.css';
 @import './pictureLinks.css';
+@import './dropdown.css';
 
 h1 {
   font-family: 'David Libre', serif;
@@ -91,6 +92,7 @@ input {
 .bookingField p {
   text-align: center;
 }
+
 
 
 

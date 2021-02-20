@@ -5,6 +5,7 @@
 @import './movieInformation.css';
 @import './seats-booking.css';
 @import './pictureLinks.css';
+@import './dropdown.css';
 
 *{
     box-sizing: border-box;
@@ -128,7 +129,6 @@ input {
 .bookingField p {
   text-align: center;
   }
-
 
 
 

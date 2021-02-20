@@ -11,7 +11,8 @@ function showJsonasHtml(aktuellt) {
         '<div><p class="movieClick" onclick="readJson(' + "'" + aktuella.title + "'" + '); "> <img src= "' + aktuella.images + '" id="moviePictureLink" </div>'
       )
     })
-    $('.firstcolumn').html('')
+  $('.firstcolumn').html('')
   $('.firstcolumn').append($aktuella)
 }
 readJsonFilmer()
+

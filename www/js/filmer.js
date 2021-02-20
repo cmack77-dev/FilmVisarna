@@ -20,7 +20,7 @@ function showJsonAsHtml(filmer, wantedTitle) {
         `<section class="middleColumnChange"><div id="movieText"> <h3 id="titleName">${film.title}</h3> <p>Handling: ${film.description}</p> <p>Regissör: ${film.director}</p> <p>Skådespelare: ${film.actors}</p> </div> <div id="moviePicture"><img src="${film.images}" id="moviePic"></div> <div> <iframe id="trailer" src="${film.youtubeTrailers}" allowfullscreen></iframe> </div></section>`
       )
 
-      $('.moviecolumn').replaceWith($film)
+      //$('.moviecolumn').replaceWith($film)
       $('.middleColumnChange').append(`<form>
 <div class="ticketTypeNormal"></div>
  <select id="ticket-dropdown-vuxna" name="tickets"></select>  

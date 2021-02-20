@@ -1,10 +1,11 @@
-.ticketType h4{
+h4{
   font-family: "Montserrat",sans-serif;
   font-weight: 700;
+  color: #aaa;
 
 }
 
-.ticketType select{
+select{
     display: flexbox;
   font-size: 16px;
   font-family: "Montserrat",sans-serif;
@@ -12,7 +13,7 @@
   color: rgb(255, 255, 255);
   line-height: 1.3;
   padding: .6em 1.4em .5em .8em;
-  width: 10%;
+  width: 20%;
   max-width: 100%;
   box-sizing: border-box;
   margin: 0;
@@ -26,7 +27,7 @@
  -webkit-appearance: none;
    -moz-appearance: none;
    appearance: none;       /* Remove default arrow */
-   background-image:url(./down-chevron.png), linear-gradient(to bottom,rgba(116, 0, 0, 1),rgba(116, 0, 0, 1));
+   background-image:url('/images/down-chevron.png'), linear-gradient(to bottom,rgba(116, 0, 0, 1),rgba(116, 0, 0, 1));
    background-repeat: no-repeat, repeat;
    background-position: right .7em top 50%;
    background-size: .65em auto, 100%;

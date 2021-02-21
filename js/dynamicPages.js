@@ -30,10 +30,11 @@ const dynamicPages = {
     let html = `<div class="secondcolumn"><div class="moviecolumn">`
 
     html += (
-      `<div class="moviePicture"><img src="${movie.images}" id="moviePic"></div>
-
+      `<div class="moviePicture"><img src="${movie.images}" id="moviePic"><span>
       <button onclick="toggleTrailer();" id="trailer-button"  type="button">Visa trailer</button>
-
+      <a href="${url1}"><button id="book-tickets" type="button">Boka biljetter</button></a>
+      </div>
+      <hr>
       <div class="movie-information"> <div class="movie-information-label">Titel: </div> <div class="movie-information-value">${movie.title} </div></div>
       <div class="movie-information"> <div class="movie-information-label">Handling: </div> <div class="movie-information-value">${movie.description} </div></div>
       <div class="movie-information"> <div class="movie-information-label">Regissör: </div> <div class="movie-information-value">${movie.director} </div></div>
@@ -42,7 +43,7 @@ const dynamicPages = {
 
       <div class="trailer-container"><iframe id="trailer" src="${movie.youtubeTrailers}" allowfullscreen="true" allowscriptaccess="always"></iframe>
       <button onclick="toggleTrailer();" id="close-button">&times;</button></div>
-      <a href="${url1}">bokning</a>`
+      `
     )
     html += `</div></div>`
     return html

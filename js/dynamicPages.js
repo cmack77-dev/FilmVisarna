@@ -30,13 +30,22 @@ const dynamicPages = {
     let html = `<div class="secondcolumn"><div class="moviecolumn">`
 
     html += (
-      `<div class="moviePicture"><img src="${movie.images}" id="moviePic"><span>
-      <button onclick="toggleTrailer();" id="trailer-button"  type="button">Visa trailer</button>
+      `<div class="moviePicture"><img src="${movie.images}" id="moviePic">
+      
+      <div class="movie-info">
+      <h3>${movie.title}</h3>
+      <div class="movie-title-info"><p>${movie.genre}</p>
+      <p class="movie-age">${movie.length} | ${movie.age}</p>
+      
+      <div class="buttons-movie-info"><button onclick="toggleTrailer();" id="trailer-button" type="button">Visa trailer</button>
       <a href="${url1}"><button id="book-tickets" type="button">Boka biljetter</button></a>
       </div>
-      <hr>
-      <div class="movie-information"> <div class="movie-information-label">Titel: </div> <div class="movie-information-value">${movie.title} </div></div>
-      <div class="movie-information"> <div class="movie-information-label">Handling: </div> <div class="movie-information-value">${movie.description} </div></div>
+      </div>
+      </div>
+      </div>
+      <span>
+      <hr> 
+      <div class="movie-information"> <div class="movie-information-label"></div> <div class="movie-information-value">${movie.description} </div></div>
       <div class="movie-information"> <div class="movie-information-label">Regissör: </div> <div class="movie-information-value">${movie.director} </div></div>
       <div class="movie-information"> <div class="movie-information-label">Skådespelare: </div> <div class="movie-information-value">${movie.actors} </div></div>
       <div class="movie-information"> <div class="movie-information-label">Språk: </div> <div class="movie-information-value">${movie.language} </div></div>

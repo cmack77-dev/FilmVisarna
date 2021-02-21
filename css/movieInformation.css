@@ -1,8 +1,39 @@
 .moviePicture {
   display:flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100%;
-  align-items: baseline;
+  align-items: flex-end;
+}
+
+.movie-info > h3 {
+  font-size: 30px;
+  color: #fff;
+}
+
+.movie-info {
+  margin-left: 5px;
+  width: 100%;
+  display:flexbox;
+  justify-content: space-between;
+}
+.movie-age {
+  color:gray;
+}
+.movie-title-info {
+  display: flexbox;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.buttons-movie-info {
+  display:block;
+  justify-content: space-between;
+  text-align: right;
+}
+
+.movie-title-info > p {
+  margin: 0;
+  padding-bottom: 4px;
 }
 
 #close-button {
@@ -67,15 +98,8 @@
   color: #fff;
   margin-left: 10px;
 }
-.button-trailer {
-  position:absolute;
-  width: 20%;
-  height: 20%;
-}
+
 #book-tickets {
-  position: absolute;
-  left: 90%;
-  top: 45%;
   background: linear-gradient(to top right, rgb(255, 255, 255), rgb(64, 64, 70));
 }
 #book-tickets:hover {
@@ -95,24 +119,26 @@
     transform: translateY(-10px);
   }
 }
+
 #trailer-button {
-  position: absolute;
-  left: 82%;
-  top: 45%;
   background: linear-gradient(to bottom left, rgb(255, 255, 255), rgb(64, 64, 70));
 }
+
 #trailer-button:hover {
   animation: bounce 1s;
 }
+
 .movie-information {
   color: #fff;
   padding-bottom: 5px;
 }
+
 .movie-information-label {
   font-size: 14px;
   color: gray;
   padding-bottom: 2px;
 }
+
 .movie-information-value > p {
   margin: 0;
 }

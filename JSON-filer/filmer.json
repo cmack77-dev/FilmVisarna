@@ -1,6 +1,8 @@
 [
   {
     "title": "Gladiator",
+    "genre": "Action/Äventyr",
+    "age": "15år",
     "productionCountries": [
       "Malta",
       "Marocko",
@@ -9,7 +11,7 @@
       "Storbritannien"
     ],
     "productionYear": 1999,
-    "length": 155,
+    "length": "2h 51m",
     "distributor": "Universal Pictures",
     "language": "Engelska",
     "subtitles": "Svenska",
@@ -21,7 +23,7 @@
       "Oliver Reed",
       "Djimon Hounsou"
     ],
-    "description": "<p>En före detta romersk general får ett mål att utkräva hämnd mot den korrupta kejsaren som mördade hans familj och skickade honom till slaveri.</p>",
+    "description": "<p>Germanien, år 180 efter Kristus. Den romerska armén, under ledning av general Maximus, besegrar de sista barbariska horderna som gör motstånd mot Rom. Den döende kejsaren, Marcus Aurelius, förbigår sin egen son Commodus och ber Maximus ta över kejsardömet i syfte att återinföra republik. Commodus dödar sin far och ger order om att avrätta Maximus och hans hustru och son i Spanien. Maximus lyckas fly men kommer försent för att rädda sin familj. Han tillfångatas av en slavhandlare och säljs till Proximo, som organiserar gladiatorspel. Maximus tvingas strida på den lokala arenan och får bifallsrop av massorna och vinner respekt bland sina kamrater gladiatorerna, då speciellt den afrikanske Juba och germanen Hagen.</p>",
     "images": "images/gladiatorbild.jpg",
     "youtubeTrailers": "https://www.youtube.com/embed/owK1qxDselE",
     "reviews": [
@@ -41,12 +43,14 @@
   },
   {
     "title": "Braveheart",
+    "genre": "Krig/Drama",
+    "age": "15år",
     "productionCountries": [
       "Skottland",
       "Irland"
     ],
     "productionYear": 1994,
-    "length": 178,
+    "length": "3h 2m",
     "distributor": "Paramount Pictures",
     "language": "Engelska",
     "subtitles": "Svenska",
@@ -58,7 +62,7 @@
       "Sandy Nelson",
       "James Cosmo"
     ],
-    "description": "<p>William Wallace är en skotsk rebel som leder ett uppror mot den grymma engelska kungen Edward Longshanks. Det blir en episk saga om hur William försöker vinna Skottlands frihet.</p>",
+    "description": "<p>Filmen är baserad på den sanna historien om den skotske folkledaren William Wallace som under medeltiden ledde sina skotska vänner mot engelsmännens förtryck i Skottland under 1200-talet. Som ung tvingas William Wallace lämna sitt hemland Skottland efter att hans far blivit dödad och följa med sin farbror Argyle. När han flera år senare återvänder till sitt hemland har den grymme, brittiske kungen Edward Longhshanks styrt Skottland med järnhand. Efter att William Wallaces kvinna mördas av brittiska undersåtar leder han sina landsmän i revolt mot den brittiske kungen som styr över Skottland för att göra landet fritt.</p>",
     "images": "images/braveheart.jpg",
     "youtubeTrailers": "https://www.youtube.com/embed/1NJO0jxBtMo",
     "reviews": [
@@ -78,12 +82,14 @@
   },
   {
     "title": "Good Will Hunting",
+    "genre": "Drama/Romantik",
+    "age": "11år",
     "productionCountries": [
       "Kanada",
       "USA"
     ],
     "productionYear": 1997,
-    "length": 126,
+    "length": "2h 7m",
     "distributor": "Miramax",
     "language": "Engelska",
     "subtitles": "Svenska",
@@ -95,7 +101,7 @@
       "Stellan Skarsgård",
       "Casey Affleck"
     ],
-    "description": "<p>En rörande historia om en lite vilsen ung man som kämpar med att hitta sin plats i livet. Will Hunting är uppvuxen i slummen, spenderar kvällarna på barer med sina vänner. När Will är påväg att hämna i fängelse betalas borgen utav en professor på M.I.T som ger honom ett ultimatum att jobba med honom, och att träffa en terapeut som kommer förändra hans liv.</p>",
+    "description": "<p>Will Hunting är en 20-åring vars vardag kantas av slagsmål, skitjobb och pubrundor med polarna. Men Will är annorlunda. Han är överintelligent, har fotografiskt minne och kan lösa matematiska problem som t.o.m. prisbelönta matematiker går bet på. När han efter en fängelsedom beordras uppsöka psykiatrisk hjälp hamnar han hos psykologen Sean McGuire. Sean, som vuxit upp i samma stadsdel och själv genomgått livskriser, känner igen sig i Will och beslutar sig för att hjälpa honom. Han vet att det under den tuffa, likgiltiga ytan döljer sig en osäker ung man med dålig självkänsla. Utan framgång försöker han få Will att öppna sig, att släppa taget om det trygga och invanda, och sätta upp nya mål här i livet. </p>",
     "images": "images/goodwillhunting.png",
     "youtubeTrailers": "https://www.youtube.com/embed/ReIJ1lbL-Q8",
     "reviews": [
@@ -115,12 +121,14 @@
   },
   {
     "title": "Big Hero 6",
+    "genre": "Komedi/Barn",
+    "age": "Barntillåten",
     "productionCountries": [
       "USA",
       "Japan"
     ],
     "productionYear": 2014,
-    "length": 102,
+    "length": "1h 48m",
     "distributor": "Walt Disney Pictures",
     "language": "Engelska",
     "subtitles": "Svenska",
@@ -132,7 +140,7 @@
       "Jamie Chung(voice)",
       "T.J Miller(voice)"
     ],
-    "description": "<p>En animerad film om en annorlunda vänskap mellan ett ungt geni och en uppblåsbar robot. Tillsammans med andra vänner skapar dom en grupp high-tech hjältar.</p>",
+    "description": "<p>Hiro Hamada är ett trettonårigt geni som ägnar alldeles för mycket tid på olagliga robotfighter. Hans storebror Tadashi vill att Hiro ska börja på teknologiuniversitetet. Hiro tycker själv att han är för smart, men går till slut med på att söka stipendium. Samma dag som Hiro blir antagen dör Tadashi i en tragisk olycka samtidigt som staden San Fransokyo hamnar i fara. Hiro får tröst av Tadashis stora uppfinning: hälsorådgivaren Baymax, en uppblåsbar robot som scannar, diagnoserar och hjälper alla som uttrycker smärta. För att undanröja hotet mot San Fransokyo tar Hiro hjälp av Baymax och sina kompisar från universitetet: adrenalinjunkien Go Go Tomago, kontrollfreaket Wasabi, kemifantasten Honey Lemon och Fred. Med ett antal högteknologiska uppgraderingar förvandlas Hiro och hans vänner till ett annorlunda superhjältegäng som får namnet Big Hero 6.</p>",
     "images": "images/bighero6.jpg",
     "youtubeTrailers": "https://www.youtube.com/embed/bT8qmoCgxZg",
     "reviews": [
@@ -152,13 +160,15 @@
   },
   {
     "title": "The Dark Knight",
+    "genre": "Action/Äventyr",
+    "age": "11år",
     "productionCountries": [
       "USA",
       "Hong Kong",
       "Storbritannien"
     ],
     "productionYear": 2007,
-    "length": 152,
+    "length": "2h 32m",
     "distributor": "Warner Bros",
     "language": "Engelska",
     "subtitles": "Svenska",
@@ -170,7 +180,7 @@
       "Michael Caine",
       "Morgan Freeman"
     ],
-    "description": "<p>När en ny brottsling som kallar sig Jokern dyker upp i Gotham City, måste Bruce Wayne (Batman) göra allt i sin makt för att stoppa honom.</p>",
+    "description": "<p>Ett år har gått sedan Batman (Christian Bale) överlistade Ra's al Ghul och stoppade honom. Nu vill Batman en gång för alla sätta stopp för brottsligheten i Gotham City och slå till mot maffians svagaste punkt, deras plånböcker. Trots att polisen jagar honom som laglös fortsätter miljardären Bruce Wayne att bekämpa brott under sitt maskerade alias Batman. Denna gång är det den galne Jokern som rånar, mördar och massakrerar alla som kommer i hans väg, mest för sitt höga nöjes skull.</p>",
     "images": "images/thedarkknight.jpg",
     "youtubeTrailers": "https://www.youtube.com/embed/kmJLuwP3MbY",
     "reviews": [

@@ -3,12 +3,12 @@ let barn;
 let pensionar;
 let url1 = `#bokning?`
 const dynamicPages = {
-  "#start": () => `<div class="secondcolumn"></div>`,
+  // "#start": () => `<div class="secondcolumn"></div>`,
   "#error": () => `<div class="secondcolumn">Något gick fel</div>`,
   "#about-us": () => () => $('main').load('/html-partials/about-us.html'),
   "#contact": () => () => $('main').load('/html-partials/contact.html'),
 
-  "#filmer": async () => {
+  "#start": async () => {
     let movies = await getMovies()
     let html = `<div class="secondcolumn"><div class="filmObj"><h2>Aktuella Filmer</h2>`
 
@@ -59,9 +59,9 @@ const dynamicPages = {
   },
 
   "#bokning": (readNumbers) => {
-    readNumbers()
+    //readNumbers()
     let html = `<div class="secondcolumn"><form class="dropdown-form">`
-    html += (`
+    html += `
     <button onclick="getShows();">Visa när filmen går</button><br>
       <div class="partTwoSecondColumn" style="display:none;">
       <div class="schema">
@@ -75,14 +75,12 @@ const dynamicPages = {
           <div class="summaryTickets"></div>
           <div class="movieScreen" align="center">
             <p>Bioduken</p>
-            </div></div></div></div>
-
-    <div class="drop"><a>asdhkashdks</a></div>`)
+            </div></div></div></div>`
     html += `</form ></div > `
     setTimeout(readNumbers, 0)
     return html
     function readNumbers() {
-      $('.secondcolumn form').html('<div class="ticketType"></div>')
+      $('.secondcolumn form').prepend('<div class="ticketType"></div>')
       $('.ticketType').append(`
   <H4>Välj antal biljetter<br></H4>
   <select id=dropdown-vuxna  ><option value="" disabled selected>Vuxna</option></select>

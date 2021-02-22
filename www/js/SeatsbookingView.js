@@ -259,7 +259,7 @@ async function bookSeats () {
   
     $(
       '.secondcolumn'
-    ).replaceWith(`<div class="bookingField"><div class="bookingText"><h3 id="titleName">Bokning!</div><p>Nu är det dags att boka biljetter till filmen <b>${title}</b> <br><br>Avser föreställningen <b>${date}</b> kl <b>${time}</b> i <b>${chosenTheater}</b><br><br>Du har valt följande platser: <b>${seatNumbers}</b> <br><br></p>
+    ).replaceWith(`<div class="secondcolumn"><div class="bookingField"><div class="bookingText"><h3 id="titleName">Bokning!</div><p>Nu är det dags att boka biljetter till filmen <b>${title}</b> <br><br>Avser föreställningen <b>${date}</b> kl <b>${time}</b> i <b>${chosenTheater}</b><br><br>Du har valt följande platser: <b>${seatNumbers}</b> <br><br></p>
       <div id="containerForm">
       <form action="">
       <label for="namn">Fullständigt namn:</label>
@@ -267,7 +267,7 @@ async function bookSeats () {
       <label for="email">E-postadress:</label>
       <input type="email" id="email" name="email" placeholder="e-postadress" required> <br><br> 
       <label for="telefonnummer">Telefonnummer:</label>
-      <input type="int" id="phone" name="phone" placeholder="telefonnummer" required></div></div><div align="center"><button id="cancel-button" type="button">Avbryt reservation</button><button id="booking-button" type="button">Boka biljetter</button></div>`)
+      <input type="int" id="phone" name="phone" placeholder="telefonnummer" required></div></div><div align="center"><button id="cancel-button" type="button">Avbryt reservation</button><button id="booking-buttonx" type="button">Boka biljetter</button></div></div>`)
 
 
     $('.partTwoSecondColumn').hide()
@@ -276,12 +276,13 @@ async function bookSeats () {
 
   //FUNKTION SOM SKICKAR MED chosenseats...
   // Kod som implementeras vid tryck på "Boka biljetter knappen"
-  $('body').on('click', '#booking-button', async () => {
+  $('body').on('click', '#booking-buttonx', async () => {
+    alert('HEJ!')
     enteredName = $('#namn').val()
     enteredPhone = $('#phone').val()
     enteredMail = $('#email').val()
-    $('.moviecolumn').replaceWith(
-      `<div><h3 id="titleName">Tack för din bokning!</h3><p>Vi har skickat en bekräftelse till din email-adress.<br><br>Hjärtligt välkommen <b>${enteredName}</b> att se <b>${title}</b> den <b>${date}</b> klockan <b>${time}</b> i <b>${chosenTheater}</b>.<br><br>Vi önskar dig en riktigt trevlig bio upplevelse!</p></div><button id="cancel-button" type="button">Tillbaka</button>`
+    $('.secondcolumn').replaceWith(
+      `<div class="secondcolumn"><div><h3 id="titleName">Tack för din bokning!</h3><p>Vi har skickat en bekräftelse till din email-adress.<br><br>Hjärtligt välkommen <b>${enteredName}</b> att se <b>${title}</b> den <b>${date}</b> klockan <b>${time}</b> i <b>${chosenTheater}</b>.<br><br>Vi önskar dig en riktigt trevlig bio upplevelse!</p></div><button id="cancel-button" type="button">Tillbaka</button></div>`
     )
 
     let x = 0

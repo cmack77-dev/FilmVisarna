@@ -96,13 +96,10 @@ const dynamicPages = {
 
       }
 
-
-
-
     }
-    
-  }, 
-    
+
   }
-  
+
+}
+
 

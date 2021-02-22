@@ -10,3 +10,19 @@ function toggleTrailer() {
   $('#trailer').attr('src', "");
   $('#trailer').attr('src', video);
 }
+
+$('body').on('click', '#dropdown-vuxna', e => {
+  vuxna = $(e.currentTarget).val()
+
+  console.log(vuxna)
+  alert(vuxna)
+})
+$('body').on('click', '#ticket-dropdown-barn', function () {
+  barn = $(this).val()
+
+})
+$('body').on('click', '#ticket-dropdown-pensionar', function () {
+  pensionar = $(this).val()
+
+
+})

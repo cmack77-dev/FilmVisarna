@@ -1,3 +1,7 @@
+let vuxna;
+let barn;
+let pensionar;
+let url1 = `#bokning?`
 const dynamicPages = {
   "#start": () => `<div class="secondcolumn"></div>`,
   "#error": () => `<div class="secondcolumn">Något gick fel</div>`,
@@ -17,12 +21,13 @@ const dynamicPages = {
     })
     html += `</div></div>`
     return html
-
   },
+
   "#detailedView": async () => {
     let movie = storage.movies.filter(mov => mov.title === decodeURI(window.location.hash.split("?")[1]))[0]
     storage.selectedMovie = movie.title;
-    let url1 = `#bokning?`
+    url1 = `#bokning?`
+    url2 = `#schema?`
     let html = `<div class="secondcolumn"><div class="moviecolumn">`
 
     html += (
@@ -35,32 +40,92 @@ const dynamicPages = {
       <div class="movie-information"> <div class="movie-information-label">Språk: </div> <div class="movie-information-value">${movie.language} </div></div>
       <div class="trailer-container"><iframe id="trailer" src="${movie.youtubeTrailers}" allowfullscreen="true" allowscriptaccess="always"></iframe>
       <button onclick="toggleTrailer();" id="close-button">&times;</button></div>
-      <a href="${url1}">bokning</a>`
+      <a href="${url1}">bokning</a><br>
+      <button onclick="getShows();">Visa när filmen går</button><br>
+      <a href="${url2}">Hitta en föreställning</a>
+      <div class="partTwoSecondColumn" style="display:none;">
+      <div class="schema">
+        <p class="schemarubrik"></p>
+        <div class="schedule"></div>
+        <div align="center" class="seatingBooking">
+          <p class="film"></p>
+          <p class="salong"></p>
+          <p class="dateTime"></p>
+          <p class="nrSeats"></p>
+          <div class="summaryTickets"></div>
+          <div class="movieScreen" align="center">
+            <p>Bioduken</p>
+            </div></div></div></div>`
     )
     html += `</div></div>`
     return html
   },
 
+  "#bokning": (readNumbers) => {
+    readNumbers()
 
-  "#bokning": () => {
     let html = `<div class="secondcolumn"><form class="dropdown-form">`
-    html += (`
-      <H4> Välj antal biljetter <br></H4>
-  <select id=dropdown-vuxna><option value="" disabled selected>Vuxna</option></select>
-  <select id=dropdown-barn><option value="" disabled selected>Barn</option></select>
-  <select id=dropdown-pensionar><option value="" disabled selected>Pensionär</option></select>
-  `);
-
-    for (let antal = 1; antal < 21; antal++) {
-
-      $('#dropdown-vuxna').append(`<option value="${antal}"> ${antal} </option`)
-      $('#dropdown-barn').append(`<option value="${antal}"> ${antal} </option>`)
-      $('#dropdown-pensionar').append(`<option value="${antal}"> ${antal} </option>`)
-    }
-
+    html += (`<div class="drop"><a>asdhkashdks</a></div>`)
     html += `</form ></div > `
     return html
+    async function readNumbers() {
+      await $('.drop').append('<div class="ticketType"></div>')
+      $('.ticketType').append(`
+  <H4>Välj antal biljetter<br></H4>
+  <select id=dropdown-vuxna  ><option value="" disabled selected>Vuxna</option></select>
+  <select id=dropdown-barn  ><option value="" disabled selected>Barn</option></select>
+  <select id=dropdown-pensionar  ><option value="" disabled selected>Pensionär</option></select>
+  `)
 
+      for (let antal = 1; antal < 21; antal++) {
+
+        $('#dropdown-vuxna').append(`<option value="${antal}"> ${antal} </option>`)
+        $('#dropdown-barn').append(`<option value="${antal}"> ${antal} </option>`)
+        $('#dropdown-pensionar').append(`<option value="${antal}"> ${antal} </option>`)
+
+      }
+
+      $('body').on('click', '#dropdown-vuxna', () => {
+        vuxna = $(this)
+          .val()
+        console.log(vuxna)
+        alert(vuxna)
+      })
+      $('body').on('click', '#ticket-dropdown-barn', () => {
+        barn = $(this)
+          .val()
+      })
+      $('body').on('click', '#ticket-dropdown-pensionar', () => {
+        pensionar = $(this)
+          .val()
+
+      })
+
+    }
+    
+  }, 
+  
+  "#schema": async () => {
+    let html = `<div class="secondcolumn">`
+    html += (
+      `<div class="partTwoSecondColumn" style="display:none;">
+      <div class="schema">
+        <p class="schemarubrik"></p>
+        <div class="schedule"></div>
+        <div align="center" class="seatingBooking">
+          <p class="film"></p>
+          <p class="salong"></p>
+          <p class="dateTime"></p>
+          <p class="nrSeats"></p>
+          <div class="summaryTickets"></div>
+          <div class="movieScreen" align="center">
+            <p>Bioduken</p>
+            </div></div></div></div>`
+    )
+    html += `</div>`
+    
+    return html
+    
   }
-
+  
 }

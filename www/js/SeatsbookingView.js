@@ -1,4 +1,3 @@
-//temporära hårdkodade varaibler
 let visningar = []
 let title
 let insertVar = ''
@@ -27,15 +26,17 @@ $('.movieScreen').hide()
 
 //Hämta och presentera tider för vald film
 //Hämta JSON
-async function getShows (nameOfFilm) {
+async function getShows () {
   visningar = await $.getJSON('JSON-filer/visningar.json')
-  title = nameOfFilm
+  title = storage.selectedMovie
+  // alert(title)
   $('.seatingBooking').hide()
-  await readInSeats()
+  readInSeats()
   showSchedule()
+  
 }
 
-function showSchedule () {
+async function showSchedule () {
   
   $('.scheduleObj').html('')
   $('.partTwoSecondColumn').show()
@@ -101,7 +102,7 @@ function showSchedule () {
   $('.schemarubrik').append('Visningar för ' + movie)
 
   $('body').on('change', 'select', async function () {
-    console.log($(this))
+    // console.log($(this))
     let x = $(this)
       .val()
       .substring(1, 4)
@@ -257,7 +258,7 @@ async function bookSeats () {
     // ----------------------- boknings-formulär --------------------------------
   
     $(
-      '.middleColumnChange'
+      '.moviecolumn'
     ).replaceWith(`<div class="bookingField"><div class="bookingText"><h3 id="titleName">Bokning!</div><p>Nu är det dags att boka biljetter till filmen <b>${title}</b> <br><br>Avser föreställningen <b>${date}</b> kl <b>${time}</b> i <b>${chosenTheater}</b><br><br>Du har valt följande platser: <b>${seatNumbers}</b> <br><br></p>
       <div id="containerForm">
       <form action="">
@@ -266,7 +267,7 @@ async function bookSeats () {
       <label for="email">E-postadress:</label>
       <input type="email" id="email" name="email" placeholder="e-postadress" required> <br><br> 
       <label for="telefonnummer">Telefonnummer:</label>
-      <input type="int" id="phone" name="phone" placeholder="telefonnummer" required></div></div><button id="cancel-button" type="button">Avbryt reservation</button><button id="booking-button" type="button">Boka biljetter</button>`)
+      <input type="int" id="phone" name="phone" placeholder="telefonnummer" required></div></div><div align="center"><button id="cancel-button" type="button">Avbryt reservation</button><button id="booking-button" type="button">Boka biljetter</button></div>`)
 
 
     $('.partTwoSecondColumn').hide()
@@ -308,8 +309,9 @@ async function bookSeats () {
 
 async function readInSeats () {
   BS = await db.run(/*sql*/ `select * from bokningar;`)
-  return BS
+  // return BS
 }
+
 
 async function book () {
   console.log(insertVar)

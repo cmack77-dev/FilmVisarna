@@ -7,7 +7,7 @@ async function readJson(title) {
   showJsonAsHtml(filmer, title)
   // readNumbers()
 
-  getShows(title) //Markus har lagt in för att ropa på funktioner för bokning etc.
+  // getShows(title) //Markus har lagt in för att ropa på funktioner för bokning etc.
 }
 
 function showJsonAsHtml(filmer, wantedTitle) {

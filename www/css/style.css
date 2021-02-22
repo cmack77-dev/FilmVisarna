@@ -6,15 +6,12 @@
 @import './seats-booking.css';
 @import './pictureLinks.css';
 @import './dropdown.css';
-<<<<<<< HEAD:www/css/style.css
 
 *{
     box-sizing: border-box;
 }
 
 
-=======
->>>>>>> 06b6de2da0a1b1f4cb25c2b7146e263f505b45ff:css/style.css
 
 h1 {
   font-family: 'David Libre', serif;
@@ -79,9 +76,10 @@ form {
 }
 
 .bookingField {
-background-color: rgb(199, 197, 197);
+/* background-color: rgb(199, 197, 197); */
+color:white;
 margin-left: 20px;
-margin-top: -35px;
+/* margin-top: -35px; */
 border: solid 1px black;
 padding: 10px;
 padding-bottom: 20px;

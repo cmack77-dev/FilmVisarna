@@ -2,7 +2,7 @@ footer {
  font-family: verdana;
  font-size: smaller;
  width: auto;
- background-color: #24252A;
+ background: linear-gradient(to right left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9));
  padding: 20px 20px 20px 20px;
  font-weight: bold;
  font-style: italic;

@@ -258,7 +258,7 @@ async function bookSeats () {
     // ----------------------- boknings-formulär --------------------------------
   
     $(
-      '.moviecolumn'
+      '.secondcolumn'
     ).replaceWith(`<div class="bookingField"><div class="bookingText"><h3 id="titleName">Bokning!</div><p>Nu är det dags att boka biljetter till filmen <b>${title}</b> <br><br>Avser föreställningen <b>${date}</b> kl <b>${time}</b> i <b>${chosenTheater}</b><br><br>Du har valt följande platser: <b>${seatNumbers}</b> <br><br></p>
       <div id="containerForm">
       <form action="">
@@ -302,7 +302,7 @@ async function bookSeats () {
 
   // Kod som implementeras vid tryck på "Avbryt reservation knappen"
   $('body').on('click', '#cancel-button', () => {
-    location.hash = '#booking'
+    //location.hash = '#booking'
     window.history.back()
   })
 }

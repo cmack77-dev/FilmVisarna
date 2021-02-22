@@ -31,18 +31,38 @@ const dynamicPages = {
     let html = `<div class="secondcolumn"><div class="moviecolumn">`
 
     html += (
-      `<div class="moviePicture"><img src="${movie.images}" id="moviePic"></div>
-      <button onclick="toggleTrailer();" id="trailer-button"  type="button">Visa trailer</button>
-      <div class="movie-information"> <div class="movie-information-label">Titel: </div> <div class="movie-information-value">${movie.title} </div></div>
-      <div class="movie-information"> <div class="movie-information-label">Handling: </div> <div class="movie-information-value">${movie.description} </div></div>
+      `<div class="moviePicture"><img src="${movie.images}" id="moviePic">
+      
+      <div class="movie-info">
+      <h3>${movie.title}</h3>
+      <div class="movie-title-info"><p>${movie.genre}</p>
+      <p class="movie-age">${movie.length} | ${movie.age}</p>
+      
+      <div class="buttons-movie-info"><button onclick="toggleTrailer();" id="trailer-button" type="button">Visa trailer</button>
+      <a href="${url1}"><button id="book-tickets" type="button">Boka biljetter</button></a>
+      </div>
+      </div>
+      </div>
+      </div>
+      <span>
+      <hr> 
+      <div class="movie-information"> <div class="movie-information-label"></div> <div class="movie-information-value">${movie.description} </div></div>
       <div class="movie-information"> <div class="movie-information-label">Regissör: </div> <div class="movie-information-value">${movie.director} </div></div>
       <div class="movie-information"> <div class="movie-information-label">Skådespelare: </div> <div class="movie-information-value">${movie.actors} </div></div>
       <div class="movie-information"> <div class="movie-information-label">Språk: </div> <div class="movie-information-value">${movie.language} </div></div>
       <div class="trailer-container"><iframe id="trailer" src="${movie.youtubeTrailers}" allowfullscreen="true" allowscriptaccess="always"></iframe>
       <button onclick="toggleTrailer();" id="close-button">&times;</button></div>
-      <a href="${url1}">bokning</a><br>
-      <button onclick="getShows();">Visa när filmen går</button><br>
-      <a href="${url2}">Hitta en föreställning</a>
+      `
+    )
+    html += `</div></div>`
+    return html
+  },
+
+  "#bokning": (readNumbers) => {
+    readNumbers()
+    let html = `<div class="secondcolumn"><form class="dropdown-form">`
+    html += (`
+    <button onclick="getShows();">Visa när filmen går</button><br>
       <div class="partTwoSecondColumn" style="display:none;">
       <div class="schema">
         <p class="schemarubrik"></p>
@@ -55,17 +75,9 @@ const dynamicPages = {
           <div class="summaryTickets"></div>
           <div class="movieScreen" align="center">
             <p>Bioduken</p>
-            </div></div></div></div>`
-    )
-    html += `</div></div>`
-    return html
-  },
+            </div></div></div></div>
 
-  "#bokning": (readNumbers) => {
-    readNumbers()
-
-    let html = `<div class="secondcolumn"><form class="dropdown-form">`
-    html += (`<div class="drop"><a>asdhkashdks</a></div>`)
+    <div class="drop"><a>asdhkashdks</a></div>`)
     html += `</form ></div > `
     return html
     async function readNumbers() {
@@ -104,28 +116,7 @@ const dynamicPages = {
     }
     
   }, 
-  
-  "#schema": async () => {
-    let html = `<div class="secondcolumn">`
-    html += (
-      `<div class="partTwoSecondColumn" style="display:none;">
-      <div class="schema">
-        <p class="schemarubrik"></p>
-        <div class="schedule"></div>
-        <div align="center" class="seatingBooking">
-          <p class="film"></p>
-          <p class="salong"></p>
-          <p class="dateTime"></p>
-          <p class="nrSeats"></p>
-          <div class="summaryTickets"></div>
-          <div class="movieScreen" align="center">
-            <p>Bioduken</p>
-            </div></div></div></div>`
-    )
-    html += `</div>`
-    
-    return html
     
   }
   
-}
+

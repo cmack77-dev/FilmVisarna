@@ -1,5 +1,5 @@
 header{
-  background-color: rgb(0, 0, 0);
+  background: linear-gradient(to left right,  rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9));
   position: relative;
   min-height: 50vh;
 }

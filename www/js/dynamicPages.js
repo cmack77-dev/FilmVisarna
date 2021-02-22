@@ -79,9 +79,10 @@ const dynamicPages = {
 
     <div class="drop"><a>asdhkashdks</a></div>`)
     html += `</form ></div > `
+    setTimeout(readNumbers, 0)
     return html
-    async function readNumbers() {
-      await $('.drop').append('<div class="ticketType"></div>')
+    function readNumbers() {
+      $('.secondcolumn form').html('<div class="ticketType"></div>')
       $('.ticketType').append(`
   <H4>Välj antal biljetter<br></H4>
   <select id=dropdown-vuxna  ><option value="" disabled selected>Vuxna</option></select>
@@ -97,21 +98,8 @@ const dynamicPages = {
 
       }
 
-      $('body').on('click', '#dropdown-vuxna', () => {
-        vuxna = $(this)
-          .val()
-        console.log(vuxna)
-        alert(vuxna)
-      })
-      $('body').on('click', '#ticket-dropdown-barn', () => {
-        barn = $(this)
-          .val()
-      })
-      $('body').on('click', '#ticket-dropdown-pensionar', () => {
-        pensionar = $(this)
-          .val()
 
-      })
+
 
     }
     

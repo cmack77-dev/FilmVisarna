@@ -2,11 +2,13 @@ let vuxna;
 let barn;
 let pensionar;
 let url1 = `#bokning?`
+
 const dynamicPages = {
   // "#start": () => `<div class="secondcolumn"></div>`,
   "#error": () => `<div class="secondcolumn">Något gick fel</div>`,
   "#about-us": () => () => $('main').load('/html-partials/about-us.html'),
   "#contact": () => () => $('main').load('/html-partials/contact.html'),
+  "#login": () => () => $('main').load('/html-partials/login.html'),
 
   "#start": async () => {
     let movies = await getMovies()
@@ -102,4 +104,4 @@ const dynamicPages = {
 
 }
 
-
+registration();

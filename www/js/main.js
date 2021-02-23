@@ -11,5 +11,6 @@ async function loadMainContent() {
   }
 }
 loadMainContent();
+registration();
 
 

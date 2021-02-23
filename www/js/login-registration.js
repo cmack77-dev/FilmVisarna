@@ -1,16 +1,16 @@
 function registration() {
   console.log('teeeest')
 
-  var name = document.getElementById("t1").value;
-  var email = document.getElementById("t2").value;
-  var uname = document.getElementById("t3").value;
-  var pwd = document.getElementById("t4").value;
-  var cpwd = document.getElementById("t5").value;
+  let name = document.getElementById("t1").value;
+  let email = document.getElementById("t2").value;
+  let uname = document.getElementById("t3").value;
+  let pwd = document.getElementById("t4").value;
+  let cpwd = document.getElementById("t5").value;
 
 
-  var pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
-  var letters = /^[A-Za-z]+$/;
-  var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  let pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
+  let letters = /^[A-Za-z]+$/;
+  let filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
   if (name == '') {
     alert('Please enter your name');

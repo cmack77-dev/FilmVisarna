@@ -24,4 +24,3 @@ $('body').on('click', '#dropdown-pensionar', function () {
 
 
 })
-registration();

@@ -102,7 +102,10 @@ const dynamicPages = {
     }
 
   }
-
 }
 
-registration();
+
+
+
+
+

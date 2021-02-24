@@ -1,53 +1,57 @@
+let sparat_namn1;
 function registration() {
-  console.log('teeeest')
+  console.log('teeeestregg')
 
   let name = document.getElementById("t1").value;
   let email = document.getElementById("t2").value;
   let uname = document.getElementById("t3").value;
   let pwd = document.getElementById("t4").value;
   let cpwd = document.getElementById("t5").value;
+  console.log(name)
+  console.log(email)
+  console.log(uname)
+  console.log(pwd)
+  console.log(cpwd)
 
-
-  let pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
+  // val av Special tecken för PW kan läggas till senare| (?=.*?[#?!@$%^&*-]) | 
+  let pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])/;
   let letters = /^[A-Za-z]+$/;
   let filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
   if (name == '') {
-    alert('Please enter your name');
+    alert('Vänligen skriv ditt namn');
   }
   else if (!letters.test(name)) {
-    alert('Name field required only alphabet characters');
+    alert('endast vanliga tecken i namn');
   }
   else if (email == '') {
-    alert('Please enter your user email id');
+    alert('skirv en E-port adress');
   }
   else if (!filter.test(email)) {
-    alert('Invalid email');
+    alert('Ogiltig E-post');
   }
   else if (uname == '') {
-    alert('Please enter the user name.');
+    alert('Ange användarnamn.');
   }
   else if (!letters.test(uname)) {
-    alert('User name field required only alphabet characters');
+    alert('Användarnamn får endast innehålla vanliga tecken');
   }
   else if (pwd == '') {
-    alert('Please enter Password');
+    alert('Vänligen skriv in lösenord');
   }
   else if (cpwd == '') {
-    alert('Enter Confirm Password');
+    alert('Bekräfta lösenord');
   }
   else if (!pwd_expression.test(pwd)) {
-    alert('Upper case, Lower case, Special character and Numeric letter are required in Password filed');
+    alert('Lösenord måste innehålla små och stora bokstäver och minst 1 siffra');
   }
   else if (pwd != cpwd) {
-    alert('Password not Matched');
+    alert('Lösenord matchar inte, var god försök igen!');
   }
   else if (document.getElementById("t5").value.length < 6) {
-    alert('Password minimum length is 6');
+    alert('Minst 6 tecken i lösenordet');
   }
-  else if (document.getElementById("t5").value.length > 12) {
-    alert('Password max length is 12');
-  }
+
   else {
     alert('Tack för din registrering!');
 
@@ -61,4 +65,6 @@ function clearFunc() {
   document.getElementById("t4").value = "";
   document.getElementById("t5").value = "";
 }
-registration();
+
+
+registration()

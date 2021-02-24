@@ -1,17 +1,16 @@
 let sparat_namn1;
 function registration() {
-  console.log('teeeestregg')
 
   let name = document.getElementById("t1").value;
   let email = document.getElementById("t2").value;
   let uname = document.getElementById("t3").value;
   let pwd = document.getElementById("t4").value;
   let cpwd = document.getElementById("t5").value;
-  console.log(name)
-  console.log(email)
-  console.log(uname)
-  console.log(pwd)
-  console.log(cpwd)
+  // console.log(name)
+  // console.log(email)
+  // console.log(uname)
+  // console.log(pwd)
+  // console.log(cpwd)
 
   // val av Special tecken för PW kan läggas till senare| (?=.*?[#?!@$%^&*-]) | 
   let pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])/;
@@ -65,6 +64,5 @@ function clearFunc() {
   document.getElementById("t4").value = "";
   document.getElementById("t5").value = "";
 }
-
 
 registration()

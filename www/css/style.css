@@ -6,6 +6,8 @@
 @import './seats-booking.css';
 @import './pictureLinks.css';
 @import './dropdown.css';
+@import './nav-dropdown.css';
+@import './login-reg-form.css';
 
 *{
     box-sizing: border-box;

@@ -2,13 +2,16 @@
 // let barn;
 // let pensionar;
 let url1 = `#bokning?`
-const dynamicPages = {
-  '#start': () => `<div class="secondcolumn"></div>`,
-  '#error': () => `<div class="secondcolumn">Något gick fel</div>`,
-  '#about-us': () => () => $('main').load('/html-partials/about-us.html'),
-  '#contact': () => () => $('main').load('/html-partials/contact.html'),
 
-  '#filmer': async () => {
+const dynamicPages = {
+  // "#start": () => `<div class="secondcolumn"></div>`,
+  "#error": () => `<div class="secondcolumn">Något gick fel</div>`,
+  "#about-us": () => () => $('main').load('/html-partials/about-us.html'),
+  "#contact": () => () => $('main').load('/html-partials/contact.html'),
+  "#login": () => () => $('main').load('/html-partials/login.html'),
+  "#registration": () => () => $('main').load('/html-partials/registration.html'),
+
+  '#start': async () => {
     let movies = await getMovies()
     let html = `<div class="secondcolumn"><div class="filmObj"><h2>Aktuella Filmer</h2>`
 
@@ -102,6 +105,14 @@ const dynamicPages = {
           `<option value="${antal}"> ${antal} </option>`
         )
       }
+
     }
+
   }
 }
+
+
+
+
+
+

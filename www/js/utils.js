@@ -1,29 +1,26 @@
-let formID
 async function getMovies() {
   return await $.getJSON('JSON-filer/filmer.json')
-
 }
 function toggleTrailer() {
   let trailer = $('.trailer-container')
   trailer.toggleClass('active')
 
-  let video = $('#trailer').attr('src');
-  $('#trailer').attr('src', "");
-  $('#trailer').attr('src', video);
+  let video = $('#trailer').attr('src')
+  $('#trailer').attr('src', '')
+  $('#trailer').attr('src', video)
 }
 
-$('body').on('click', '#dropdown-vuxna', e => {
-  vuxna = $(e.currentTarget).val()
-
+$('body').on('click', '#dropdown-vuxna', function () {
+  storage.vuxna = $(this).val()
+  // getShows()
 })
 $('body').on('click', '#dropdown-barn', function () {
-  barn = $(this).val()
-
+  storage.barn = $(this).val()
+  // getShows()
 })
 $('body').on('click', '#dropdown-pensionar', function () {
-  pensionar = $(this).val()
-
-
+  storage.pensionar = $(this).val()
+  // getShows()
 })
 $('#loginForm').on('click', '#btn', function () {
   formID = $(this).val()

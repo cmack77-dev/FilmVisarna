@@ -31,5 +31,15 @@ select{
    background-repeat: no-repeat, repeat;
    background-position: right .7em top 50%;
    background-size: .65em auto, 100%;
-  
+  width:auto;
+  }
+
+  .biljett-rubrik{
+    display:block;
+  }
+
+  .ticketnlabels{
+    display:inline-block;
+    text-align: center;
+    width:100px;
   }

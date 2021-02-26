@@ -1,32 +1,9 @@
 let storage = {
   selectedMovie: "",
   movies: [],
-
-  //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-  // visningar = [],
-  // title,
-  // insertVar = '',
-  // BS = [],
-  // salongerx,
-  // bioRum,
-  // enteredName,
-  // enteredPhone,
-  // enteredMail,
-  
-  // chosenTheater,
-  // date,
-  // time,
-  // movie,
-  // seatNumbers,
-  // seatNr,
-  
-  // salonger = [],
-  // chosenShowID,
-  // nrOfTickets = 15
-  //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-
-
+  vuxna:0,
+  pensionar:0,
+  barn:0
 }
 async function initStorage() {
   storage.movies = await getMovies();

@@ -1,26 +1,38 @@
-let sparat_namn1;
+let realname;
+let email;
+let uname;
+let pwd;
+let cpwd;
+let test = [];
+
+
+
 function registration() {
 
-  let name = document.getElementById("t1").value;
-  let email = document.getElementById("t2").value;
-  let uname = document.getElementById("t3").value;
-  let pwd = document.getElementById("t4").value;
-  let cpwd = document.getElementById("t5").value;
-  // console.log(name)
-  // console.log(email)
-  // console.log(uname)
-  // console.log(pwd)
-  // console.log(cpwd)
+  username = $('t1').val();
+  email = $('t2').val();
+  uname = $('t3').val();
+  pwd = $('t4').val();
+  cpwd = $('t5').val();
+
+
+
+  console.log(realname)
+  console.log(email)
+  console.log(uname)
+  console.log(pwd)
+  console.log(cpwd)
+  console.log(test)
 
   // val av Special tecken för PW kan läggas till senare| (?=.*?[#?!@$%^&*-]) | 
-  let pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])/;
+  let pwd_expression = A - /^(?=.*?[Z])(?=.*?[a-z])(?=.*?[0-9])/;
   let letters = /^[A-Za-z]+$/;
   let filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-
-  if (name == '') {
+  //if stats för att vägleda användare att skriva in rätt i formulär
+  if (realname == '') {
     alert('Vänligen skriv ditt namn');
   }
-  else if (!letters.test(name)) {
+  else if (!letters.test(realname)) {
     alert('endast vanliga tecken i namn');
   }
   else if (email == '') {
@@ -57,12 +69,24 @@ function registration() {
     window.location = "#start";
   }
 }
+
+//Reset knapp för att rensa förmulär
 function clearFunc() {
-  document.getElementById("t1").value = "";
-  document.getElementById("t2").value = "";
-  document.getElementById("t3").value = "";
-  document.getElementById("t4").value = "";
-  document.getElementById("t5").value = "";
+  username = $('t1').val('');
+  email = $('t2').val('');
+  uname = $('t3').val('');
+  pwd = $('t4').val('');
+  cpwd = $('t5').val('');
+
+}
+function createAcount() {
+  $('#submit').trigger('click'), function () {
+    formID = $(this).value
+    console.log(formID)
+    console.log('testcreateacount')
+  }
+
 }
 
-registration()
+
+

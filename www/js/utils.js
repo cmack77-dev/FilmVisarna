@@ -1,3 +1,4 @@
+let formID
 async function getMovies() {
   return await $.getJSON('JSON-filer/filmer.json')
 
@@ -23,4 +24,9 @@ $('body').on('click', '#dropdown-pensionar', function () {
   pensionar = $(this).val()
 
 
+})
+$('#loginForm').on('click', '#btn', function () {
+  formID = $(this).val()
+  console.log(formID)
+  console.log('formID')
 })

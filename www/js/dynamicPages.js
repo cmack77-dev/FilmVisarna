@@ -13,7 +13,7 @@ const dynamicPages = {
 
   '#start': async () => {
     let movies = await getMovies()
-    let html = `<div class="secondcolumn"><div class="filmObj"><h2>Aktuella Filmer</h2>`
+    let html = `<div class="secondcolumn"><h2>Aktuella Filmer</h2><div class="filmObj">`
 
     movies.forEach(movie => {
       let url = `#detailedView?${encodeURI(movie.title)}`
@@ -76,7 +76,7 @@ const dynamicPages = {
     html += `</form ></div > `
     setTimeout(readNumbers, 0)
     return html
-    function readNumbers () {
+    function readNumbers() {
       $('.secondcolumn form').prepend('<div class="ticketType"></div>')
       $('.ticketType').append(`
   <H4>Välj antal biljetter<br></H4>

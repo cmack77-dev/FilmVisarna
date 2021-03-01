@@ -13,7 +13,7 @@ header{
 
 .nav-links li {
   display: inline-block;
-  padding: 0px 15px;
+  padding: 0px 10px;
   background-color: rgba(116, 0, 0, 1);
   border: none;
   border-radius: 50px;
@@ -32,7 +32,7 @@ header{
 
 .nav-bar {
   position: relative;
-  bottom: 40px;
+  bottom: 36px;
   vertical-align: bottom;
   width: auto;
   background-color: transparent;
@@ -41,24 +41,28 @@ header{
   align-items: center;
   padding: 10px 10%;
 }
+.nav-bar > p {
+  display: flex;
+}
 
 .nav-links > li, a, .login{
   font-family: "Montserrat",sans-serif;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 18px;
   color: #edf0f1;
   text-decoration: none;
 }
 
- .login {
+ /* .login {
   padding: 9px 25px;
   background-color: rgba(116, 0, 0, 1);
   border: none;
+  outline: none;
   border-radius: 50px;
   cursor:pointer;
   transition: all 0.3s ease 0s;
   text-decoration: none;
-} 
+}  */
 
 .login:hover {
   background-color: rgba(116, 0, 0, 0.6);
@@ -77,4 +81,80 @@ header{
 .menu {
   text-align: center;
   padding-bottom: 10px;
+}
+.burger {
+  display: none;
+  cursor: pointer;
+}
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color:rgba(116, 0, 0, 1);
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+/* ---------------  MOBILE MENU --------------- */
+
+@media screen and (max-width: 768px) {
+  header {
+    min-height: 20vh;
+  }
+  body {
+    overflow-x: hidden;
+  }
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 30vh;
+    top: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: right;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+  .nav-links > li:hover {
+    background-color: transparent;
+  }
+  .nav-links > li {
+    opacity: 0;
+    background-color: transparent;
+    text-align: left;
+  }
+  .burger {
+    display: block;
+    align-items: right;
+    justify-content: right;
+  }
+  .login {
+    display: none;
+  }
+}
+ .nav-active {
+    transform: translateX(0%);
+  }
+@keyframes navLinkFade{
+  from{
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to{
+    opacity: 1;
+    transform:translateX(0px);
+  }
+}
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+@media screen and (max-width: 375px) {
+  header {
+    min-height: 50vh;
+  }
 }

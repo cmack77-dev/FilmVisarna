@@ -1,21 +1,21 @@
 .filmObj {
-  position: relative;
-  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   width: 100%;
 }
 #moviePictureLink{
   width: 180px;
   height: 280px;
   border-radius: 3%;
-  display: flex;
   cursor: pointer;
   margin: auto;
-  
 }
 .movieFrame {
-  margin-left: 18px;
-  display: inline-block;
-  width: 18%;
+  display:flex;
+  width:auto;
+  height: fit-content;
   border: 2px solid transparent;
   padding: 10px 10px 10px 10px;
   transition: transform .5s ease;
@@ -42,4 +42,12 @@
   text-align: center;
   font-size: 50px;
   color: #fff;
+}
+@media screen and (max-width: 768px) {
+  .filmObj {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
 }

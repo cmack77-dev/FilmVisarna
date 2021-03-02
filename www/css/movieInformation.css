@@ -7,7 +7,7 @@
 
 .movie-info > h3 {
   font-size: 30px;
-  color: #fff;
+  color: rgb(21, 158, 221);
 }
 
 .movie-info {
@@ -34,6 +34,7 @@
 .movie-title-info > p {
   margin: 0;
   padding-bottom: 4px;
+  color: rgb(21, 158, 221);
 }
 
 #close-button {
@@ -133,7 +134,7 @@
 }
 
 .movie-information {
-  color: #fff;
+  color: rgb(21, 158, 221);
   padding-bottom: 5px;
 }
 

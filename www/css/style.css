@@ -34,16 +34,17 @@ body {
   flex-direction: column;
   justify-content: space-between;
   font-family: 'Montserrat', serif;
-  background: linear-gradient(to bottom right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.85));
+  /* background: linear-gradient(to bottom right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.85)); */
+  background: linear-gradient(to right, #6c725f 20%, #4d7585 100%);
   margin:auto;
 }
 
 p {
-  color: #fff;
+  color:  #002849;
 }
 
  h2 {
-  color: #ffffff;
+  color:  #002849;
 } 
 
 .secondcolumn {
@@ -56,6 +57,8 @@ p {
   margin: auto;
   margin-bottom: 60px;
   padding: 10px 10px 60px 10px;
+  background: linear-gradient(to right, rgba(255,255,255,0.1), rgba(255,255,255,0.1));
+  border-radius: 20px;
 }
 @media screen and (max-width: 768px) {
   .secondcolumn {

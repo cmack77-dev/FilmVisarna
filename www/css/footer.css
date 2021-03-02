@@ -2,7 +2,7 @@ footer {
  font-family: verdana;
  font-size: smaller;
  width: auto;
- background: linear-gradient(to right left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9));
+ background: linear-gradient(to right bottom, rgba(255,255,255,0.1), rgba(255,255,255,0.1));
  padding: 20px 20px 20px 20px;
  font-weight: bold;
  font-style: italic;
@@ -16,7 +16,7 @@ footer > p {
 }
 
 .info-footer:hover {
- background-color: rgba(116, 0, 0, 0.5);
- border-radius: 50px;
+ background-color:  rgba(0, 40, 73, 0.5);
+ border-radius: 30px;
 
 }

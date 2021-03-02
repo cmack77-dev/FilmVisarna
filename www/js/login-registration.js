@@ -3,7 +3,7 @@ let email;
 let uname;
 let pwd;
 let cpwd;
-let test = [];
+
 
 
 
@@ -22,10 +22,10 @@ function registration() {
   console.log(uname)
   console.log(pwd)
   console.log(cpwd)
-  console.log(test)
+
 
   // val av Special tecken för PW kan läggas till senare| (?=.*?[#?!@$%^&*-]) | 
-  let pwd_expression = A - /^(?=.*?[Z])(?=.*?[a-z])(?=.*?[0-9])/;
+  let pwd_expression = /^(?=.*?[Z])(?=.*?[a-z])(?=.*?[0-9])/;
   let letters = /^[A-Za-z]+$/;
   let filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
   //if stats för att vägleda användare att skriva in rätt i formulär
@@ -59,7 +59,7 @@ function registration() {
   else if (pwd != cpwd) {
     alert('Lösenord matchar inte, var god försök igen!');
   }
-  else if (document.getElementById("t5").value.length < 6) {
+  else if ($('t5').val().length < 6) {
     alert('Minst 6 tecken i lösenordet');
   }
 
@@ -82,8 +82,6 @@ function clearFunc() {
 function createAcount() {
   $('#submit').trigger('click'), function () {
     formID = $(this).value
-    console.log(formID)
-    console.log('testcreateacount')
   }
 
 }

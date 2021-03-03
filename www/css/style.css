@@ -57,10 +57,23 @@ p {
   margin-bottom: 60px;
   padding: 10px 10px 60px 10px;
 }
+@media screen and (max-width: 1000px) {
+  .secondcolumn,.regform2,.loginForm {
+    width: 70vw;
+     margin: auto;
+  }
+  
+  
+}
 @media screen and (max-width: 768px) {
   .secondcolumn {
-    width: 50vw;
+    width: 90vw;
+    margin: auto;
   }
+  /* .regform2,.loginForm{
+    
+
+  } */
 }
 @media screen and (max-width: 375px) {
   .secondcolumn {

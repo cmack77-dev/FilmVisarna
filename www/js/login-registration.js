@@ -5,15 +5,13 @@ let pwd;
 let cpwd;
 
 
-
-
 function registration() {
 
-  username = $('t1').val();
-  email = $('t2').val();
-  uname = $('t3').val();
-  pwd = $('t4').val();
-  cpwd = $('t5').val();
+  realname = $('#t1').val();
+  email = $('#t2').val();
+  uname = $('#t3').val();
+  pwd = $('#t4').val();
+  cpwd = $('#t5').val();
 
 
 
@@ -36,7 +34,7 @@ function registration() {
     alert('endast vanliga tecken i namn');
   }
   else if (email == '') {
-    alert('skirv en E-port adress');
+    alert('skirv en E-post adress');
   }
   else if (!filter.test(email)) {
     alert('Ogiltig E-post');
@@ -59,7 +57,7 @@ function registration() {
   else if (pwd != cpwd) {
     alert('Lösenord matchar inte, var god försök igen!');
   }
-  else if ($('t5').val().length < 6) {
+  else if ($('#t5').val().length < 6) {
     alert('Minst 6 tecken i lösenordet');
   }
 
@@ -72,11 +70,11 @@ function registration() {
 
 //Reset knapp för att rensa förmulär
 function clearFunc() {
-  $('t1').val('');
-  $('t2').val('');
-  $('t3').val('');
-  $('t4').val('');
-  $('t5').val('');
+  $('#t1').val('');
+  $('#t2').val('');
+  $('#t3').val('');
+  $('#t4').val('');
+  $('#t5').val('');
 
 }
 function createAcount() {

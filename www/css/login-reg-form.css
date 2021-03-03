@@ -59,10 +59,11 @@ outline: none;
 .h-tag{
   display: border;
   font-size: 200%;
- color:#fff;
-  display:flexbox,();   /*fixa en flexbox för positionering av logintext och bild*/ 
+  color:#fff;
+  display:flex;   /*fixa en flexbox för positionering av logintext och bild*/ 
   text-align:center;
   display:inline-block;
+  width: 100%;
 }
 /* ------------loggo bild och spinn i formulär-------------*/
   .fvpic{

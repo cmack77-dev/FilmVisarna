@@ -25,10 +25,22 @@
   color:rgb(255, 255, 255);
   background: #740000;
 }
+.loginUser:hover{
+  border:1px solid#fff
+}
+.loginUser:focus{
+background:rgba(116, 0, 0, 0.6);
+}
 /* ------------reg knapp------------- */
 .registrera{
   color:rgb(255, 255, 255);
   background: #740000;
+}
+.registrera:hover{
+  border:1px solid #fff
+}
+.registrera:focus{
+  background:rgba(116, 0, 0, 0.6);
 
 }
 /* -----------input class för loggin/reg form ----------- */
@@ -97,5 +109,10 @@ outline: none;
   background: #740000;
 	
 }
-
+.btn:hover{
+  border: 1px solid #fff;
+}
+.btn:focus{
+  background:rgba(116, 0, 0, 0.6);
+}
 

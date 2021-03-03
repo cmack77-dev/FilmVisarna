@@ -1,3 +1,4 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 @import './footer.css';
@@ -20,6 +21,8 @@ h1 {
 }
 button {
   font-family: 'Montserrat', serif;
+  padding: 0;
+  border: none;
 }
 main { 
   flex-grow: 1;
@@ -53,9 +56,30 @@ p {
   margin: auto;
   margin-bottom: 60px;
   padding: 10px 10px 60px 10px;
-  /* background: linear-gradient(to right bottom, rgb(7, 7, 7), rgb(116, 0, 0)); */
 }
+@media screen and (max-width: 1000px) {
+  .secondcolumn,.regform2,.loginForm {
+    width: 70vw;
+     margin: auto;
+  }
+  
+  
+}
+@media screen and (max-width: 768px) {
+  .secondcolumn {
+    width: 90vw;
+    margin: auto;
+  }
+  /* .regform2,.loginForm{
+    
 
+  } */
+}
+@media screen and (max-width: 375px) {
+  .secondcolumn {
+    width: 100vw;
+  }
+}
 .schemarubrik {
   font-weight: bold;
 }

@@ -1,7 +1,7 @@
-async function getMovies () {
+async function getMovies() {
   return await $.getJSON('JSON-filer/filmer.json')
 }
-function toggleTrailer () {
+function toggleTrailer() {
   let trailer = $('.trailer-container')
   trailer.toggleClass('active')
 
@@ -22,3 +22,28 @@ $('body').on('click', '#dropdown-pensionar', function () {
   storage.pensionar = $(this).val()
   // getShows()
 })
+$('#loginForm').on('click', '#btn', function () {
+  formID = $(this).val()
+  console.log(formID)
+  console.log('formID')
+})
+const navSlide = () => {
+  const burger = document.querySelector('.burger');
+  const nav = document.querySelector('.nav-links');
+  const navLinks = document.querySelectorAll('.nav-links li');
+
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('nav-active');
+
+    navLinks.forEach((link, index) => {
+      if (link.style.animation) {
+        link.style.animation = '';
+      } else {
+        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 8 + 0.2}s`
+      }
+    });
+    burger.classList.toggle('toggle')
+  });
+
+}
+navSlide();

@@ -5,11 +5,12 @@ let url1 = `#bokning?`
 
 const dynamicPages = {
   // "#start": () => `<div class="secondcolumn"></div>`,
-  "#error": () => `<div class="secondcolumn">Något gick fel</div>`,
-  "#about-us": () => () => $('main').load('/html-partials/about-us.html'),
-  "#contact": () => () => $('main').load('/html-partials/contact.html'),
-  "#login": () => () => $('main').load('/html-partials/login.html'),
-  "#registration": () => () => $('main').load('/html-partials/registration.html'),
+  '#error': () => `<div class="secondcolumn">Något gick fel</div>`,
+  '#about-us': () => () => $('main').load('/html-partials/about-us.html'),
+  '#contact': () => () => $('main').load('/html-partials/contact.html'),
+  '#login': () => () => $('main').load('/html-partials/login.html'),
+  '#registration': () => () =>
+    $('main').load('/html-partials/registration.html'),
 
   '#start': async () => {
     let movies = await getMovies()
@@ -60,7 +61,7 @@ const dynamicPages = {
 
   '#bokning': readNumbers => {
     let html = `<div class="secondcolumn"><form class="dropdown-form">`
-    html += `<button onclick="getShows();">Visa när filmen går</button><br><div class="partTwoSecondColumn" style="display:none;">
+    html += `<br><div class="partTwoSecondColumn" style="display:none;">
       <div class="schema">
         <p class="schemarubrik"></p>
         <div class="schedule"></div>
@@ -91,7 +92,7 @@ const dynamicPages = {
   <div class="ticketnlabels">
   <p class="biljett-rubrik">Pensionär:</p>
   <select id=dropdown-pensionar  ><option value="0" disabled selected>-</option></select>
-  </div>
+  </div><br><br><button onclick='getShows()'>Visa när filmen går</button>
   `)
 
       for (let antal = 1; antal < 21; antal++) {
@@ -105,14 +106,6 @@ const dynamicPages = {
           `<option value="${antal}"> ${antal} </option>`
         )
       }
-
     }
-
   }
 }
-
-
-
-
-
-

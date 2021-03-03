@@ -24,6 +24,7 @@
 .loginUser{
   color:rgb(255, 255, 255);
   background: #740000;
+  border: 1px solid transparent;
 }
 .loginUser:hover{
   border:1px solid#fff
@@ -35,6 +36,7 @@ background:rgba(116, 0, 0, 0.6);
 .registrera{
   color:rgb(255, 255, 255);
   background: #740000;
+  border: 1px solid transparent;
 }
 .registrera:hover{
   border:1px solid #fff
@@ -105,8 +107,9 @@ outline: none;
   margin: 5px;
   font-size: inherit;
   font-family: "Montserrat",sans-serif;
-    color:rgb(255, 255, 255);
+  color:rgb(255, 255, 255);
   background: #740000;
+  border: 1px solid transparent;
 	
 }
 .btn:hover{

@@ -48,11 +48,11 @@
   .dropdown-content {
     position: relative;
     display: none;
-    background:rgb(53, 53, 53);
+    background: rgb(121, 121, 121);
     border-radius: 0;
   }
   .dropdown-content > a {
-    color: rgb(75, 75, 75);
+    color: rgba(255, 0, 0, 0.6);
     padding: 0;
     font-size: 14px;
     margin-top: 10px;
@@ -60,4 +60,31 @@
   .dropdown:hover .dropdown-content {
     display:block;
   }
+  .nav-active {
+    z-index: 1000;
+    background: rgb(121, 121, 121);
+  }
+}
+@media screen and (max-width: 375px) {
+  
+  .dropdown-content {
+    position: relative;
+    display: none;
+    background:rgb(121, 121, 121);
+    border-radius: 0;
+  }
+  .dropdown-content > a {
+    color: rgba(255, 0, 0, 0.6);
+    padding: 0;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  .dropdown:hover .dropdown-content {
+    display:block;
+  }
+  .nav-active {
+    z-index: 1000;
+    background:rgb(121, 121, 121);
+  }
+
 }

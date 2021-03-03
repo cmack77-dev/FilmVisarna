@@ -155,6 +155,9 @@ header{
 }
 @media screen and (max-width: 375px) {
   header {
-    min-height: 50vh;
+    min-height: 10vh;
+  }
+  .nav-Links {
+    z-index: 1000;
   }
 }

@@ -23,8 +23,8 @@ function registration() {
 
 
   // val av Special tecken för PW kan läggas till senare| (?=.*?[#?!@$%^&*-]) | 
-  let pwd_expression = /^(?=.*?[Z])(?=.*?[a-z])(?=.*?[0-9])/;
-  let letters = /^[A-Za-z]+$/;
+  let pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])/;
+  let letters = /^[A-Za-z \båäö]+$/;
   let filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
   //if stats för att vägleda användare att skriva in rätt i formulär
   if (realname == '') {

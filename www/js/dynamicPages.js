@@ -47,10 +47,10 @@ const dynamicPages = {
       </div>
       <span>
       <hr> 
-      <div class="movie-information"> <div class="movie-information-label"></div> <div class="movie-information-value">${movie.description} </div></div>
-      <div class="movie-information"> <div class="movie-information-label">Regissör: </div> <div class="movie-information-value">${movie.director} </div></div>
-      <div class="movie-information"> <div class="movie-information-label">Skådespelare: </div> <div class="movie-information-value">${movie.actors} </div></div>
-      <div class="movie-information"> <div class="movie-information-label">Språk: </div> <div class="movie-information-value">${movie.language} </div></div>
+      <div class="movie-information"> <div class="movie-information-label"></div> <div class="movie-information-value"><p>${movie.description}</p> </div></div>
+      <div class="movie-information"> <div class="movie-information-label">Regissör: </div> <div class="movie-information-value"><p>${movie.director}</p> </div></div>
+      <div class="movie-information"> <div class="movie-information-label">Skådespelare: </div> <div class="movie-information-value"><p>${movie.actors}</p> </div></div>
+      <div class="movie-information"> <div class="movie-information-label">Språk: </div> <div class="movie-information-value"><p>${movie.language}</p> </div></div>
       <div class="trailer-container"><iframe id="trailer" src="${movie.youtubeTrailers}" allowfullscreen="true" allowscriptaccess="always"></iframe>
       <button onclick="toggleTrailer();" id="close-button">&times;</button></div>
       `

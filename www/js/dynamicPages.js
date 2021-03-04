@@ -88,7 +88,7 @@ const dynamicPages = {
   <li class="ticket-number">
   <div class="ticketnlabels">
   <p class="biljett-rubrik">Vuxna</p>
-  <p class="pris">65kr/st</p>
+  <p class="pris">85kr/st</p>
   </div>
   <div class="select-tickets">
   <select id=dropdown-vuxna  ><option value="0" disabled selected>-</option></select>
@@ -108,7 +108,7 @@ const dynamicPages = {
   <li class="ticket-number">
   <div class="ticketnlabels">
   <p class="biljett-rubrik">Pensionär</p>
-  <p class="pris">65kr/st</p>
+  <p class="pris">75kr/st</p>
   </div>
   <div class="select-tickets">
   <select id=dropdown-pensionar  ><option value="0" disabled selected>-</option></select>

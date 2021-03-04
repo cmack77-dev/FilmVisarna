@@ -9,8 +9,7 @@ const dynamicPages = {
   '#about-us': () => () => $('main').load('/html-partials/about-us.html'),
   '#contact': () => () => $('main').load('/html-partials/contact.html'),
   '#login': () => () => $('main').load('/html-partials/login.html'),
-  '#registration': () => () =>
-    $('main').load('/html-partials/registration.html'),
+  '#registration': () => () => $('main').load('/html-partials/registration.html'),
 
   '#start': async () => {
     let movies = await getMovies()
@@ -77,22 +76,46 @@ const dynamicPages = {
     html += `</form ></div > `
     setTimeout(readNumbers, 0)
     return html
-    function readNumbers() {
+    async function readNumbers() {
       $('.secondcolumn form').prepend('<div class="ticketType"></div>')
       $('.ticketType').append(`
-  <H4>Välj antal biljetter<br></H4>
- <div class="ticketnlabels">
-  <p class="biljett-rubrik">Vuxna:</p>
+
+  <h4>Välj film i listan</h4>
+  <select id=movie-list><option value="0" disabled selected>-</option></select>
+  
+  <h4>Välj antal biljetter<br></h4>
+
+  <li class="ticket-number">
+  <div class="ticketnlabels">
+  <p class="biljett-rubrik">Vuxna</p>
+  <p class="pris">65kr/st</p>
+  </div>
+  <div class="select-tickets">
   <select id=dropdown-vuxna  ><option value="0" disabled selected>-</option></select>
   </div>
+  </li>
+  
+  <li class="ticket-number">
   <div class="ticketnlabels">
-  <p class="biljett-rubrik">Barn:</p>
+  <p class="biljett-rubrik">Barn</p>
+  <p class="pris">65kr/st</p>
+  </div>
+  <div class="select-tickets">
   <select id=dropdown-barn  ><option value="0" disabled selected>-</option></select>
   </div>
+  </li>
+
+  <li class="ticket-number">
   <div class="ticketnlabels">
-  <p class="biljett-rubrik">Pensionär:</p>
+  <p class="biljett-rubrik">Pensionär</p>
+  <p class="pris">65kr/st</p>
+  </div>
+  <div class="select-tickets">
   <select id=dropdown-pensionar  ><option value="0" disabled selected>-</option></select>
-  </div><br><br><button onclick='getShows()'>Visa när filmen går</button>
+  </div>
+  </li>
+
+  <br><br><button onclick='getShows()' id="show-screenings">Visa när filmen går</button>
   `)
 
       for (let antal = 1; antal < 21; antal++) {
@@ -106,6 +129,12 @@ const dynamicPages = {
           `<option value="${antal}"> ${antal} </option>`
         )
       }
+      let movies = await getMovies()
+      movies.forEach(movie => {
+        $('#movie-list').append(
+          `<option value="${movie.title}"> ${movie.title} </option>`
+        )
+      })
     }
   }
 }

@@ -25,9 +25,13 @@
   color:rgb(255, 255, 255);
   background: #740000;
   border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 12px 20px;
+
 }
 .loginUser:hover{
-  border:1px solid#fff
+  border:1px solid#fff;
+  border-radius: 5px;
 }
 .loginUser:focus{
 background:rgba(116, 0, 0, 0.6);
@@ -37,30 +41,33 @@ background:rgba(116, 0, 0, 0.6);
   color:rgb(255, 255, 255);
   background: #740000;
   border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 12px 20px;
+
 }
 .registrera:hover{
-  border:1px solid #fff
+  border:1px solid #fff;
+  border-radius: 5px;
 }
 .registrera:focus{
   background:rgba(116, 0, 0, 0.6);
 
 }
-/* -----------input class för loggin/reg form ----------- */
+/* -----------input class för loggin form ----------- */
 .tb{
- 
-	padding: 1px;  
-    font-size: 12px;  
-     
-    outline: none; 
+	padding: 10px, 20px;  
+  font-size: 12px;  
+  outline: none; 
+  border:2px solid transparent
 }
 .tb:focus{
-border: 1px solid #aaa;
-border:linear-gradient(to bottom left, rgb(255, 255, 255), rgb(64, 64, 70));
-outline: none;
+border: 2px solid rgba(116, 0, 0, 0.8);
+/* outline: none; */
 /* ----------------------------------------------------------- */
  /* h-tag klass för h2 tag finns både i login och reg html */
 }
 .h-tag{
+  left:20%;
   display: border;
   font-size: 200%;
   color:#fff;
@@ -96,19 +103,26 @@ outline: none;
   box-sizing: border-box;
   flex-direction: row;
   align-items: center;
-	padding: 1px;  
+	padding: 12px 20px;  
   font-size: 12px;  
   text-shadow: 0px 1px 0px #fff;  
   outline: none; 
   flex-grow: 1;
+  border: 2px solid transparent;
+}
+.regform2 input:focus{
+  border: 2px solid rgba(116, 0, 0, 0.8);
+
 }
 /* -----reg from knapp------- */
 .btn{
+  padding: 12px 20px;
   margin: 5px;
   font-size: inherit;
   font-family: "Montserrat",sans-serif;
   color:rgb(255, 255, 255);
   background: #740000;
+  border-radius: 5px;
   border: 1px solid transparent;
 	
 }
@@ -119,3 +133,10 @@ outline: none;
   background:rgba(116, 0, 0, 0.6);
 }
 
+.formmsg{
+  margin: -4px 0px 0px -4px;
+  padding-left: 5px;
+  /* left:-10%; */
+  color: red;
+  font-size: 15px;
+}

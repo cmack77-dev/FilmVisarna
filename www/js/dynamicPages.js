@@ -1,10 +1,6 @@
-// let vuxna;
-// let barn;
-// let pensionar;
 let url1 = `#bokning?`
 
 const dynamicPages = {
-  // "#start": () => `<div class="secondcolumn"></div>`,
   '#error': () => `<div class="secondcolumn">Något gick fel</div>`,
   '#about-us': () => () => $('main').load('/html-partials/about-us.html'),
   '#contact': () => () => $('main').load('/html-partials/contact.html'),
@@ -69,6 +65,7 @@ const dynamicPages = {
           <p class="salong"></p>
           <p class="dateTime"></p>
           <p class="nrSeats"></p>
+          <p class="nrTickets"></p>
           <div class="summaryTickets"></div>
           <div class="movieScreen" align="center">
             <p>Bioduken</p>

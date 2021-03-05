@@ -1,12 +1,20 @@
+.ticketType {
+  display: inline-flexbox;
+  justify-content: center;
+  text-align: center;
+}
+.schema {
+  text-align: center;
+}
 h4{
   font-family: "Montserrat",sans-serif;
   font-weight: 700;
   color: #aaa;
-
+  margin-bottom: 5px;
 }
 
 select{
-    display: flexbox;
+  display: flexbox;
   font-size: 16px;
   font-family: "Montserrat",sans-serif;
   font-weight: 700;
@@ -16,7 +24,7 @@ select{
   width: 20%;
   max-width: 100%;
   box-sizing: border-box;
-  margin: 0;
+  margin-bottom: 40px;
   border: 1px solid #aaa;
   box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
   border-radius: .5em;
@@ -36,10 +44,39 @@ select{
 
   .biljett-rubrik{
     display:block;
+    margin-bottom: 3px;
+    margin-top: 3px;
   }
 
   .ticketnlabels{
     display:inline-block;
-    text-align: center;
+    text-align: left;
     width:100px;
+  }
+  #show-screenings {
+    border: 1px solid #aaa;
+    border-radius: .5em;
+    margin-top: 30px;
+  }
+  .ticket-number {
+    display: flex;
+    justify-content: center;
+    list-style:none;
+    margin: 10px;
+    padding: 0;
+    text-decoration: none;
+  }
+  .pris {
+    margin: 0;
+    color: #aaa;
+    font-size: 14px;
+  }
+  #dropdown-vuxna {
+    margin:0;
+  }
+  #dropdown-barn {
+    margin: 0;
+  }
+  #dropdown-pensionar {
+    margin: 0;
   }

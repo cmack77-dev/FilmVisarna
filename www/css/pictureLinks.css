@@ -61,3 +61,12 @@
     font-size: 2vw;
   }
 }
+@media screen and (max-width: 375px) {
+  .secondcolumn > h2 {
+    font-size: 25px;
+  }
+  #moviePictureLink {
+    width: 100px;
+    height: 150px;
+  }
+}

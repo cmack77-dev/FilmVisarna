@@ -99,37 +99,22 @@
   margin-left: 10px;
 }
 
-@keyframes bounce {
-  0%, 20%, 60%, 100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  40% {
-    -webkit-transform: translateY(-20px);
-    transform: translateY(-20px);
-  }
-  80% {
-    -webkit-transform: translateY(-10px);
-    transform: translateY(-10px);
-  }
-}
-
 #trailer-button {
-  background: linear-gradient(to bottom left, rgb(255, 255, 255), rgb(64, 64, 70));
+  background: rgb(116,0,0);
   font-size: 16px;
-}
-
-#trailer-button:hover {
-  animation: bounce 1s;
+  color: #fff;
+  padding: 10px;
+  border: 1px solid #aaa;
+  letter-spacing: 1.5px;
 }
 
 #book-tickets {
-  background: linear-gradient(to bottom left, rgb(255, 255, 255), rgb(64, 64, 70));
+  background: rgb(116,0,0);
   font-size: 16px;
-}
-
-#book-tickets:hover {
-  animation: bounce 1s;
+  color: #fff;
+  padding: 10px;
+  border: 1px solid #aaa;
+  letter-spacing: 1.5px;
 }
 
 .movie-information {
@@ -166,4 +151,30 @@
     text-align: top;
     margin-top: 0;
   }
+}
+@media screen and (max-width: 375px) {
+  #book-tickets {
+    letter-spacing: 0;
+    font-size: 14px;
+  }
+  #trailer-button {
+    letter-spacing: 0;
+    font-size: 14px;
+  }
+  .movie-info > h3 {
+    font-size: 20px;
+    margin-top: 0;
+  }
+  .movie-information-value > p {
+  margin: 0;
+  size: 12px;
+}
+.movie-information-label {
+  font-size: 10px;
+}
+#trailer {
+  height: 100%;
+  width: 100%;
+}
+
 }

@@ -160,4 +160,7 @@ header{
   .nav-Links {
     z-index: 1000;
   }
+  .nav-bar {
+    bottom: 30px;
+  }
 }

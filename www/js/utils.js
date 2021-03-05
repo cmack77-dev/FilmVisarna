@@ -22,6 +22,9 @@ $('body').on('click', '#dropdown-pensionar', function () {
   storage.pensionar = $(this).val()
   // getShows()
 })
+$('body').on('click', '#movie-list', function () {
+  storage.selectedMovie = $(this).val()
+})
 $('#loginForm').on('click', '#btn', function () {
   formID = $(this).val()
   console.log(formID)

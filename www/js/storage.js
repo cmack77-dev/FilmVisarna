@@ -14,16 +14,3 @@ async function initStorage () {
   storage.movies = await getMovies()
 }
 initStorage()
-
-
-else if (uname == '') {
-    $('#t3').after('<p class="formmsg">Ange Användarnamn*</p>');
-  }
-  else if (!letters.test(uname)) {
-    replace
-    $('#t3').after('<p class="formmsg">Användarnamn får endast innehålla vanliga tecken*</p>');else if (uname == '') {
-    $('#t3').after('<p class="formmsg">Ange Användarnamn*</p>');
-  }
-  else if (!letters.test(uname)) {
-    replace
-    $('#t3').after('<p class="formmsg">Användarnamn får endast innehålla vanliga tecken*</p>');

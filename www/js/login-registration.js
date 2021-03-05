@@ -1,8 +1,9 @@
-// let realname
-// let email
-// let uname
-// let pwd
-// let cpwd
+window.location = '#start'
+// let realname;
+// let email;
+// let uname;
+// let pwd;
+// let cpwd;
 
 function registration () {
   storage.realname = $('#t1').val()
@@ -18,32 +19,39 @@ function registration () {
   console.log(storage.cpwd)
 
   // val av Special tecken för PW kan läggas till senare| (?=.*?[#?!@$%^&*-]) |
-  let pwd_expression = /^(?=.*?[Z])(?=.*?[a-z])(?=.*?[0-9])/
-  let letters = /^[A-Za-z]+$/
+  let pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])/
+  let letters = /^[A-Za-z \båäö]+$/
   let filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
   //if stats för att vägleda användare att skriva in rätt i formulär
   if (storage.realname == '') {
-    alert('Vänligen skriv ditt namn')
+    $('#t1').after('<p class="formmsg">Vänligen skriv ditt Namn*</p>')
   } else if (!letters.test(storage.realname)) {
-    alert('endast vanliga tecken i namn')
+    $('#t1').after('<p class="formmsg">endast vanliga tecken i Namn*</p>')
   } else if (storage.email == '') {
-    alert('skriv en E-post adress')
+    $('#t2').after('<p class="formmsg">skriv en E-post*</p>')
   } else if (!filter.test(storage.email)) {
-    alert('Ogiltig E-post')
+    $('#t2').after('<p class="formmsg">Ogiltig E-post*</p>')
   } else if (storage.uname == '') {
-    alert('Ange användarnamn.')
+    $('#t3').after('<p class="formmsg">Ange Användarnamn*</p>')
   } else if (!letters.test(storage.uname)) {
-    alert('Användarnamn får endast innehålla vanliga tecken')
+    $('.formmsg').replaceWith('')
+    $('#t3').after(
+      '<p class="formmsg">Användarnamn får endast innehålla vanliga tecken*</p>'
+    )
   } else if (storage.pwd == '') {
-    alert('Vänligen skriv in lösenord')
+    $('#t4').after('<p class="Vänligen skriv ett lösenord*</p>')
   } else if (storage.cpwd == '') {
-    alert('Bekräfta lösenord')
+    $('#t5').after('<p class="formmsg">Bekräfta lösenord*</p>')
   } else if (!pwd_expression.test(storage.pwd)) {
-    alert('Lösenord måste innehålla små och stora bokstäver och minst 1 siffra')
+    $('#5').after(
+      '<p class="formmsg">Lösenord måste innehålla små och stora bokstäver och minst 1 siffra*</p>'
+    )
   } else if (storage.pwd != storage.cpwd) {
-    alert('Lösenord matchar inte, var god försök igen!')
+    $('#t5').after(
+      '<p class="formmsg">Lösenord matchar inte, var god försök igen!*</p>'
+    )
   } else if ($('#t5').val().length < 6) {
-    alert('Minst 6 tecken i lösenordet')
+    $('#t1').after('<p class="formmsg">Minst 6 tecken i lösenordet</p>')
   } else {
     alert('Tack för din registrering!')
 

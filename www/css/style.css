@@ -78,6 +78,9 @@ h2 {
   .secondcolumn {
     width: 100vw;
   }
+  p {
+    font-size: 12px;
+  }
 }
 .schemarubrik {
   font-weight: bold;

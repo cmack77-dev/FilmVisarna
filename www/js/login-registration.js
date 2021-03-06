@@ -19,18 +19,23 @@ $('body').on('click', '#submitreg', function submitRegistration () {
 
   // val av Special tecken för PW kan läggas till senare| (?=.*?[#?!@$%^&*-]) |
   let pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])/
-  let letters = /^[A-Za-z \båäö]+$/
+  let letters = /^[A-Za-z0-9 \båäö]+$/
   let filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
   //if stats för att vägleda användare att skriva in rätt i formulär
   if (storage.realname == '') {
+    $('.formmsg').replaceWith('')
     $('#t1').after('<p class="formmsg">Vänligen skriv ditt Namn*</p>')
   } else if (!letters.test(storage.realname)) {
+    $('.formmsg').replaceWith('')
     $('#t1').after('<p class="formmsg">endast vanliga tecken i Namn*</p>')
   } else if (storage.email == '') {
+    $('.formmsg').replaceWith('')
     $('#t2').after('<p class="formmsg">skriv en E-post*</p>')
   } else if (!filter.test(storage.email)) {
+    $('.formmsg').replaceWith('')
     $('#t2').after('<p class="formmsg">Ogiltig E-post*</p>')
   } else if (storage.uname == '') {
+    $('.formmsg').replaceWith('')
     $('#t3').after('<p class="formmsg">Ange Användarnamn*</p>')
   } else if (!letters.test(storage.uname)) {
     $('.formmsg').replaceWith('')
@@ -38,19 +43,24 @@ $('body').on('click', '#submitreg', function submitRegistration () {
       '<p class="formmsg">Användarnamn får endast innehålla vanliga tecken*</p>'
     )
   } else if (storage.pwd == '') {
-    $('#t4').after('<p class="Vänligen skriv ett lösenord*</p>')
+    $('.formmsg').replaceWith('')
+    $('#t4').after('<p class="formmsg">Vänligen skriv ett lösenord*</p>')
   } else if (storage.cpwd == '') {
+    $('.formmsg').replaceWith('')
     $('#t5').after('<p class="formmsg">Bekräfta lösenord*</p>')
   } else if (!pwd_expression.test(storage.pwd)) {
-    $('#5').after(
+    $('.formmsg').replaceWith('')
+    $('#t4').after(
       '<p class="formmsg">Lösenord måste innehålla små och stora bokstäver och minst 1 siffra*</p>'
     )
   } else if (storage.pwd != storage.cpwd) {
+    $('.formmsg').replaceWith('')
     $('#t5').after(
       '<p class="formmsg">Lösenord matchar inte, var god försök igen!*</p>'
     )
   } else if ($('#t5').val().length < 6) {
-    $('#t1').after('<p class="formmsg">Minst 6 tecken i lösenordet</p>')
+    $('.formmsg').replaceWith('')
+    $('#t5').after('<p class="formmsg">Minst 6 tecken i lösenordet</p>')
   } else {
     alert('Tack för din registrering!')
 

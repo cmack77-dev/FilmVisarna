@@ -10,7 +10,7 @@ let storage = {
   pwd: '',
   cpwd: ''
 }
-async function initStorage () {
+async function initStorage() {
   storage.movies = await getMovies()
 }
 initStorage()

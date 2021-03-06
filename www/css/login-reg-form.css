@@ -97,6 +97,7 @@ border: 2px solid rgba(116, 0, 0, 0.8);
 }
 /* ------------input i reg form----------- */
 .regform2 input{
+  max-width: 50vw;
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -116,8 +117,10 @@ border: 2px solid rgba(116, 0, 0, 0.8);
 }
 /* -----reg from knapp------- */
 .btn{
-  padding: 12px 20px;
-  margin: 5px;
+  display: flexbox;
+  flex-direction: row;
+  padding: 12px 2px;
+  margin: 4px;
   font-size: inherit;
   font-family: "Montserrat",sans-serif;
   color:rgb(255, 255, 255);
@@ -139,4 +142,14 @@ border: 2px solid rgba(116, 0, 0, 0.8);
   /* left:-10%; */
   color: red;
   font-size: 15px;
+  max-width: 100%;
 }
+.regform2 td{
+  max-width: 21vw;
+}
+
+
+@media screen and (max-width: 768px) {
+  .regform2 td {
+    max-width: unset;
+  }

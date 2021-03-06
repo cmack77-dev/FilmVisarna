@@ -1,11 +1,10 @@
 window.location = '#start'
-// let realname;
-// let email;
-// let uname;
-// let pwd;
-// let cpwd;
 
-function registration () {
+let UserBookings
+
+$('body').on('click', '#submitreg', function submitRegistration () {
+  let goAhead = true
+
   storage.realname = $('#t1').val()
   storage.email = $('#t2').val()
   storage.uname = $('#t3').val()
@@ -56,20 +55,39 @@ function registration () {
     alert('Tack för din registrering!')
 
     window.location = '#start'
+
+    formID = $(this).value
+
+    //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    $('.secondcolumn').replaceWith(
+      `<div class="secondcolumn"><div><h3 id="userReg">Tack för din registrering!</h3><p>Vi har skickat en bekräftelse till din email-adress.<br><br>Hjärtligt välkommen <b>${storage.realname}</b>.<br><br>Vi önskar dig en riktigt dag!</p></div></div>`
+    )
+
+    let insertVarReg = ''
+
+    insertVarReg += `insert into users values ("${storage.realname}", "${storage.email}", "${storage.uname}", "${storage.pwd}");`
+
+    createUser(insertVarReg)
   }
+})
+
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+async function showBookings () {
+  UserBookings = await db.run(/*sql*/ `select * from bokningar;`) //where user===user
+  console.log(UserBookings)
+}
+
+async function createUser (insertVarReg) {
+  console.log(insertVarReg)
+  let result = await db.run(insertVarReg)
+  console.table(result)
 }
 
 //Reset knapp för att rensa förmulär
-function clearFunc () {
+$('body').on('click', '#resetreg', () => {
   $('#t1').val('')
   $('#t2').val('')
   $('#t3').val('')
   $('#t4').val('')
   $('#t5').val('')
-}
-function createAcount () {
-  $('#submit').trigger('click'),
-    function () {
-      formID = $(this).value
-    }
-}
+})

@@ -1,142 +1,142 @@
-
 /* -----------loginformulär--------- */
 .loginForm {
-  
   /* border: 2px solid rgba(255, 255, 255,0.2); */
- position: relative;
+  position: relative;
 
   width: 100%;
   height: 80%;
-  background: rgba(255, 255, 255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   /* background: #f1f1f1; */
-  padding: 5em,2.5;
+  padding: 5em, 2.5;
   border-radius: 10px;
-
 }
 /* -------------h4 under inloggning------------- */
-.loginForm h4{
-  display:flexbox,();   /*fixa en flexbox för positionering av logintext och bild*/ 
-  text-align:center;
-  display:inline-block;
-
+.loginForm h4 {
+  display: flexbox, (); /*fixa en flexbox för positionering av logintext och bild*/
+  text-align: center;
+  display: inline-block;
 }
 /* ----------loggin knapp--------- */
-.loginUser{
-  color:rgb(255, 255, 255);
+.loginUser {
+  color: rgb(255, 255, 255);
   background: #740000;
   border: 1px solid transparent;
   border-radius: 5px;
   padding: 12px 20px;
-
 }
-.loginUser:hover{
-  border:1px solid#fff;
+.loginUser:hover {
+  border: 1px solid#fff;
   border-radius: 5px;
 }
-.loginUser:focus{
-background:rgba(116, 0, 0, 0.6);
+.loginUser:focus {
+  background: rgba(116, 0, 0, 0.6);
 }
 /* ------------reg knapp------------- */
-.registrera{
-  color:rgb(255, 255, 255);
+.registrera {
+  color: rgb(255, 255, 255);
   background: #740000;
   border: 1px solid transparent;
   border-radius: 5px;
   padding: 12px 20px;
-
 }
-.registrera:hover{
-  border:1px solid #fff;
+.registrera:hover {
+  border: 1px solid #fff;
   border-radius: 5px;
 }
-.registrera:focus{
-  background:rgba(116, 0, 0, 0.6);
-
+.registrera:focus {
+  background: rgba(116, 0, 0, 0.6);
 }
 /* -----------input class för loggin form ----------- */
-.tb{
-	padding: 10px, 20px;  
-  font-size: 12px;  
-  outline: none; 
-  border:2px solid transparent
+.tb {
+  padding: 10px, 20px;
+  font-size: 12px;
+  outline: none;
+  border: 2px solid transparent;
 }
-.tb:focus{
-border: 2px solid rgba(116, 0, 0, 0.8);
-/* outline: none; */
-/* ----------------------------------------------------------- */
- /* h-tag klass för h2 tag finns både i login och reg html */
+.tb:focus {
+  border: 2px solid rgba(116, 0, 0, 0.8);
+  /* outline: none; */
+  /* ----------------------------------------------------------- */
+  /* h-tag klass för h2 tag finns både i login och reg html */
 }
-.h-tag{
-  left:20%;
+.h-tag {
+  left: 20%;
   display: border;
   font-size: 200%;
-  color:#fff;
-  display:flex;   /*fixa en flexbox för positionering av logintext och bild*/ 
-  text-align:center;
-  display:inline-block;
+  color: #fff;
+  display: flex; /*fixa en flexbox för positionering av logintext och bild*/
+  text-align: center;
+  display: inline-block;
   width: 100%;
 }
 /* ------------loggo bild och spinn i formulär-------------*/
-  .fvpic{
-    position: right 70%;
-    width: 15%;
-    height: 15%;
-    animation:spin 4s linear infinite;
+.fvpic {
+  position: right 70%;
+  width: 15%;
+  height: 15%;
+  animation: spin 4s linear infinite;
 }
 
-@keyframes spin { 100% { -webkit-transform: rotateY(360deg); transform:rotateY(360deg); } }
+@keyframes spin {
+  100% {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
 
 /*----------------reg formulär-------------- */
-.regform2{
-   position: relative;
+.regform2 {
+  position: relative;
   height: 80%;
-  background: rgba(255, 255, 255,0.1);
-  padding: 80px,40px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 80px, 40px;
   border-radius: 10px;
   flex-grow: 1;
 }
 /* ------------input i reg form----------- */
-.regform2 input{
+.regform2 input {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
   flex-direction: row;
   align-items: center;
-	padding: 12px 20px;  
-  font-size: 12px;  
-  text-shadow: 0px 1px 0px #fff;  
-  outline: none; 
+  padding: 12px 20px;
+  font-size: 12px;
+  text-shadow: 0px 1px 0px #fff;
+  outline: none;
   flex-grow: 1;
   border: 2px solid transparent;
 }
-.regform2 input:focus{
+.regform2 input:focus {
   border: 2px solid rgba(116, 0, 0, 0.8);
-
 }
 /* -----reg from knapp------- */
-.btn{
+.btn {
   padding: 12px 20px;
   margin: 5px;
   font-size: inherit;
-  font-family: "Montserrat",sans-serif;
-  color:rgb(255, 255, 255);
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(255, 255, 255);
   background: #740000;
   border-radius: 5px;
   border: 1px solid transparent;
-	
 }
-.btn:hover{
+.btn:hover {
   border: 1px solid #fff;
 }
-.btn:focus{
-  background:rgba(116, 0, 0, 0.6);
+.btn:focus {
+  background: rgba(116, 0, 0, 0.6);
 }
 
-.formmsg{
+.formmsg {
   margin: -4px 0px 0px -4px;
   padding-left: 5px;
   /* left:-10%; */
   color: red;
   font-size: 15px;
+}
+
+#userReg {
+  color: white;
 }

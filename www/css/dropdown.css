@@ -34,7 +34,7 @@ select{
   background-color: rgb(110, 100, 100);
  -webkit-appearance: none;
    -moz-appearance: none;
-   appearance: none;       /* Remove default arrow */
+   appearance: none;    
    background-image:url('/images/down-chevron.png'), linear-gradient(to bottom,rgba(116, 0, 0, 1),rgba(116, 0, 0, 1));
    background-repeat: no-repeat, repeat;
    background-position: right .7em top 50%;

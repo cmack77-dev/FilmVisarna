@@ -1,5 +1,3 @@
-
-
 let UserBookings
 
 $('body').on('click', '#submitreg', function submitRegistration() {
@@ -62,13 +60,9 @@ $('body').on('click', '#submitreg', function submitRegistration() {
     $('.formmsg').replaceWith('')
     $('#t5').after('<p class="formmsg">Minst 6 tecken i lösenordet</p>')
   } else {
-
-    window.location = '#start'
-
     formID = $(this).value
-
     $('.secondcolumn').replaceWith(
-      `<div class="secondcolumn"><div><h3 id="userReg">Tack för din registrering!</h3><p>Vi har skickat en bekräftelse till din email-adress.<br><br>Hjärtligt välkommen <b>${storage.realname}</b>.<br><br>Vi önskar dig en riktigt dag!</p></div></div>`
+      `<div class="secondcolumn"><div class="register"><h3 id="userReg">Tack för din registrering!</h3><p>Vi har skickat en bekräftelse till din email-adress.<br><br>Hjärtligt välkommen <b>${storage.realname}</b>.<br><br>Vi önskar dig en riktigt dag!</p></div></div>`
     )
 
     let insertVarReg = ''

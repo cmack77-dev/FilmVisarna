@@ -28,6 +28,9 @@
 .loginUser:focus {
   background: rgba(116, 0, 0, 0.6);
 }
+.register{
+  text-align: center;
+}
 
 .registrera {
   color: rgb(255, 255, 255);

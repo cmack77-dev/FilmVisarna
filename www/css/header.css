@@ -82,7 +82,6 @@ header{
   margin: 5px;
   transition: all 0.3s ease;
 }
-/* ---------------  MOBILE MENU --------------- */
 
 @media screen and (max-width: 768px) {
   header {

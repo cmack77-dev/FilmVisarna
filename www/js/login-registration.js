@@ -62,13 +62,11 @@ $('body').on('click', '#submitreg', function submitRegistration() {
     $('.formmsg').replaceWith('')
     $('#t5').after('<p class="formmsg">Minst 6 tecken i lösenordet</p>')
   } else {
-    alert('Tack för din registrering!')
 
     window.location = '#start'
 
     formID = $(this).value
 
-    //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     $('.secondcolumn').replaceWith(
       `<div class="secondcolumn"><div><h3 id="userReg">Tack för din registrering!</h3><p>Vi har skickat en bekräftelse till din email-adress.<br><br>Hjärtligt välkommen <b>${storage.realname}</b>.<br><br>Vi önskar dig en riktigt dag!</p></div></div>`
     )
@@ -81,9 +79,8 @@ $('body').on('click', '#submitreg', function submitRegistration() {
   }
 })
 
-//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 async function showBookings() {
-  UserBookings = await db.run(/*sql*/ `select * from bokningar;`) //where user===user
+  UserBookings = await db.run(/*sql*/ `select * from bokningar;`)
   console.log(UserBookings)
 }
 
@@ -105,7 +102,6 @@ $('body').on('click', '.loginUser', async () => {
   for (let userName of dbname) {
     if (loginName === userName.uname && loginPW === userName.password) {
       window.location = '#mypages'
-      $('.login-page').replaceWith('<li><a href="#mypages">Mina sidor</a></li>')
     }
     else if (loginName != userName.uname) {
       $('.formmsg').replaceWith('')

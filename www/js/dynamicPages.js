@@ -137,11 +137,13 @@ const dynamicPages = {
   },
   '#mypages': async () => {
 
-    let html = `<div class="secondcolumn"><div class="h-tag"><h4>Aktuella bokningar
-            <img src="images/FVwhite.png" alt="FV" class="fvpic"></h4>
-            </div>`
+    let html = `<div class="secondcolumn"><div class="mypage-head"><h4>Aktuella bokningar
+            <img src="images/FVwhite.png" alt="FV" class="fvpic"></h4></div>
+            <div class="aktuellaBokningar">`
+
     let loginName = $('#t3').val()
     let loginPW = $('#t4').val()
+
     let dbname = await db.run(
     /*SQL*/`
     SELECT * FROM users`
@@ -149,8 +151,6 @@ const dynamicPages = {
 
     for (let userName of dbname) {
       if (loginName === userName.uname && loginPW === userName.password) {
-
-        // window.location = '#mypages'
 
         let dbmovie = await db.run(/*SQL*/`
         SELECT *
@@ -160,7 +160,7 @@ const dynamicPages = {
           if (bokningar.email === userName.uemail) {
 
             html += `
-            <div class="aktuellaBokningar"><p>Du har bokat filmen ${bokningar.movie} på ${bokningar.theater} med plats ${bokningar.seatnr} datum ${bokningar.date} klockan ${bokningar.time} </p>`
+            <p>Du har bokat filmen ${bokningar.movie} på ${bokningar.theater} med plats ${bokningar.seatnr} datum ${bokningar.date} klockan ${bokningar.time} <button id="cancel-booking">Avboka biljett</button></p>`
           }
         }
         html += `</div</div>`

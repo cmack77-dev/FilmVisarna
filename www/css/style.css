@@ -11,6 +11,7 @@
 @import './login-reg-form.css';
 @import './contact.css';
 @import './about-us.css';
+@import './mypages.css';
 
 * {
   box-sizing: border-box;

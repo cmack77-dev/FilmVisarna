@@ -117,7 +117,6 @@ $('body').on('click', '.loginUser', async () => {
     }
   }
 })
-
 //Reset knapp för att rensa förmulär
 $('body').on('click', '#resetreg', () => {
   $('#t1').val('')

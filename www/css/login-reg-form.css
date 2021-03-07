@@ -112,7 +112,7 @@
 .btn {
   display: flexbox;
   flex-direction: row;
-  padding: 12px 2px;
+  padding: 12px 20px;
   margin: 4px;
   font-size: inherit;
   font-family: 'Montserrat', sans-serif;

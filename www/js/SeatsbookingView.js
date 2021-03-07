@@ -267,7 +267,7 @@ async function bookSeats() {
 
     $(
       '.secondcolumn'
-    ).replaceWith(`<body><div class="secondcolumn"><div class="bookingField"><div class="bookingText"><h3 id="titleName">Bokning!</div><p>Nu är det dags att boka biljetter till filmen <b>${title}</b> <br><br>Avser föreställningen <b>${date}</b> kl <b>${time}</b> i <b>${chosenTheater}</b><br><br>Du har valt följande platser: <b>${seatNumbers}</b> <br><br>Totalsumma: <b>${totalSum}</b> <br><br></p>
+    ).replaceWith(`<body><div class="secondcolumn"><div class="bookingField"><div class="bookingText"><h3 id="titleName">Bokning!</div><p>Nu är det dags att boka biljetter till filmen <b>${title}</b> <br><br>Avser föreställningen <b>${date}</b> kl <b>${time}</b> i <b>${chosenTheater}</b><br><br>Du har valt följande platser: <b>${seatNumbers}</b> <br><br>Totalsumma: <b>${totalSum}kr</b> <br><br></p>
       <div id="containerForm">
       <form class="booking-form" action="">
       <label for="namn">Fullständigt namn:</label>

@@ -1,5 +1,3 @@
-window.location = '#start'
-
 let UserBookings
 
 $('body').on('click', '#submitreg', function submitRegistration() {
@@ -11,11 +9,6 @@ $('body').on('click', '#submitreg', function submitRegistration() {
   storage.pwd = $('#t4').val()
   storage.cpwd = $('#t5').val()
 
-  console.log(storage.realname)
-  console.log(storage.email)
-  console.log(storage.uname)
-  console.log(storage.pwd)
-  console.log(storage.cpwd)
 
   // val av Special tecken för PW kan läggas till senare| (?=.*?[#?!@$%^&*-]) |
   let pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])/
@@ -62,14 +55,9 @@ $('body').on('click', '#submitreg', function submitRegistration() {
     $('.formmsg').replaceWith('')
     $('#t5').after('<p class="formmsg">Minst 6 tecken i lösenordet</p>')
   } else {
-    alert('Tack för din registrering!')
-
-    window.location = '#start'
-
     formID = $(this).value
-
     $('.secondcolumn').replaceWith(
-      `<div class="secondcolumn"><div><h3 id="userReg">Tack för din registrering!</h3><p>Vi har skickat en bekräftelse till din email-adress.<br><br>Hjärtligt välkommen <b>${storage.realname}</b>.<br><br>Vi önskar dig en riktigt dag!</p></div></div>`
+      `<div class="secondcolumn"><div class="register"><h3 id="userReg">Tack för din registrering!</h3><p>Vi har skickat en bekräftelse till din email-adress.<br><br>Hjärtligt välkommen <b>${storage.realname}</b>.<br><br>Vi önskar dig en riktigt dag!</p></div></div>`
     )
 
     let insertVarReg = ''
@@ -80,7 +68,7 @@ $('body').on('click', '#submitreg', function submitRegistration() {
   }
 })
 async function showBookings() {
-  UserBookings = await db.run(/*sql*/ `select * from bokningar;`) //where user===user
+  UserBookings = await db.run(/*sql*/ `select * from bokningar;`)
   console.log(UserBookings)
 }
 
@@ -92,32 +80,16 @@ async function createUser(insertVarReg) {
 
 $('body').on('click', '.loginUser', async () => {
 
-  let html = `<div class="secondcolumn"><div class="aktuellaBokningar">`
   let loginName = $('#t3').val()
   let loginPW = $('#t4').val()
   let dbname = await db.run(
-    /*SQL*/`
-    SELECT * FROM users`
+     /*SQL*/`
+     SELECT * FROM users`
   );
 
   for (let userName of dbname) {
     if (loginName === userName.uname && loginPW === userName.password) {
       window.location = '#mypages'
-
-      let dbmovie = await db.run(/*SQL*/`
-      SELECT *
-      FROM bokningar`);
-
-      for (let bokningar of dbmovie) {
-        if (bokningar.email === userName.uemail) {
-
-          html += `<p>Du har bokat film: ${bokningar.movie} på ${bokningar.theater} med platserna ${bokningar.seatnr} datum ${bokningar.date} klockan ${bokningar.time} </p>`
-          console.log(bokningar.movie)
-        }
-      }
-      html += `</div></div>`
-      console.log('testar om html nås' + html)
-      return html;
     }
     else if (loginName != userName.uname) {
       $('.formmsg').replaceWith('')
@@ -129,19 +101,6 @@ $('body').on('click', '.loginUser', async () => {
     }
   }
 })
-// async function bokningarLogin() {
-//   let dbmovie = await db.run(
-//     /*SQL*/`
-//     SELECT *
-//     FROM bokningar`);
-//   for (let bokningar of dbmovie) {
-//     console.log(bokningar.visningsid)
-//     $('.aktuellaBokningar').replaceWith(`
-//     <p>Du har bokat film: ${bokningar.movie} på ${bokningar.theater} med platserna ${bokningar.seatnr} datum ${bokningar.date} klockan ${bokningar.time}`)
-//   }
-// }
-
-
 //Reset knapp för att rensa förmulär
 $('body').on('click', '#resetreg', () => {
   $('#t1').val('')

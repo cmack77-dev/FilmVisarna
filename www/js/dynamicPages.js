@@ -133,6 +133,7 @@ const dynamicPages = {
           `<option value="${movie.title}"> ${movie.title} </option>`
         )
       })
+      $('#movie-list').val(storage.selectedMovie);
     }
   }
 }

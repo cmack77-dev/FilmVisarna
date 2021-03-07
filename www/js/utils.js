@@ -12,15 +12,12 @@ function toggleTrailer() {
 
 $('body').on('click', '#dropdown-vuxna', function () {
   storage.vuxna = $(this).val()
-  // getShows()
 })
 $('body').on('click', '#dropdown-barn', function () {
   storage.barn = $(this).val()
-  // getShows()
 })
 $('body').on('click', '#dropdown-pensionar', function () {
   storage.pensionar = $(this).val()
-  // getShows()
 })
 $('body').on('click', '#movie-list', function () {
   storage.selectedMovie = $(this).val()

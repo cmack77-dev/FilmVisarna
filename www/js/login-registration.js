@@ -68,7 +68,6 @@ $('body').on('click', '#submitreg', function submitRegistration() {
 
     formID = $(this).value
 
-    //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     $('.secondcolumn').replaceWith(
       `<div class="secondcolumn"><div><h3 id="userReg">Tack för din registrering!</h3><p>Vi har skickat en bekräftelse till din email-adress.<br><br>Hjärtligt välkommen <b>${storage.realname}</b>.<br><br>Vi önskar dig en riktigt dag!</p></div></div>`
     )
@@ -80,8 +79,6 @@ $('body').on('click', '#submitreg', function submitRegistration() {
     createUser(insertVarReg)
   }
 })
-
-//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 async function showBookings() {
   UserBookings = await db.run(/*sql*/ `select * from bokningar;`) //where user===user
   console.log(UserBookings)

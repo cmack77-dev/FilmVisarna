@@ -286,7 +286,6 @@ async function bookSeats() {
   //FUNKTION SOM SKICKAR MED chosenseats...
   // Kod som implementeras vid tryck på "Boka biljetter knappen"
   $('body').on('click', '#booking-button', async () => {
-    console.log('en gång')
     enteredName = $('#namn').val()
     enteredPhone = $('#phone').val()
     enteredMail = $('#email').val()
@@ -323,7 +322,10 @@ async function readInSeats() {
 }
 
 async function book() {
-  console.log(insertVar)
   let result = await db.run(insertVar)
-  console.table(result)
 }
+
+
+
+      
+    

@@ -134,5 +134,38 @@ const dynamicPages = {
         )
       })
     }
+  },
+  '#mypages': async () => {
+
+    let html = `<div class="secondcolumn"><div class="h-tag"><h4>Aktuella bokningar
+            <img src="images/FVwhite.png" alt="FV" class="fvpic"></h4>
+            </div>`
+    let loginName = $('#t3').val()
+    let loginPW = $('#t4').val()
+    let dbname = await db.run(
+    /*SQL*/`
+    SELECT * FROM users`
+    );
+
+    for (let userName of dbname) {
+      if (loginName === userName.uname && loginPW === userName.password) {
+
+        // window.location = '#mypages'
+
+        let dbmovie = await db.run(/*SQL*/`
+        SELECT *
+        FROM bokningar`);
+
+        for (let bokningar of dbmovie) {
+          if (bokningar.email === userName.uemail) {
+
+            html += `
+            <div class="aktuellaBokningar"><p>Du har bokat filmen ${bokningar.movie} på ${bokningar.theater} med plats ${bokningar.seatnr} datum ${bokningar.date} klockan ${bokningar.time} </p>`
+          }
+        }
+        html += `</div</div>`
+        return html;
+      }
+    }
   }
 }

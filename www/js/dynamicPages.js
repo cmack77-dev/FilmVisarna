@@ -6,6 +6,7 @@ const dynamicPages = {
   '#contact': () => () => $('main').load('/html-partials/contact.html'),
   '#login': () => () => $('main').load('/html-partials/login.html'),
   '#registration': () => () => $('main').load('/html-partials/registration.html'),
+  '#mypages': () => () => $('main').load('/html-partials/mypages.html'),
 
   '#start': async () => {
     let movies = await getMovies()

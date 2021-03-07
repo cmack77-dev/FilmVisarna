@@ -2,7 +2,7 @@ window.location = '#start'
 
 let UserBookings
 
-$('body').on('click', '#submitreg', function submitRegistration () {
+$('body').on('click', '#submitreg', function submitRegistration() {
   let goAhead = true
 
   storage.realname = $('#t1').val()
@@ -82,16 +82,68 @@ $('body').on('click', '#submitreg', function submitRegistration () {
 })
 
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-async function showBookings () {
+async function showBookings() {
   UserBookings = await db.run(/*sql*/ `select * from bokningar;`) //where user===user
   console.log(UserBookings)
 }
 
-async function createUser (insertVarReg) {
+async function createUser(insertVarReg) {
   console.log(insertVarReg)
   let result = await db.run(insertVarReg)
   console.table(result)
 }
+
+$('body').on('click', '.loginUser', async () => {
+
+  let html = `<div class="secondcolumn"><div class="aktuellaBokningar">`
+  let loginName = $('#t3').val()
+  let loginPW = $('#t4').val()
+  let dbname = await db.run(
+    /*SQL*/`
+    SELECT * FROM users`
+  );
+
+  for (let userName of dbname) {
+    if (loginName === userName.uname && loginPW === userName.password) {
+      window.location = '#mypages'
+
+      let dbmovie = await db.run(/*SQL*/`
+      SELECT *
+      FROM bokningar`);
+
+      for (let bokningar of dbmovie) {
+        if (bokningar.email === userName.uemail) {
+
+          html += `<p>Du har bokat film: ${bokningar.movie} på ${bokningar.theater} med platserna ${bokningar.seatnr} datum ${bokningar.date} klockan ${bokningar.time} </p>`
+          console.log(bokningar.movie)
+        }
+      }
+      html += `</div></div>`
+      console.log('testar om html nås' + html)
+      return html;
+    }
+    else if (loginName != userName.uname) {
+      $('.formmsg').replaceWith('')
+      $('#t3').after('<p class="formmsg">Felaktigt användarnamn</p>')
+    }
+    else if (loginPW != userName.password) {
+      $('.formmsg').replaceWith('')
+      $('#t4').after('<p class="formmsg">Felaktigt lösenord</p>')
+    }
+  }
+})
+// async function bokningarLogin() {
+//   let dbmovie = await db.run(
+//     /*SQL*/`
+//     SELECT *
+//     FROM bokningar`);
+//   for (let bokningar of dbmovie) {
+//     console.log(bokningar.visningsid)
+//     $('.aktuellaBokningar').replaceWith(`
+//     <p>Du har bokat film: ${bokningar.movie} på ${bokningar.theater} med platserna ${bokningar.seatnr} datum ${bokningar.date} klockan ${bokningar.time}`)
+//   }
+// }
+
 
 //Reset knapp för att rensa förmulär
 $('body').on('click', '#resetreg', () => {

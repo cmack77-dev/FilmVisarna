@@ -1,4 +1,3 @@
-//temporära hårdkodade varaibler
 let visningar = []
 let title
 let insertVar = ''
@@ -19,7 +18,8 @@ let seatNr
 
 let salonger = []
 let chosenShowID
-let nrOfTickets = 15
+let nrOfTickets = 0
+let totalSum = 0
 
 $('.seatingBooking').hide()
 $('.partTwoSecondColumn').hide()
@@ -27,23 +27,35 @@ $('.movieScreen').hide()
 
 //Hämta och presentera tider för vald film
 //Hämta JSON
-async function getShows (nameOfFilm) {
+async function getShows() {
   visningar = await $.getJSON('JSON-filer/visningar.json')
-  title = nameOfFilm
-  $('.seatingBooking').hide()
-  await readInSeats()
+  title = storage.selectedMovie
+  nrOfTickets =
+    parseInt(storage.vuxna) +
+    parseInt(storage.pensionar) +
+    parseInt(storage.barn);
+
+  let vuxenPris = storage.vuxna * 85;
+  let pensionarPris = storage.pensionar * 75;
+  let barnPris = storage.barn * 65;
+  totalSum = vuxenPris + pensionarPris + barnPris;
+
+  // $('.seatingBooking').hide()
+  readInSeats()
   showSchedule()
 }
 
-function showSchedule () {
-  
-  $('.scheduleObj').html('')
+async function showSchedule() {
+  // $('.scheduleObj').html('')
+  $('.seatingBooking').hide()
+
   $('.partTwoSecondColumn').show()
   $('.schedule').show()
   $('.schedule').html('')
   let movie = title
-  
-  let $scheduleWindow = $(
+  let $scheduleWindow = ''
+
+  $scheduleWindow = $(
     '<select class="scheduleObj"><option value="" disabled selected>Välj en föreställning</option></select>'
   )
   let counterVisningar = 0
@@ -54,42 +66,40 @@ function showSchedule () {
       if (visning[key] === movie) {
         let busySeats = 0
 
-        async function readJson4 (salong) {
-          bioRum=salong
-           salongerx = await $.getJSON('JSON-filer/salonger.json')
-           await total(salongerx, bioRum)
+        async function readJson4(salong) {
+          bioRum = salong
+          salongerx = await $.getJSON('JSON-filer/salonger.json')
+          await total(salongerx, bioRum)
         }
         readJson4(visning['biograf'])
 
-        async function total (salongerx, bioRum) {
+        async function total(salongerx, bioRum) {
           for (salongx of salongerx) {
             if (salongx.name === bioRum) {
               totalSeats = salongx.seats
-            
             }
           }
-        
+
           for (let show of BS) {
             if (show.visningsid === visningsID) {
-             
               busySeats++
             }
           }
-        
+
           let SeatsLeft = totalSeats - busySeats
-        
+
           $('.scheduleObj').append(
             '<option value="S' +
-              visningsID +
-              '"><span>' +
-              visning['date'] +
-              ', kl ' +
-              visning['time'] +
-              '<br><text>' +
-              visning['biograf'] +
-              ' - Platser kvar: ' +
-              SeatsLeft +
-              '</text></span></option>'
+            visningsID +
+            '"><span>' +
+            visning['date'] +
+            ', kl ' +
+            visning['time'] +
+            '<br><text>' +
+            visning['biograf'] +
+            ' - Platser kvar: ' +
+            SeatsLeft +
+            '</text></span></option>'
           )
         }
       }
@@ -97,11 +107,12 @@ function showSchedule () {
   }
 
   $('.schedule').append($scheduleWindow)
+
   $('.schemarubrik').empty()
   $('.schemarubrik').append('Visningar för ' + movie)
 
-  $('body').on('change', 'select', async function () {
-    console.log($(this))
+  $('body').on('change', '.scheduleObj', async function () {
+    // console.log($(this))
     let x = $(this)
       .val()
       .substring(1, 4)
@@ -110,8 +121,8 @@ function showSchedule () {
     chosenTheater = visningar[x].biograf
     date = visningar[x].date
     time = visningar[x].time
-
     $('.seatingBooking').show()
+    $('.ticketType').hide()
 
     //Tilldela id för vald visning
     chosenShowID = x
@@ -120,17 +131,16 @@ function showSchedule () {
   })
 }
 
-async function bookSeats () {
+async function bookSeats() {
   //Hämta JSON
-  async function readJson3 () {
+  async function readJson3() {
     salonger = await $.getJSON('JSON-filer/salonger.json')
     await showSeats()
   }
   await readJson3()
 
   //Rita upp platser grafiskt
-  async function showSeats () {
-    
+  async function showSeats() {
     let SeatNr
     let rowCounter = 0
     $('.obj').remove()
@@ -146,10 +156,10 @@ async function bookSeats () {
             SeatNr = rowCounter + 1
             $bookingWindow.append(
               '<a class ="a-hover"><div class="seats" id="' +
-                SeatNr +
-                '"><span>' +
-                SeatNr +
-                ' </span></div></a>'
+              SeatNr +
+              '"><span>' +
+              SeatNr +
+              ' </span></div></a>'
             )
             rowCounter++
             if (x + 1 === nrOfSeats) {
@@ -179,6 +189,7 @@ async function bookSeats () {
         $('.film').append(movie)
         $('.salong').append(chosenTheater + ', (' + SeatNr + ' platser totalt)')
         $('.dateTime').append(date + ', kl ' + time)
+        $('.nrTickets').append('Vänligen välj ' + nrOfTickets + ' platser')
       }
     }
     //Läs in upptagna platser
@@ -186,19 +197,17 @@ async function bookSeats () {
   }
 
   //FUNKTION FÖR ATT LÄSA IN UPPTAGNA PLATSER
-  async function readInAndDisableReservedSeats (chosenShowID, SeatNr) {
+  async function readInAndDisableReservedSeats(chosenShowID, SeatNr) {
     let busySeats = 0
     let totalSeats = parseInt(SeatNr, 10)
     let arrOfAlreadyBookedSeats = []
 
     for (let show of BS) {
-     
-
       if (show.visningsid == chosenShowID) {
         arrOfAlreadyBookedSeats.push(show.seatnr)
       }
     }
-    
+
     for (let seatBusy of arrOfAlreadyBookedSeats) {
       busySeats++
       let seatID = '#' + seatBusy
@@ -255,19 +264,20 @@ async function bookSeats () {
     }
 
     // ----------------------- boknings-formulär --------------------------------
-  
+
     $(
-      '.middleColumnChange'
-    ).replaceWith(`<div class="bookingField"><div class="bookingText"><h3 id="titleName">Bokning!</div><p>Nu är det dags att boka biljetter till filmen <b>${title}</b> <br><br>Avser föreställningen <b>${date}</b> kl <b>${time}</b> i <b>${chosenTheater}</b><br><br>Du har valt följande platser: <b>${seatNumbers}</b> <br><br></p>
+      '.secondcolumn'
+    ).replaceWith(`<body><div class="secondcolumn"><div class="bookingField"><div class="bookingText"><h3 id="titleName">Bokning!</div><p>Nu är det dags att boka biljetter till filmen <b>${title}</b> <br><br>Avser föreställningen <b>${date}</b> kl <b>${time}</b> i <b>${chosenTheater}</b><br><br>Du har valt följande platser: <b>${seatNumbers}</b> <br><br>Totalsumma: <b>${totalSum}kr</b> <br><br></p>
       <div id="containerForm">
-      <form action="">
+      <form class="booking-form" action="">
       <label for="namn">Fullständigt namn:</label>
       <input type="text" id="namn" name="namn" placeholder="namn" required> <br><br> 
       <label for="email">E-postadress:</label>
       <input type="email" id="email" name="email" placeholder="e-postadress" required> <br><br> 
       <label for="telefonnummer">Telefonnummer:</label>
-      <input type="int" id="phone" name="phone" placeholder="telefonnummer" required></div></div><button id="cancel-button" type="button">Avbryt reservation</button><button id="booking-button" type="button">Boka biljetter</button>`)
-
+      <input type="int" id="phone" name="phone" placeholder="telefonnummer" required></div></div><div align="center">
+      </form>
+      <button id="cancel-button" type="button">Avbryt reservation</button><button id="booking-button" type="button">Boka biljetter</button></div></div></body>`)
 
     $('.partTwoSecondColumn').hide()
     $('.firstcolumn').hide()
@@ -279,8 +289,8 @@ async function bookSeats () {
     enteredName = $('#namn').val()
     enteredPhone = $('#phone').val()
     enteredMail = $('#email').val()
-    $('.moviecolumn').replaceWith(
-      `<div><h3 id="titleName">Tack för din bokning!</h3><p>Vi har skickat en bekräftelse till din email-adress.<br><br>Hjärtligt välkommen <b>${enteredName}</b> att se <b>${title}</b> den <b>${date}</b> klockan <b>${time}</b> i <b>${chosenTheater}</b>.<br><br>Vi önskar dig en riktigt trevlig bio upplevelse!</p></div><button id="cancel-button" type="button">Tillbaka</button>`
+    $('.secondcolumn').replaceWith(
+      `<div class="secondcolumn"><div class="booking-end"><h3 id="titleName">Tack för din bokning!</h3><p>Vi har skickat en bekräftelse till din email-adress.<br><br>Hjärtligt välkommen <b>${enteredName}</b> att se <b>${title}</b> den <b>${date}</b> klockan <b>${time}</b> i <b>${chosenTheater}</b>.<br><br>Vi önskar dig en riktigt trevlig bio upplevelse!</p> <button id="cancel-button" type="button">Tillbaka</button></div></div>`
     )
 
     let x = 0
@@ -295,24 +305,27 @@ async function bookSeats () {
     })
     insertVar += ';'
     x = 0
-
+    seatNumbers = []
     await book()
   })
 
   // Kod som implementeras vid tryck på "Avbryt reservation knappen"
   $('body').on('click', '#cancel-button', () => {
-    location.hash = '#booking'
+    //location.hash = '#booking'
     window.history.back()
   })
 }
 
-async function readInSeats () {
+async function readInSeats() {
   BS = await db.run(/*sql*/ `select * from bokningar;`)
-  return BS
+  // return BS
 }
 
-async function book () {
-  console.log(insertVar)
+async function book() {
   let result = await db.run(insertVar)
-  console.table(result)
 }
+
+
+
+      
+    

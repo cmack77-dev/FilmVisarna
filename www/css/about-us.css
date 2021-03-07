@@ -1,0 +1,66 @@
+.about-us {
+  padding: 50px;
+  text-align: center;
+  color: #fff;
+}
+
+.about-us > h2 {
+  font-weight: 200;
+  margin: 10px;
+}
+.team {
+  text-align: center;
+  font-size: 30px;
+  color: #aaa;
+}
+.column {
+  float: left;
+  width: 33%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 2px 10px 2px rgb(255, 255, 255, 0.4);
+  margin: 8px;
+}
+
+.container {
+  padding: 0 16px;
+}
+.container > h2 {
+  font-weight: 300;
+  font-size: 30px;
+  color: #fff;
+}
+.title {
+  color: #aaa;
+  font-size: 20px;
+}
+.button-contact {
+  border: 1px solid #aaa;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: #fff;
+  background: rgb(116,0,0);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.button-contact:hover {
+  background: rgba(116,0,0,0.6);
+}
+#img-card {
+  width: 100%;
+  height: 325px;
+}
+#phone-img {
+  margin-left: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(116,0,0);
+  color: white;
+}

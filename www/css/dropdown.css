@@ -1,28 +1,82 @@
-.ticket-dropdown-vuxna {
+.ticketType {
+  display: inline-flexbox;
+  justify-content: center;
+  text-align: center;
+}
+.schema {
+  text-align: center;
+}
+h4{
+  font-family: "Montserrat",sans-serif;
+  font-weight: 700;
+  color: #aaa;
+  margin-bottom: 5px;
+}
 
-   -webkit-appearance: none;
+select{
+  display: flexbox;
+  font-size: 16px;
+  font-family: "Montserrat",sans-serif;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  line-height: 1.3;
+  padding: .6em 1.4em .5em .8em;
+  width: 20%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 40px;
+  border: 1px solid #aaa;
+  box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+  border-radius: .5em;
   -moz-appearance: none;
-  background: transparent;
-  background-image: url("/images/FV.png");
-  background-repeat: no-repeat;
-  background-position-x: 100%;
-  background-position-y: 5px;
-  border: 1px solid #dfdfdf;
-  border-radius: 2px;
-  margin-right: 2rem;
-  padding: 1rem;
-  padding-right: 2rem;
- 
-}
-#ticket-dropdown-vuxna {
- 
-  background-color: #f9f9f9;
-  min-width: 60px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 16px;
-  z-index: 1;
-}
-.ticket-dropdown-vuxna:hover #ticket-dropdown-vuxna{
-  display: block;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: rgb(110, 100, 100);
+ -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;    
+   background-image:url('/images/down-chevron.png'), linear-gradient(to bottom,rgba(116, 0, 0, 1),rgba(116, 0, 0, 1));
+   background-repeat: no-repeat, repeat;
+   background-position: right .7em top 50%;
+   background-size: .65em auto, 100%;
+  width:auto;
+  }
 
-}
+  .biljett-rubrik{
+    display:block;
+    margin-bottom: 3px;
+    margin-top: 3px;
+  }
+
+  .ticketnlabels{
+    display:inline-block;
+    text-align: left;
+    width:100px;
+  }
+  #show-screenings {
+    border: 1px solid #aaa;
+    border-radius: .5em;
+    margin-top: 30px;
+  }
+  .ticket-number {
+    display: flex;
+    justify-content: center;
+    list-style:none;
+    margin: 10px;
+    padding: 0;
+    text-decoration: none;
+  }
+  .pris {
+    margin: 0;
+    color: #aaa;
+    font-size: 14px;
+  }
+  #dropdown-vuxna {
+    margin:0;
+  }
+  #dropdown-barn {
+    margin: 0;
+  }
+  #dropdown-pensionar {
+    margin: 0;
+  }

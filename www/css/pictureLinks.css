@@ -1,42 +1,71 @@
+.filmObj {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  flex-shrink: inherit;
+}
 #moviePictureLink{
-  width: 100px;
-  height: 170px;
+  width: 10vw;
+  height: 15vw;
   border-radius: 3%;
-}
-.movieClick {
-  display: inline-block;
   cursor: pointer;
-  border: 2px solid rgb(188, 196, 201);
-  padding: 10px 10px 10px 10px;
+  margin: auto;
 }
-.movieClick:hover {
-  border: 2px solid #0088a9;
-  border-radius: 0%;
+.movieFrame {
+  display:flex;
+  max-width: 100%;
+  height: auto;
+  border: 2px solid transparent;
+  padding: 10px 10px 10px 10px;
+  transition: transform .5s ease;
+}
+.movieFrame:hover {
+  border-radius: 3%;
   padding: 10px 10px 10px 10px;
   display: inline-block;
- background-color:  rgb(222, 224, 224);
+  transform: scale(1.2);
 }
 #moviePictureButton {
   padding: 5px 5px;
-  background-color: rgba(0, 136, 169, 1);
+  background-color: rgba(116, 0, 0, 1);
   border: none;
   border-radius: 10px;
   cursor:pointer;
   transition: all 0.3s ease 0s;
   text-decoration: none;
-  justify-content: left;
+  color: #fff;
+  display: flex;
+  margin: auto;
+  font-size: 1vw;
+}
+.secondcolumn h2 {
+  text-align: center;
+  font-size: 50px;
   color: #fff;
 }
-.filmObj {
-  display: inline-block;
-  width: 100%;
-  margin-left: 45px;
+@media screen and (max-width: 768px) {
+  .filmObj {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+  #moviePictureLink {
+    width: 120px;
+    height: 220px;
+  }
+  #moviePictureButton {
+    font-size: 2vw;
+  }
 }
-.movieFrame {
-  display: inline-block;
-  position:relative;
-  width: 40%;
-}
-.firstcolumn h2 {
-  text-align: center;
+@media screen and (max-width: 375px) {
+  .secondcolumn > h2 {
+    font-size: 25px;
+  }
+  #moviePictureLink {
+    width: 100px;
+    height: 150px;
+  }
 }
